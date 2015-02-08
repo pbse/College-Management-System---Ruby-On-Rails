@@ -1,0 +1,120 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('batch_transfer') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%= t('graduation') %></div>
+
+
+</div>
+<div id="page-yield">
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+  
+    <div class="graduate-header">  <h4><%= t('garduating_batch') %>: <%= @batch.full_name %></h4>
+      <div class="graduate-button">
+        <% unless @id_lists.blank?  %>
+    <%= link_to "#{t('generate_tc_for_all')}",
+      {:controller => "student", :action => "generate_all_tc_pdf", :stud => @id_lists},:target => '_blank',:class=>'user_button' %>
+  <% end %>
+      </div>
+    </div>
+  <% form_for :graduate, :html => { :id=>"form" } do |f| %>
+  <div class="graduate-mesage"> <%= t('graduation_message') %></div>
+  <div class="graduate-box">
+  <div class="graduate-status">
+  <div class="label-field-pair">
+
+      <div class="status-label"><%= t('status_description') %> : </div>
+      <div class="text-input-bg"><%= f.text_field 'status_description' %></div>
+    </div></div>
+  <div class="date-of-leaving">
+    <div class="label-field-pair">
+         <div class="status-label"><%= t('leaving_date') %>:</div>
+          <div class="input-container"><%= calendar_date_select_tag 'leaving_date', I18n.l(Date.today,:format=>:default) ,:popup=>:force%></div>
+        </div>
+  </div></div>
+
+
+  <div class="graduate-mesage"> <p><%= t('uncheck_message') %>.</p></div>
+    <% unless @batch.students.empty? %>
+      <ul id="category-list">
+        <li class="listheading">
+          <div class="heading-no"><%= t('adm_no') %></div>
+          <div class="category-name"><%= t('name') %></div>
+          <div class="sel-list">
+            <%= link_to_function t('all'), "$$('input.right').each(function(checkbox) { checkbox.checked = true; });" %>,
+            <%= link_to_function t('none'), "$$('input.right').each(function(checkbox) { checkbox.checked = false; });" %>
+          </div>
+        </li>
+        <% @batch.students.each do |student| %>
+        <li class="list<%=cycle('odd', 'even')%>">
+          <% if student.finance_fees.collect(&:is_paid).flatten.include? false %>
+            <div class="category-number"><%= link_to student.admission_no, :controller => 'student', :action => 'fees', :id=>student.id %></div>
+            <div class="category-name"><%= link_to student.full_name, :controller => 'student', :action => 'fees', :id=>student.id %></div>
+          <% else %>
+            <div class="category-number_disabled"><%= student.admission_no %></div>
+            <div class="category-name_disabled"><%= student.full_name %></div>
+          <% end %>
+          <div class="category-edit"><%= check_box_tag 'graduate[students][]', student.id, true,:class=>"right" %></div>
+        </li>
+        <% end %>
+      </ul>
+
+      <%= submit_tag "", :value => "► #{t('save')}", :class => "submit_button" , :id => 'submit_button' %>
+    <% else %>
+      <ul id="category-list">
+        <li class="listheading">
+          <div class="category-name"><%= t('no_students_found_in_the_batch') %></div>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <div class="extender"></div>
+</div>
+<script type ="text/javascript">
+ j('#submit_button').click( function()
+  {
+    var c = false;
+    var button = document.getElementById('submit_button')
+    $$('.right').each(function(check)
+    {
+      if (check.checked == true){
+        c=true;
+      }
+    })
+    if (c==false)
+    {
+      alert('<%=t('select_at_least_one_student')%>')
+      return false
+    }
+    else
+    {
+      
+      button.disabled = true;
+      button.value = '<%= "► #{t('please_wait')}"%>';
+     j('#form').submit();
+    }
+    return true;
+  });
+</script>

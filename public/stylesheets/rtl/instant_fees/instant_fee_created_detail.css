@@ -1,0 +1,68 @@
+.total{
+     font-size: 15px;
+    text-align: center;
+}
+.col-2{
+    padding-right:10px;
+    padding-left:10px;
+}
+label{
+    color: #999999;
+    float: right;
+    font-size: 13px;
+    font-weight: bold;
+    width:135px;
+}
+.detail_describe{
+    float: right;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top:2px;
+}
+.info{
+    width:100%;
+    float:right;
+}
+table#listing td a {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin:0px auto;
+    float:left;
+    margin-top:10px;
+    padding:7px 12px;
+    border:none;
+    text-align:center;
+    width:auto;
+    cursor:pointer;
+}
+table#listing td a:hover{
+    color:#FFFFFF;
+    text-decoration:none;
+}
+.col-total{
+    min-width:130px;
+    padding-right:10px;
+    padding-left:10px;
+}
+.col-sl
+{
+    min-width:25px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.details_fee{
+    width:auto;
+    padding-bottom:15px;
+    height:50px;
+}
+.colon{
+    margin-right:50px;
+    margin-left:10px;
+    color :#27292B;
+    float:right;
+}

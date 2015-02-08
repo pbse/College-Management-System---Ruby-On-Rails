@@ -1,0 +1,63 @@
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('reports_text') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%="#{t('exam_schedule')} #{t('details')}" %></div>
+
+</div>
+
+<% unless flash[:notice].nil? %>
+  <p class="flash-msg"> <%= flash[:notice] %> </p>
+<% end %>
+<div id="page-yield">
+  <% form_remote_for :batch_id ,:url=>{:action=>'exam_schedule_details'} ,:loading=>"$('loader1').show();",:loaded=>"$('loader1').hide();" do |f| %>
+    <div class="filter">
+      <div class="label-field-pair">
+        <label for="course_id"><%= t('select_courses') %></label>
+        <div class="text-input-bg margin-left-10">
+          <%= select :course, :course_id,
+            @courses.map {|c| [c.full_name, c.id]},
+            {:prompt => "#{t('select_courses')}"},
+            {:onChange => "#{remote_function(:url => {:action => "batch_list"},
+            :with => "'course_id='+ value",
+            :before => "Element.show('loader')",
+            :success => "Element.hide('loader')"
+            )}"} %> <%= image_tag("loader.gif",
+            :align => "absmiddle",
+            :border => 0,
+            :id => "loader",
+            :style =>"display: none;" ) %>
+        </div>
+      </div>
+      <%= submit_tag "► #{t('search_text')}", :class=> 'submit_button', :disable_with => "#{t('please_wait')}"  %> <%= image_tag("loader.gif",
+            :align => "absmiddle",
+            :border => 0,
+            :id => "loader1",
+            :style =>"display: none;" ) %>
+    </div>
+    <div class="filter_batch">
+      <div id="batch_lists"></div>
+    </div>
+    <div class="extender"></div>
+  <% end %>
+</div>
+<div class="extender"></div>
+<div class="hor_line"></div>
+<div id="information">
+  <%= render  :partial => 'exam_details'%>
+</div>
+<script type="text/javascript">
+  function batch_check()
+  {
+    var flag=0
+    $$('input.batches_box').each(function(checkbox) {
+      if(checkbox.checked == true){
+        flag=1
+      }
+    })
+    if(flag==0){
+      alert('<%= "#{t('select_one_batch')}"%>');
+      $$('input.batches_box')[0].checked=true
+    }
+  }
+</script>

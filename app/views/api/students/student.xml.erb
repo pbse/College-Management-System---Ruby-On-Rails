@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.student_detail{
+  @student = @students.first
+  @additional_data = @students.second
+  @biometric_id = @students.third
+  @xml.student do
+    @xml.student_name(@student.full_name)
+    @xml.batch_name(@student.batch.full_name)
+    @xml.admission_date(@student.admission_date)
+    @xml.blood_group(@student.blood_group)
+    @xml.gender(@student.gender)
+    @xml.nationality(@student.nationality.try(:name))
+    @xml.language(@student.language)
+    @xml.category(@student.student_category.try(:name))
+    @xml.religion(@student.religion)
+    @xml.address("#{@student.address_line1} #{@student.address_line2}")
+    @xml.city(@student.city)
+    @xml.state(@student.state)
+    @xml.country(@student.country.try(:name))
+    @xml.phone(@student.phone1)
+    @xml.mobile(@student.phone2)
+    @xml.email(@student.email)
+    @xml.biometric_id(@biometric_id)
+    @xml.is_sms_enabled(@student.is_sms_enabled)
+    @xml.is_email_enabled(@student.is_email_enabled)
+    @xml.photo do
+      begin
+        unless @student.photo.path.nil?
+          @xml.image("data:image;base64" + ',' + ActiveSupport::Base64.encode64(File.read("#{Rails.root}/public" + @student.photo.url)))
+        end
+      rescue Errno::ENOENT
+        logger.info "Binary data not found"
+      end
+    end
+    @xml.immediate_contact("#{@student.immediate_contact.try(:full_name)}" + "#{(@student.immediate_contact.nil? or @student.immediate_contact.try(:mobile_phone).empty?) ? '' : "(#{@student.immediate_contact.mobile_phone})"}" )
+    @xml.student_additional_details do
+      @additional_data.each_pair do |key,value|
+        @xml.additional_field do
+          @xml.name(key)
+          @xml.value(value)
+        end
+      end
+    end
+  end
+}%>

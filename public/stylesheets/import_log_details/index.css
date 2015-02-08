@@ -1,0 +1,70 @@
+#content-header img {
+    margin: 0;
+    padding: 2px;
+}
+.box{
+    margin-left: 10px;
+}
+.sl_no{
+    width: 10%;
+    padding: 10px;
+    padding-left: 10px;
+}
+
+.name{
+    width: 25%;
+    padding: 10px;
+}
+.date{
+    width: 25%;
+    padding: 10px;
+}
+.status{
+    width: 50%;
+    padding: 10px;
+}
+
+.model{
+    padding-left: 10px;
+}
+
+.pagination{
+    float: right;
+    margin-top: 30px;
+    margin-right: 17px;
+}
+
+.label-field-pair1{
+    float: right;
+    height: 40px;
+    margin-bottom: -16px;
+    margin-right: -82px;
+    margin-top: -48px;
+    padding-top: 3px;
+    width: 330px;
+}
+
+.label-field-pair1 label{
+    color: #444444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    margin: 0;
+    padding-top: 10px;
+    width: 71px;
+}
+
+.text-input-bg1{
+    background: none repeat scroll 0 0 transparent;
+    float: left;
+    height: 28px;
+    width: 250px;
+}
+.text-input-bg1 select{
+    background-color: #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 27px;
+    margin: 5px 0 0 10px;
+    padding: 3px 6px;
+    width: 157px;
+}

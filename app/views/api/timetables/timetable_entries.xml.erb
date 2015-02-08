@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.timetable_detail{
+  @timetable_entries.each do |timetable_entry|
+    @timetable_entry = timetable_entry
+    @xml.timetable_entry do
+      @xml.timetable("#{@timetable_entry.timetable.try(:start_date)}-#{@timetable_entry.timetable.try(:end_date)}")
+      @xml.weekday(WeekdaySet.weekday_name(timetable_entry.weekday_id))
+      @xml.batch(@timetable_entry.batch.full_name)
+      @xml.class_timing(@timetable_entry.class_timing.try(:name))
+      @xml.employee(@timetable_entry.employee.try(:employee_number))
+    end
+  end
+}%>
+
+

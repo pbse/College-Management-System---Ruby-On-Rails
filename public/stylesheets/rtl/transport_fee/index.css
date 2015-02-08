@@ -1,0 +1,107 @@
+#view_all {margin-right:50px;}
+#view_all a {font-weight:bold;color:#000;}
+
+#search_box_bg{width:714px;padding-right:50px;margin-top:10px; overflow: hidden; height:50px;padding-top:10px; }
+
+#search_box_bg label{padding-top:0px;color:#555;font-size:16px; float:right; width:80px; font-weight: bold;}
+#search_textbox input{
+    background : #eee;
+    float:right;
+    border : 1px solid #c6c6c6;
+    margin : -5px 10px 0 0;
+    width : 180px;
+    height:22px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 4px 5px 0 0;
+}
+
+.radio_button{width:400px; margin-top:0px; height:25px;color:#555; float:right; font-size:13px;}
+#information {
+    height:auto;
+    margin:30px auto 0;
+    padding-right:0;
+    width:816px;
+}
+.students-on-one-line {
+    background:url("/images/student_details/ajax_result_underline.jpg") repeat-x scroll right bottom #FFFFFF;
+    margin-bottom:20px;
+    overflow:auto;
+    width:816px;
+}
+#ajax_result {
+    float:right;
+    padding:10px 0;
+    width:204px;
+}
+#ajax_result a {
+    color:#000000;
+    font-weight:bold;
+    text-decoration:none;
+}
+.link-box {
+    float:right;
+    height:80px;
+    margin:10px 40px;
+    width:305px;
+}
+.link-heading a {
+    color:#990000;
+    font-weight:bold;
+}
+.label-field-pair {
+    height:auto;
+    margin:5px 0;
+    overflow:hidden;
+    width:450px;
+}
+.fee_category_scroll {
+    height:90px;
+    margin-right:206px;
+    overflow:auto;
+    width:200px;
+    margin-top: -31px;
+    margin-bottom:10px;
+}
+.each_batch{
+    font-size: 12px;
+    overflow:auto;
+    width:200px;
+
+}
+.sel-list {
+    margin-bottom:2px;
+    width:120px;
+}
+.submit_button {
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px 10px 10px 10px;
+    background:none repeat scroll 0 0 #27292B;
+    border:medium none;
+    color:#FFFFFF;
+    cursor:pointer;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin-right:180px;
+    margin-top:15px;
+    padding:7px 10px;
+}
+
+.box{
+    width:785px;
+    margin:0px auto;
+}
+
+.link-descr {
+    color:#666666;
+    font-size:14px;
+    margin-top:5px;
+    text-align:justify;
+}
+#error-box {
+    padding: 16px 38px 11px 0 ;
+}
+#MB_window[id] {
+    position: absolute !important;
+}

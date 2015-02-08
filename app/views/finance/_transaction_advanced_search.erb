@@ -1,0 +1,54 @@
+<p><%= t('searched_for') %></p>
+        <div class="search-again">
+    <%#= link_to_function '► Search again' do |page|
+    page.visual_effect :toggle_slide, "search-form"
+    page.hide "search-result"
+    end %>
+
+          <%= link_to "►#{t('search_again')}", {:controller=>"finance",:action=>"transactions_advanced_search"}, :class => 'user_button'%>
+          <% unless @transactions.empty? %>
+            <%#= link_to "► #{t('view')} #{t('pdf_report')}",   {:action => "advanced_search_pdf", :search=> params[:search],:advv_search=>params[:advv_search],:adv_search=>params[:adv_search],:page_height => 1200}, :target => '_blank' , :class=> 'user_button' %>
+          <% end %>
+        </div>
+        <div class="extender"></div>
+        <div class="searched_for themed_text">
+          <%= @searched_for %>
+        </div>
+
+
+       <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td><%= t('sl_no') %></td>
+        <td><%= t('payee_name') %></td>
+        <td><%= t('amount') %></td>
+        <td><%= t('cancelled_by') %></td>
+        <td><%= t('date_text') %> </td>
+        <td ><%= t('fee_collection_name') %></td>
+        <td ><%= t('finance_type') %></td>
+      </tr>
+      <tr class="tr-blank"></tr>
+      <% @transactions.each_with_index do |f , i| %>
+        <tr class="tr-<%= cycle("odd","even") %>">
+          <td class="col-1"><%= i +=1 %></td>
+          <%if f.payee.nil? and f.finance.nil?%>
+         <td class="col-3" style="width:20%"> <%="#{t('user_deleted')}"%></td>
+          <%else%>
+          <%if f.payee.nil?%>
+          <td class="col-3" style="width:20%"><%=f.finance.payee_name%></td>
+          <%else%>
+          <td class="col-3" style="width:20%"><%= "#{f.payee.full_name}-&#x200E; (#{f.payee_type=="Student" ? f.payee.admission_no : f.payee.employee_number })&#x200E;" %></td>
+          <%end%>
+          <%end%>
+          <td class="col-3"><%= precision_label(f.amount) %></td>
+          <td class="col-3" style="min-width:85px;"><%= f.user.present?? f.user.full_name  : t('user_deleted') %></td>
+          <td class="col-3" ><%= f.created_at.strftime("%m-%d-%Y") %></td>
+          <td class="col-2" ><div class="cancel" ><%= f.collection_name %></div></td>
+          <td class="col-3" ><%= f.finance_type %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%params[:search].present? ? search=params[:search] : search={"no_value"=>""}%>
+<%#= will_paginate @transactions, :previous_label=>"<", :next_label=>">", :params => {:search=>params[:search],:date=>params[:date]} %>
+        <%= will_paginate @transactions,:previous_label=>"<", :next_label=>">", :renderer => 'RemoteLinkRenderer' ,:remote => { :loading =>  "$('loader_paginate').show();",:complete =>"$('loader').hide();"  }, :params => {:controller=>:finance,:action=>:transactions_advanced_search,:search=>search,:date=>params[:date],:remote=>"remote"} %>
+        <div class="extender">
+        </div>

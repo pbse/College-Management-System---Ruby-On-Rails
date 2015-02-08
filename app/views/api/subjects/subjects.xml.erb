@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.subject_detail{
+  @subjects.each do |subject|
+    @subject = subject
+    @xml.subject do
+      @xml.name(@subject.name)
+      @xml.code(@subject.code)
+      @xml.batch(@subject.batch.try(:full_name))
+      @xml.no_exams(@subject.no_exams)
+      @xml.max_weekly_classes(@subject.max_weekly_classes)
+      @xml.credit_hours(@subject.credit_hours)
+      @xml.elective_group(@subject.elective_group.try(:name))
+      @xml.assigned_students(@subject.students.map(&:admission_no).join(','))
+    end
+  end
+}%>
+
+

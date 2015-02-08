@@ -1,0 +1,231 @@
+div.identifying-info{
+    width: 960px;
+}
+div.attr_pair{
+    width: 480px;
+    float: left;
+}
+div.attr_pair div{
+    float: left;
+    padding: 5px;
+    height: auto;
+    color: #444;
+}
+div.attr_value{
+    width: 260px;
+    font-weight: bold;
+    font-size: 14px;
+}
+div.attr_label{
+    width: 200px;
+    font-size: 14px;
+}
+h4.section-heading {
+    border-bottom: 2px solid black;
+    margin-top: 2px;
+}
+
+table.section-table th, table td {
+    padding: 10px 10px 9px;
+    line-height: 18px;
+    text-align: left;
+}
+table.section-table {
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 0;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+table.section-table th {
+    padding-top: 9px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+table.section-table td {
+    vertical-align: top;
+    border-top: 1px solid #DDD;
+}
+
+h4.section-heading-question{
+    width:100%;
+    float:left;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-weight: normal;
+    color:#444444;
+}
+div.questions div.attr_pair {
+    width: 960px;
+    border-bottom: 0.5px solid #DDD;
+}
+div.questions div.attr_pair div.attr_label {
+    width: 890px;
+}
+div.questions div.attr_pair div.attr_value {
+    width: 50px;
+    padding: 10px 0px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+div.goal div.attr_pair,div.goal div.attr_pair div.attr_label,div.goal div.attr_pair div.attr_value{
+    width: 960px;
+    padding-top: 10px;
+}
+div.goal div.attr_pair div.attr_label{
+    font-weight:500;
+    border-bottom: 0.5px solid #DDD;
+}
+div.goal div.attr_pair div.attr_value{
+    font-size: 14px;
+    font-weight: normal;
+    border-bottom: 0.5px solid #DDD;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+#applicant_photo {
+    float: left;
+    height: 270px;
+    width: 400px;
+}
+
+#applicant_photo img{
+    width: 156px;
+    height:  143px;
+    padding: 2px;
+    border: 1px solid #ddd;
+}
+div.photo-section{
+    height: auto;
+    overflow: hidden;
+}
+.downloads{
+    width:100%;
+    float:left;
+}
+.downloadlink{
+    width:100%;
+    float:left;
+}
+.downloadlink a{
+    width: auto;
+    float: left;
+    margin-bottom: 12px;
+    color: #b00;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.acceptance_status{
+    height: 15px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-right: 2px;
+    width:960px;
+    border:1px solid #67ae5d;
+    margin-left:5px;
+    margin-bottom:10px;
+}
+.accepted{
+
+}
+
+.rejected{
+
+}
+
+.pending{
+
+}
+.status{
+    width:auto;
+    font-size: 12px;
+    color: #444444;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    float:left;
+}
+
+.acceptlink a{
+    font-size:12px;
+    text-decoration: none;
+    color: #00b400;
+    float:left;
+    width:auto;
+    margin-left:10px;
+}
+.rejectlink a{
+    font-size:12px;
+    text-decoration: none;
+    color:#b00;
+    float:left;
+    width:auto;
+    margin-left: 5px;
+}
+
+.downloads span{
+    font-size: 12px;
+    width:100%;
+    float:left;
+    color: #444444;
+    margin-bottom: 5px;
+}
+.submit_button {
+    margin-top: -2px;
+    margin-left: 210px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+#conf-status-U, #conf-status-O {
+    background-image: url("/images/_global/warning_small.png");
+    background-repeat: no-repeat;
+    background-position: 1% 50%;
+    border: 1px solid;
+    font-size: 13px;
+    padding: 5px;
+    padding-left: 28px;
+    color: #383838;
+    border-color: #CD0009;
+}
+p {
+    display: block;
+}
+.addl-attachment a {
+    width: auto;
+    float: left;
+    margin-bottom: 12px;
+    font-size: 12px;
+    text-decoration: none;
+}
+#errorExplanation1 {
+  background: #ffdedf url(/images/_global/error.png) no-repeat 10px 14px;
+   -moz-border-radius:10px;
+   border-radius:10px;
+   -webkit-border-radius:10px;
+   height : auto; width : 510px;
+   margin : 20px auto;
+   padding : 10px 0 20px 20px;
+}
+#errorExplanation1 ul {
+   margin: 5px 0 0;
+}
+#errorExplanation1 ul li{
+   font-weight:600;
+   font-size:13px;
+   display: block;
+}
+
+

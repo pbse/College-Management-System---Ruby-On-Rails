@@ -1,0 +1,65 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('class_timing_sets') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%= t('manage_class_timing_sets') %></div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <li class='themed_bg themed-dark-hover-background'><%= link_to "#{t('new')}", new_class_timing_set_path %></li>
+  </ul>
+</div>
+
+</div>
+<div id="page-yield">
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+  <% unless @class_timing_sets.empty?  %>
+    <table id ="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td class ="sl_no"><%= t('sl_no') %></td>
+        <td class="name"><%= t('name') %></td>
+        <td class="options"><%= t('options') %></td>
+      </tr>
+      <tr class="tr-blank"></tr>
+      <% @class_timing_sets.each_with_index do |cts,index| %>
+        <tr class="tr-<%= cycle('odd', 'even') %>">
+          <td class="sl_no"><%= ((@class_timing_sets.current_page - 1) * @class_timing_sets.per_page) + index + 1 %></td>
+          <td class="name"><%= cts.name %></td>
+          <td class="options">
+            <small>
+              <%= link_to t('class_timings'),cts %> |
+              <%= link_to t('edit'),edit_class_timing_set_path(cts) %> |
+              <% if cts.total_entries == "0" %>
+                <%= link_to t('delete'),cts,:method => "delete", :confirm => t('sure_delete') %>
+              <% else %>
+                <s><%= t('delete_text') %></s>
+              <% end %>
+            </small>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <%= will_paginate @class_timing_sets %>
+  <% end %>
+</div>

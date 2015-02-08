@@ -1,0 +1,153 @@
+.label-field-pair {
+    height: 40px;
+    width: 285px;
+    padding-top: 3px;
+    float: left;
+}
+#loader{
+    margin-top:10px
+}
+.subject{
+    font-weight:bold;
+    font-size:15px;
+}
+.teacher{
+    margin-top:5px;
+    font-size:11px
+}
+.teacher_name{
+    font-size:13px;
+}
+table#listing td.col-1 {
+    width: 12%;
+    font-weight:bold;
+}
+table#listing td.col-2 {
+    width: 15%;
+    word-break: break-all;
+}
+table#listing td.col-3 {
+    width: 51%;
+}
+#timetable{
+    margin-top:25px
+}
+
+.text-input-bg1 select {
+    background-color: #eee;
+    border: 1px solid #c6c6c6;
+    margin: 5px 0 0 10px;
+    width: 144px;
+    height: 27px;
+    padding: 3px 6px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+.text-input-bg1 {
+    background: transparent;
+    height: 28px;
+    width: 145px;
+    float: left;
+}
+.label-field-pair1 {
+    height: 40px;
+    width: 148px;
+    padding-top: 3px;
+    float: left;
+}
+.image_loading{
+    float:left;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+.submit_button {
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-weight: bold;
+    font-size: 11px;
+    border: none;
+    font-family: arial;
+    cursor: pointer;
+}
+.submit{
+    float:right;
+    margin-right: 58px;
+    margin-top: 7px;
+}
+.new_entry{
+    float:left;
+}
+.change_title{
+    float:left;
+    font-size:13px;
+    margin-top:10px;
+    margin-right:15px
+}
+table#listing td a {
+    font-size: 13px;
+}
+.edit_link {
+    float: right;
+    margin-top: 10px;
+    margin-right: 24px;
+}
+.cancel_link {
+    float: right;
+    margin-top: -23px;
+    margin-right: 5px;
+}
+.errorExplanation {
+    border-radius: 10px 10px 10px 10px;
+    height: auto;
+    margin: 20px auto;
+    padding: 16px 0 20px 50px;
+    width: 400px;
+    font-size:14px
+}
+table#listing td a {
+    text-decoration: none;
+    color: #B00;
+}
+.hor_line {
+    margin-top: 10px;
+}
+.submit-button {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    background: #27292B;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 0 210px;
+    padding: 5px;
+    float: left;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 22px;
+    margin-right: 12px;
+    padding-left: 13px;
+    padding-right: 10px;
+}
+.submit-button a {
+    text-decoration: none;
+    color:#fff;
+    font-size: 14px;
+}
+.submit-button a:hover{
+    color:#fff !important
+}
+#page-yield1 {
+    margin: 30px 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+table#listing .tr-odd {
+    font-weight: 100;
+}
+table#listing .tr-even {
+    font-weight: 100;
+}

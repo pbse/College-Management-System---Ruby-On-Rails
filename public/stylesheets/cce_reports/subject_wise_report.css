@@ -1,0 +1,179 @@
+.label-field-pair1{
+    width: 1061px;
+}
+.label-field-pair {
+    height : 40px;
+    width: 344px;
+    padding-top: 3px;
+    float: left;
+}
+.text-input-bg {
+    background : transparent;
+    height : 28px;
+    width: 230px;
+    float:left;
+}
+.label-field-pair label {
+    color : #444;
+    display : block;
+    font-size: 14px;
+    margin : 0 0 0px 0;
+    float:left;
+    width: 106px;
+    padding-top: 10px;
+    font-weight: 600;
+
+}
+.label-field-pair input {
+    background : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width : 205px;
+    height:17px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 5px;
+}
+.text-input-bg select {
+    background-color : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width: 155px;
+    height:27px;
+    padding:3px 6px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+.label-checkbox-pair {
+    float : left;
+    padding : 30px 0 0 10px;
+    width : 250px;
+}
+
+
+.label-field-pair2 {
+    height : 40px;
+    width: 345px;
+    padding-top: 3px;
+    float: left;
+}
+.text-input-bg2 {
+    background : transparent;
+    height : 28px;
+    width: 230px;
+    float:left;
+}
+.label-field-pair2 label {
+    color : #444;
+    display : block;
+    font-size: 14px;
+    margin : 0 0 0px 0;
+    float:left;
+    width: 106px;
+    padding-top: 10px;
+    font-weight: 600;
+
+}
+.label-field-pair2 input {
+    background : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width : 205px;
+    height:17px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 5px;
+}
+.text-input-bg2 select {
+    background-color : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width: 155px;
+    height:27px;
+    padding:3px 6px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+.submit-button {
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background: #27292B;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 0 0px;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 14px;
+    float: left;
+    cursor: pointer;
+}
+#report_table {
+    margin-top: 30px;
+}
+.pdf-button {
+    margin-left: 5px;
+    margin-top: 20px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background: #27292B;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 14px;
+    float: left;
+    cursor: pointer;
+    text-decoration: none;
+}
+.pdf-button a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.submit_btn{
+    float:left;
+    margin-top:9px
+}
+.errorExplanation {
+    background: #ffdedf url(/images/_global/error.png) no-repeat 10px 14px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    height: auto;
+    width: 510px;
+    margin: 20px auto;
+    padding: 1px 0 3px 20px;
+    list-style: none;
+}
+.button{
+    width: 262px;
+    height: 50px;
+    margin-left: 354px;
+}
+#loading{
+    margin-left:5px;
+    margin-top:5px;
+}
+table#listing td.col-2 {
+    width: 15%;
+    text-align: left;
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+#loader{
+    margin-left:5px;
+}
+table#listing tr.tr-head {
+    font-size: 14px;
+    text-align: center;
+}
+table#listing td.col-3 {
+    width: 4%;
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}

@@ -1,0 +1,1 @@
+  Feature.destroy_all(:feature_key=>"additional_reports")

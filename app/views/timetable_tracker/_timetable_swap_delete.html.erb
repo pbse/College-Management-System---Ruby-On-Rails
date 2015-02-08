@@ -1,0 +1,3 @@
+<div id=<%= "entry_#{params[:timetable_entry_id]}" %>>
+  <%=link_to_remote "#{t('change')}", :url=>{:action=>'timetable_swap_from',:timetable_entry_id=>params[:timetable_entry_id],:batch_id=>params[:batch_id],:date=>params[:date]},:success=>"$('entry_#{params[:timetable_entry_id]}').hide();$('link_#{params[:timetable_entry_id]}').show();" ,:html=>{:class=>"themed_text"}%>
+</div>

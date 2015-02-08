@@ -1,0 +1,188 @@
+/* Login Page */
+
+#login_strip {
+    background: #0b0b3b url(images/bg_pattern.png) repeat;
+}
+.forgot_password_link a {
+    color: #0b0b3b;
+}
+
+/* Header Section */
+
+#header_bg, #main-menu li ul.level-1 li ul.level-2, #main-menu li ul.level-1 {
+/*    background: #0b0b3b url(images/bg_pattern.png) repeat;*/
+}
+#main-menu li a {
+    background: white;
+    color: #0b0b3b;
+}
+
+#header_bottom {
+    background-color:#0b0b3b;
+    border-top: 1px solid #1d1d60;
+}
+.top-right-link:hover,.top-right-link-active {
+    background-color: #050510;
+}
+#link-menu:hover{
+  background-color: #050510;
+}
+#username_textbox_bg input:focus,#password_textbox_bg input:focus{
+    background: #ffffff !important;
+    border: 1px solid #0b0b3b !important;
+}
+.theme-inactive-color {
+    background-color: #050510;
+}
+
+/* Dashboard News */
+
+#news_bar .news_box .news-title a {
+    color: #0b0b3b;
+}
+#news_bar .news_box .comments-count {
+    color: #666;
+    background: url(images/chat.png) no-repeat right;
+}
+
+.lower-menu-link {
+    border-right: 1px solid #1d1d60;
+    border-left: 1px solid #050510;
+}
+#lower-show-menu {
+    border-left: 1px solid #1d1d60;
+    border-right: 1px solid  #050510;
+}
+#institution-name:hover{
+    background-color: #050510;
+}
+.themed-dark-hover-background:hover{
+    background-color: #050510 !important;
+}
+.child-link-text:hover{
+    background-color: #0b0b3b;
+}
+
+/* Footer */
+
+#footer {
+}
+
+/* Inner Pages */
+
+
+#content-header h3{
+    color: #0b0b3b;
+}
+#inner-tab-menu ul li{
+    color: #ffffff;
+    background-color: #0b0b3b;
+}
+.sel-list a {
+    color: #0b0b3b;
+}
+.link-heading a, tr.tr-head, tr.tr-head a, td a:hover {
+    color: #0b0b3b !important;
+}
+
+.sub-heading {
+    background: #0b0b3b;
+}
+.ajax-subject a{
+    color: #0b0b3b;
+}
+#page-yield a:hover{
+    color: #0b0b3b !important;
+}
+#page-yield input[type=text]:focus, #page-yield input[type=password]:focus, #page-yield textarea:focus {
+    background: #ffffff !important;
+    border: 1px solid #0b0b3b !important;
+}
+#page-yield .user_button:hover, #page-yield .user_button a:hover, td a.user_button:hover{
+    color: #ffffff !important;
+}
+.active-link {
+    color: #0b0b3b !important;
+}
+.pagination .current {
+    color: #0b0b3b;
+}
+.hover:hover a{
+    color: #0b0b3b !important;
+}
+.themed_text {
+    color: #0b0b3b !important;
+}
+.themed_hover_text:hover {
+    color: #0b0b3b !important;
+}
+.themed_bg {
+    background-color: #0b0b3b !important;
+}
+
+/* Student Profile */
+
+.profile-topbanner{
+    background: url(images/topbanner.png);
+    width: 185px;
+    height: 135px;
+}
+#student_main_info h4{
+    color: #0b0b3b;
+}
+#nav ul li{
+    background: #0b0b3b;
+    color: #ffffff;
+}
+#nav li a{
+    background: #0b0b3b;
+    color: #ffffff;
+}
+#nav ul.scriptaculously{
+    background: #0b0b3b;
+}
+#nav ul li ul li {
+    background: #0b0b3b;
+}
+
+/* Employee Profile */
+
+#employee_main_info h4 {
+    color: #0b0b3b;
+}
+
+/* Popup boxes */
+
+#MB_close {
+    color: white;
+    background: #0b0b3b;
+}
+
+#MB_frame .head_label span {
+    color: #0b0b3b;
+}
+#MB_frame input[type=text]:focus, #MB_frame input[type=password]:focus, #MB_frame textarea:focus {
+    background: #ffffff !important;
+    border: 1px solid #0b0b3b !important;
+}
+
+/* Calendar */
+
+#calendar a:hover, #calendar tr.week td span, #calendar td .link:hover span, .events a:hover{
+    color: #0b0b3b;
+}
+
+/* Timetable */
+
+#timetable .employees_subject:hover{
+    background: #0b0b3b;
+}
+#timetable table#table td, #timetable table#table .subject span, #timetable table#table td .top{
+    color: #0b0b3b !important;
+}
+
+/* Attendance register */
+
+#register-table .td-mark a.present:hover{
+    color: #C3D9FF !important;
+}

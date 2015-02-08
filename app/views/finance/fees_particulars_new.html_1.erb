@@ -1,0 +1,139 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+
+<script type="text/javascript">
+      var j = jQuery.noConflict();
+      document.observe("dom:loaded", function() {
+       <%#*$$("#right-side-inputs")[0].hide();%>
+      });
+      </script>
+<div id="content-header">
+  <%= image_tag("/images/show_finance.png") %>
+  <h1><%= t('fees_collection') %></h1>
+  <h3><%= t('create_particular_for_master_fee') %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <li><%= link_to "#{t('master_fees')}", :action=>'master_fees'%></li>
+  </ul>
+</div>
+
+<div id="page-yield">
+  <div class="bread_crumb">
+    <%= link_to t('finance_text'), :controller => "finance", :action=>"index" %> &raquo;
+    <%= link_to "#{t('fees_text')}", :controller => "finance", :action => "fees_index" %> &raquo;
+    <%= link_to "#{t('master_fees')}", :controller => "finance", :action => "master_fees" %> &raquo;
+    <%= t('create_particulars') %>
+  </div>
+  <div id="flash_box">
+  </div>
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div id="grading-levels-form">
+
+    <% form_for  :finance_fee_particular,:url =>{:action => 'fees_particulars_create'}  do |f| %>
+
+      <div id="form-errors"><%= error_messages_for 'finance_fee_particular' %></div>
+      <div id="form-errors"></div>
+      <div id="right-side-inputs">
+        <div class="label-field-pair">
+      <label for="student_course"><%= t('select_a_category') %> : <%= image_tag("loader.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "loader",
+              :style =>"display: none;" ) %></label>
+      <div  class="text-input-bg">
+        <%= select :finance_fee_particular, :finance_fee_category_id,
+          @fees_categories.map {|b| [b.name, b.id]},
+          {:prompt => "#{t('select_a_category')}"},{:onChange => "#{remote_function(:url => {:action => "list_category_batch"}, :with => "'category_id='+value",:before => "$('loader').show();",
+              :success => "$('loader').hide();")}"}%></div></div>
+        <div class="label-field-pair category_list" id="list-category-batch">
+         
+        </div>
+      </div>
+      <div id="left-side-inputs">
+
+        <div class="label-field-pair">
+          <div class="label-container"> <%= f.label "#{t('name')}"  %></div>
+          <div class="input-container"><%= f.text_field :name %></div>
+        </div>
+
+        <div class="label-field-pair">
+          <div class="label-container"><%= f.label "#{t('description')}" %></div>
+          <div class="input-container"><%= f.text_field :description %></div>
+        </div>
+  <%#if @t%>
+  <%#*<script>%>
+  <%#*v="student"%>
+  <%#=remote_function(:url => {:action => "student_or_student_category"},:with => "'select_value='+v")%>
+  <%#*</script>%>
+  <%#end%>
+        <div class="label-field-pair2">
+          <div class="label-container2"><label><%= t('create_using') %></label></div>
+          <div class="input-container2">
+            <div class="opt"><%= radio_button("finance_fee_particular","receiver_type","Batch",
+                {:checked=>@all,:onchange => "#{remote_function(:url => {:action => "student_or_student_category"},
+                  :with => "'select_value='+value")}"}) %><%= t('all') %></div>
+            <div class="opt"><%=  radio_button("finance_fee_particular","receiver_type","Student",
+                {:checked=>@student,:onchange => "#{remote_function(:url => {:action => "student_or_student_category"},
+                  :with => "'select_value='+value")}"}) %><%= t('admission_no') %></div>
+            <div class="opt"> <%= radio_button("finance_fee_particular","receiver_type","StudentCategory",
+                {:checked=>@category,:onchange => "#{remote_function(:url => {:action => "student_or_student_category"},
+                  :with => "'select_value='+value")}"}) %><%= t('student_category') %> </div>
+          </div>
+        </div>
+
+        <div id="student">
+          <%if @render%>
+            <%if @student%>
+              <div class="label-field-pair">
+                <div class="label-container">
+                  <label> <%= t('admission_number') %> :</label></div>
+                <div class="input-container"> <%= text_field(:finance_fee_particular,:receiver_id,{}) %></div>
+              </div>
+            <%end%>
+            <%if @category%>
+              <div class="label-field-pair">
+                <div class="label-container"><label><%= t('student_category') %>:</label></div>
+                <div class="input-container"> <%= select :finance_fee_particular,:receiver_id, @student_categories.map { |c| [c.name, c.id] },
+                    {:prompt => "#{t('select_category')}" }%></div></div>
+            <%end%>
+          <%end%>
+        </div>
+
+        <div class="label-field-pair">
+          <div class="label-container"><%= f.label "#{t('amount')}" %></div>
+          <div class="input-container"> <%= f.text_field :amount %></div>
+        </div>
+      </div>
+      
+
+
+
+      <%=  submit_tag "► #{t('create_text')}",:class=>'submit_button', :disable_with => "► #{t('please_wait')}" %>
+
+    <% end %>
+  </div>
+</div>

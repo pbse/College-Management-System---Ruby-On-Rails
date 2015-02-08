@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.biometric_detail{
+  @xml.biometric_information do
+    @xml.biometric_id(@biometric_information.biometric_id)
+    @xml.username(@biometric_information.user.try(:username))
+    @xml.first_name(@biometric_information.user.try(:first_name))
+    @xml.last_name(@biometric_information.user.try(:last_name))
+    @xml.role(@biometric_information.user.try(:role_name))
+  end
+}%>

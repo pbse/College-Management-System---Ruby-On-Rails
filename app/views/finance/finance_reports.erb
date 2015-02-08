@@ -1,0 +1,32 @@
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('finance_reports') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%= t('finance_reports') %></div>
+
+
+
+</div>
+
+
+<div id="page-yield">
+   <div class="bread_crumb">
+    <%= link_to t('finance_text'), :controller => "finance", :action=>"index" %> <div class = "bread-crumb-separator"> > </div>
+    <%= t('finance_reports') %>
+  </div>
+<div class="box">
+
+  <div class="link-box">
+      <div class="link-heading"><%= link_to "#{t('report')}", :action => "monthly_report" %></div>
+      <div class="link-descr"><%= t('show_transactions') %></div>
+    </div>
+
+
+ <div class="link-box">
+    <div class="link-heading"><%= link_to "#{t('compare_transactions')}", :action => "compare_report" %></div>
+    <div class="link-descr"><%= t('compare_transactions') %></div>
+  </div>
+
+
+</div>
+</div>

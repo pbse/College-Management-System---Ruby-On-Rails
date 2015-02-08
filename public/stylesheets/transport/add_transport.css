@@ -1,0 +1,80 @@
+
+#view_all {margin-left:50px;}
+#view_all a {font-weight:bold;color:#000;}
+.necessary-field {
+    color:#FF0000;
+    font-size:1.1em;
+}
+.label-field-pair {
+    height:40px;
+    padding-top:3px;
+    width:600px;
+}
+.label-field-pair label {
+    color:#444444;
+    display:block;
+    float:left;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px;
+    padding-top:10px;
+    margin-left:13px;
+    width:200px;
+}
+.necessary-field {
+    color:#FF0000;
+    font-size:1.1em;
+}
+.label-underline{
+    background:  #eeeeee;
+    height: 1px;
+    border: none;
+}
+.submit_button {
+    margin-top:30px;
+    margin-left:224px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+
+.loader5{height:20px; width:20px;}
+
+.seat{
+    font-weight: bold;
+    float: left;
+}
+
+.number {
+    font-weight: bold;
+    float: left;
+    padding-left: 10px;
+}
+.number3 {
+    font-weight: bold;
+    float: left;
+    padding-left: 10px;
+}
+.available-seat{
+    margin: 0 auto;
+    padding: 0;
+}
+
+#seat_description{
+    margin-left: 10px;
+
+}
+#vehicle_form{
+    width:550px;
+    margin:auto;
+}

@@ -1,0 +1,44 @@
+<%=
+@xml.student_detail{
+  @students.each do |student|
+    student_profile_data = student.get_profile_data
+    @student = student_profile_data.first
+    @additional_data = student_profile_data.second
+    @biometric_id = student_profile_data.third
+    @xml.student do
+      @xml.admission_no(@student.admission_no)
+      @xml.student_name(@student.full_name)
+      @xml.batch_name(@student.batch.full_name)
+      @xml.admission_date(@student.admission_date)
+      @xml.date_of_birth(@student.date_of_birth)
+      @xml.blood_group(@student.blood_group)
+      @xml.gender(@student.gender)
+      @xml.nationality(@student.nationality.try(:name))
+      @xml.language(@student.language)
+      @xml.category(@student.student_category.try(:name))
+      @xml.religion(@student.religion)
+      @xml.address("#{@student.address_line1} #{@student.address_line2}")
+      @xml.city(@student.city)
+      @xml.state(@student.state)
+      @xml.pin_code(@student.pin_code)
+      @xml.country(@student.country.try(:name))
+      @xml.birth_place(@student.birth_place)
+      @xml.phone(@student.phone1)
+      @xml.mobile(@student.phone2)
+      @xml.email(@student.email)
+      @xml.immediate_contact("#{@student.immediate_contact.try(:full_name)}" + "#{(@student.immediate_contact.nil? or @student.immediate_contact.try(:mobile_phone).nil?) ? '' : "(#{@student.immediate_contact.mobile_phone})"}" )
+      @xml.biometric_id(@biometric_id)
+      @xml.all_siblings(@student.all_siblings.map(&:admission_no).join(','))
+      @xml.is_sms_enabled(@student.is_sms_enabled)
+      @xml.is_email_enabled(@student.is_email_enabled)
+      @xml.student_additional_details do
+        @additional_data.each_pair do |key,value|
+          @xml.additional_field do
+            @xml.name(key)
+            @xml.value(value)
+          end
+        end
+      end
+    end
+  end
+}%>

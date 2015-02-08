@@ -1,0 +1,69 @@
+<script type="text/javascript">
+        Element.hide('loader_date');
+        </script>
+<%if @transactions.present?%>
+<div id="payments_details">
+    <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td><%= t('sl_no') %></td>
+        <td><%= t('payee_name') %></td>
+        <td><%= t('amount') %></td>
+        <td><%= t('cancelled_by') %></td>
+        <td><%= t('date_text') %> </td>
+        <td ><%= t('fee_collection_name') %></td>
+        <td ><%= t('finance_type') %></td>
+      </tr>
+      <tr class="tr-blank"></tr>
+      <% @transactions.each_with_index do |f , i| %>
+        <tr class="tr-<%= cycle("odd","even") %>">
+          <td class="col-1"><%= i +=1 %></td>
+          <%if f.payee.nil? and f.finance.nil?%>
+         <td class="col-3" style="width:20%"> <%="#{t('user_deleted')}"%></td>
+          <%else%>
+          <%if f.payee.nil?%>
+          <td class="col-3" style="width:20%"><%=f.finance.payee_name%></td>
+          <%else%>
+          <td class="col-3" style="width:20%"><%= "#{f.payee.full_name}-&#x200E; (#{f.payee_type=="Student" ? f.payee.admission_no : f.payee.employee_number })&#x200E;" %></td>
+          <%end%>
+          <%end%>
+          <td class="col-3">
+            <%= precision_label(f.amount) %>
+          </td>
+          <td class="col-3" style="min-width:85px;"><%= f.user.present?? f.user.full_name  : t('user_deleted') %></td>
+          <td class="col-3" ><%= f.created_at.strftime("%d-%m-%Y") %></td>
+          <td class="col-2" ><div class="cancel" ><%= f.collection_name %></div></td>
+          <td class="col-3" ><%= f.finance_type %></td>
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+<div class="pagination_div"><div class="div1"><%= will_paginate @transactions, :previous_label=>"<", :next_label=>">", :renderer => 'RemoteLinkRenderer' ,:remote => { :loading =>  "$('loader_paginate').show();",:complete =>"$('loader').hide();"  }, :params => {:controller=>:finance,:action => "transaction_filter_by_date",:s_date=>params[:s_date],:e_date=>params[:e_date]} %></div><div class="div2"><%= image_tag("loader.gif",
+          :align => "absmiddle",
+          :border => 0,
+          :id => "loader_paginate",
+          :style =>"display: none;" ) %></div></div>
+<%else%>
+<div id="payments_details">
+<table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+  <tr class="tr-head">
+    <td style="text-align:center;">
+<%=t('no_reverted_transactions_exists')%></td>
+  </tr>
+</table></div>
+<%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,324 @@
+
+
+root {
+    display: block;
+}
+#add_comment
+{
+    height:200px;
+}
+.label-field-pair textarea {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:10px;
+    -moz-border-radius-bottomright:10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-radius:10px;
+    background:#EEEEEE none repeat scroll 0 0;
+    border:1px solid #C6C6C6;
+    margin:5px 0 0px 0px;
+    padding:5px;
+    width:205px;
+}
+.text-area-bg {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:transparent none repeat scroll 0 0;
+    float:left;
+    width:565px;
+}
+.label-field-pair textarea:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+.label-field-pair label{
+    color: #333333;
+    font-size: 14px;
+    font-family: arial;
+    width:150px;
+    padding-top: 30px;
+}
+.label-field-pair input, .label-field-pair textarea{
+    height: 80px;
+    width: 550px;
+    resize: none;
+}
+
+.commenttable{
+    width: 725px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
+}
+.hrline1{color: #C6C6C6 ; width: 680px; height: 1px;margin-top: 10px;}
+.red_heading{
+    color: #B30000;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: arial;
+}
+.red_heading1{
+    float: left;
+    padding-left: 40px;
+    color: #BB0000;
+    font-weight: bold ;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.bread_crumb1 {
+    float: left;
+    color: #666666;
+    font-size: 12px;
+    font-family: arial;
+}
+.bread_crumb1 a {
+    color:#000000;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: arial;
+    text-decoration: none;
+}
+
+.textt{font-size: 13px; font-family: arial; width: 700px;text-align: justify;padding-top: 5px;color: #000000}
+.label-container1{color: #C6C6C6}
+.commenttable td{ padding-right: 10px;}
+.commenttable td a{
+    font-size: 15px;
+    font-family: arial;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+#cmnt a {
+    color: #BB0000;
+    font-family: arial;
+    font-size: 14px;
+}
+#commentdel a{
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight:normal;
+    color: #000000;
+}
+#commentdel{float: right}
+#commentbody{
+    color: #000000;
+    font-size: 13px;
+    font-family: arial;
+}
+#time{ color: #888888;float: right; font-size: 12px;padding-left: 370px;}
+#go{
+
+    padding-right: 35px;
+    float: right;
+}
+#go input{
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 10px;
+    width: auto;
+    height:35px;
+
+
+}
+.pagination {
+    float: right;
+    margin-right: 20px;
+    margin-top: 0px;
+    position: relative;
+}
+#part1{float: left}
+#part2{float: left;padding-top: 25px;}
+#one{float: left;width: 30px }
+#two{float: right;border-left:#c6c6c6 solid 1px }
+#line{}
+.red_heading2 h3{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: arial;
+    padding-left: 20px;
+    padding-bottom: 20px;}
+.content2 a{color: #333333;
+            font-size: 13px;
+            font-family: arial;
+            text-decoration: none;
+            padding-left: 0px;
+            margin-top: -20px;
+}
+.content2{color: #989FA9; text-decoration: none; padding-left: 20px; margin-top: -20px;margin-bottom: 50px;}
+.red_heading2 {margin-top: -20px;}
+.red_heading3{float: left;color: #BB0000;}
+#files{float: left;padding-left: 10px;}
+#files_field a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #BB0000;;
+    font-size: 13px;
+}
+#files_field1 a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 13px;
+}
+#files_field{height:auto;}
+.red_heading3 h3{margin-top:-2px;}
+.bread_crumb2 {
+    float: left;
+    padding-left: 20px;
+    font-size: 12px;
+}
+.bread_crumb2 a {
+    color:#bb0000;
+    text-decoration: none;
+}
+.errorExplanation {
+    -moz-border-radius: 10px 10px 10px 10px;
+    background: url("/images/_global/error.png") no-repeat scroll 10px 14px #FFDEDF;
+    height: auto;
+    margin: 20px 0px;
+    padding: 10px 0 20px 20px;
+    width: 510px;
+}
+.errorExplanation ul li {
+    font-size: 13px;
+    font-weight: 600;
+}
+.errorExplanation p {
+    font-weight: bold;
+    margin: 5px 0 0 20px;
+}
+.member_img
+{
+    float: left;
+    margin-right: 10px;
+    padding-left: 20px;
+}
+.member
+{
+    color: #fff;
+    font-size: 13px;
+    font-family: arial;
+    margin-top: 10px;
+}
+#cmnt{
+    border-bottom: 2px solid gray;
+    color: #BB0000;
+    font-size: 14px;
+    font-family: arial;
+    width: 725px;
+}
+.group_name
+{
+    margin-top: 10px;
+}
+#post_details
+{
+    height:20px;
+}
+
+#cmnt_name{
+    font-size: 12px;
+    color: #888888;
+}
+.memberDetails
+{
+    font-family: "arial";
+    font-weight: bold;
+    font-size: 11px;
+}
+.memberDetails:hover
+{
+    color: #ffffff;
+}
+.memberName
+{
+    color:#000;
+}
+.memberName:hover
+{
+    color:#b30000;
+    cursor: pointer;
+}
+.member:hover
+{
+    color:#000000;
+}
+#posters_name
+{
+    font-weight: bold;
+    color: #000;
+}
+.commentbody a{
+    text-decoration: underline;
+}
+.textt a{
+    text-decoration: none;
+}
+.td-name{
+    padding:5px;
+    color:#2D2D2D;
+    padding-left:0px;
+    width: 140px;
+    font-size:12px;
+    cursor:pointer;
+    word-break: break-word;
+}
+.td-name .date{
+    position: relative;
+}
+.td-name:hover{
+    color: #b30000;
+}
+.td-name .date span{
+    display: none;
+    color: #FFFFFF;
+}
+.td-name:hover .date span{
+    color: #000000;
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    background-color: #fff;
+    border:1px solid #000000;
+    min-height: 20px;
+    left: 50px;
+    top: -10px;
+    color: #FFFFFF;
+    padding: 5px;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    padding-top:10px;
+    color:#000000;
+    font-weight:bold;
+    font-size: 11px;
+    font-family: arial;
+}
+#top{
+}
+#down{
+    float: left;
+    position: relative;
+}
+#members a
+{
+    color:#b30000;
+    font-family: "arial";
+    font-weight: bold;
+    font-size: 11px;
+}
+#img_load{
+    padding-top: 30px;
+    height: 25px;
+}

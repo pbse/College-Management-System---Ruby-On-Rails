@@ -1,0 +1,37 @@
+<div class="assigned_batches_section">
+  <div class="select_all_section">
+    <%= check_box_tag "select_all", nil,false,:onclick => "select_assigned_all_or_none(this)" %>
+    <label><%= t('assigned_batches') %></label>
+  </div>
+  <div id="assigned_batches">
+    <% @assigned_batches.each do |batch| %>
+      <div class="assigned_batch">
+        <%= check_box_tag "batch#{batch.id}", batch.id,false,{:onclick => "update_assigned()",:class=> "assigned_batches_check"} %>
+        <label><%= batch.full_name %></label>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= image_tag("loader.gif", :align => "absmiddle", :border => 0, :id => "loader1", :style =>"display: none" ) %>
+<div class="buttons">
+  <div class="right">
+    <%= link_to_function "", "remove_batch_class_timing_set(#{@class_timing_set.id})" %>
+  </div>
+  <div class="left"><%= link_to_function "","add_batch_class_timing_set(#{@class_timing_set.id})" %></div>
+</div>
+
+<div class="all_batches_section">
+  <div class="select_all_section">
+    <%= check_box_tag "select_all_available", nil,false,:onclick => "select_available_all_or_none(this)" %>
+    <label><%= t('available_batches') %></label>
+  </div>
+  <div id="all_batches">
+    <% @all_batches.each do |batch| %>
+      <div class="all_batch">
+        <%= check_box_tag "batch#{batch.id}", batch.id,false,{:onclick => "update_available()",:class=> "all_batches_check"} %>
+        <label><%= batch.full_name %></label>
+      </div>
+    <% end %>
+  </div>
+</div>  

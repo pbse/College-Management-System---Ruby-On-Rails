@@ -1,0 +1,137 @@
+.student_list{
+}
+.header{
+    list-style-type: none;
+    font-weight: bold;
+}
+li.student_names, li.student_names a{
+    text-decoration: none;
+    /*    margin-top: 5px;*/
+    color: black;
+    width:100%;
+    min-width:100%;
+    display: block;
+    padding: 2px 0 2px 0;
+}
+.student_list{
+    list-style-type: none;
+    clear : both;
+    width: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 13px;
+    padding: 0px;
+    float: left;
+}
+
+.student_list a:hover{
+    text-decoration: none;
+    background-color:  #F1F6FF;
+    width:100%;
+
+}
+.student_list a:active{
+    text-decoration: none;
+    /*    font-weight: bold;*/
+}
+.active-link{
+    font-weight: bold;
+    color: #C00 !important;
+}
+.student-name{
+    height: 28px;
+}
+.label-field-pair-select-class {
+    height:40px;
+    padding-top:3px;
+    width:500px;
+    margin:0px auto;
+}
+.label-field-pair-select-class label {
+    color:#444444;
+    display:block;
+    float:left;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px;
+    padding-top:10px;
+    width:200px;
+}
+#loader{
+    padding-top:10px;
+}
+
+
+/*
+#page-yield
+{
+    width:650px;
+}*/
+
+#list {
+    margin:20px auto;
+    width:440px;
+    overflow: hidden;
+}
+#list li {
+    padding:6px 0 0 50px;
+    list-style-type:none;
+}
+#list li label input {
+    margin-right:10px;
+}
+.name_listodd{
+    background:#E4EBFE;
+    height:30px;
+    width:425px;
+    border-top:1px solid #C2CEEF;
+}
+.name_listeven{
+    background:#DAE6FF;
+    height:30px;
+    width:425px;
+    border-top:1px solid #C2CEEF;
+}
+.att_list_names {
+    display:inline;
+    font-weight: 600;
+    font-size: 13px;
+}
+label {display:inline;}
+.submit_button {
+    margin:30px 55px;
+    float:left;
+    -moz-border-radius:12px;
+    -webkit-border-radius:12px;
+    background:none repeat scroll 0 0 #27292B;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    padding:7px 10px;
+    border:none;
+    cursor:pointer;
+}
+.submit_button:hover{
+   background:  #373B3F;
+}
+#skip{
+    margin-top:29px;
+    margin-left: 20px;
+    float:left;
+    -moz-border-radius:12px;
+    -webkit-border-radius:12px;
+    background:none repeat scroll 0 0 #27292B;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    padding:7px 10px;
+}
+#skip a{
+    color:#fff;
+    text-decoration: none;
+}
+#skip:hover{
+   background:  #373B3F;
+}

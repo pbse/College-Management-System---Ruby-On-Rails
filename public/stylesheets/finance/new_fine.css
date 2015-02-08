@@ -1,0 +1,10 @@
+#left-side-inputs{
+    width: 300px;
+margin: auto;
+}
+.user_button{
+    margin-left: 80px !important;
+}
+.label-field-pair label {
+width: auto !important;
+}

@@ -1,0 +1,64 @@
+.link-box {
+    margin:10px 40px;
+    width:270px;
+    float:left;
+    height:80px;
+}
+.link-heading a {
+    font-weight:bold;
+    color:#900;
+}
+.link-descr {
+    margin-top:5px;
+    color:#666;
+    text-align:justify;
+    font-size:14px;
+}
+#box{
+    width:700px;
+    margin:0px auto;
+}
+.box{
+    width:750px;
+    margin:0px auto;
+}
+table {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:954px;
+}
+table#listing td.col-1 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:30%;
+}
+table#listing td.col-2 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:10%;
+}
+table#listing td.col-3 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:27%;
+}
+table#listing td.col-4 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:30%;
+}
+table#listing td.col-5 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:30%;
+}
+table#listing td.col-unique {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:15%;
+}
+table#listing td a {
+color:#27292B;
+font-size:11px;
+text-decoration:none;
+}

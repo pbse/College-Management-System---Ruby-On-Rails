@@ -1,0 +1,23 @@
+/* 
+    Document   : update
+    Created on : 11 Jul, 2012, 3:21:53 PM
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+#content-header img {
+    border: 0 none;
+    float: left;
+    margin: 0;
+    padding: 2px;
+}

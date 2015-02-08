@@ -1,0 +1,114 @@
+
+#search_box_bg{width:auto;margin-top:10px; overflow: hidden; height:50px;padding-top:10px;float:left }
+
+#search_box_bg label{padding-top:0px;color:#555;font-size:16px; float:left; width:auto; font-weight: bold;}
+#search_box_bg1{width:435px;padding-left:50px;margin-top:10px; overflow: hidden; height:50px;padding-top:10px;float:left }
+
+#search_box_bg1 label{padding-top:0px;color:#555;font-size:16px; float:left; width:80px; font-weight: bold;}
+#search_textbox input{
+    background : #eee;
+    float:left;
+    border : 1px solid #c6c6c6;
+    margin : -5px 0 0 10px;
+    width : 180px;
+    height:22px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 4px 0 0 5px;
+}
+.pagination{
+/*    margin-top: -2px !important;*/
+    margin-right: 10px !important;
+
+}
+.pagination_div{
+    float:right;
+/*    width:200px;*/
+}
+.div1{
+    width:auto;
+    float:left;
+    margin-right:10px;
+}
+.div2{
+    margin-right:10px;
+    width:30px;
+    float:right;
+    margin-top: -30px;
+}
+#payments_details{
+    margin-top:20px;
+}
+/*.label-field-pair3 {
+    height : 40px;
+    width: 230px;
+    float:left;
+    padding-top: 3px;
+}
+table#listing {
+    margin-bottom: 30px;
+    padding: 20px 20px 20px;
+    float: left;
+}
+table#listing td.col-1 {
+    width: 7%;
+    padding: 5px;
+    padding-left: 10px;
+}
+table#listing td.col-1 {
+    width: 7%;
+    padding: 5px;
+    padding-left: 10px;
+}
+.label-field-pair3 label {
+    color: #444;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 0px 0;
+    width: 200px;
+    padding-top: 10px;
+    font-weight: 600;
+    margin-left: 16px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+.label-field-pair3 input {
+    background : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width : 205px;
+    height:17px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 5px;
+}*/
+.box{
+    width: 100%;
+    float: left;
+}
+.date-select label{
+    float:left;
+    font-size: 15px;
+}
+.date-search{
+/*    margin-left:-3px;*/
+/*    width: 300px;*/
+float: left;
+}
+.date-search2{
+margin-left: 30px;
+float: left;
+}
+.date-select input{
+    background: #eee;
+border: 1px solid #c6c6c6;
+margin: -3px 0 0 13px;
+width: 140px;
+height: 17px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+padding: 5px;
+}
+.text-input-bg select {
+    margin: -3px 0 0 10px !important;
+}

@@ -1,0 +1,26 @@
+<ul id="category-list">
+  <% @electives.each do |subject| %>
+    <li id="subject-<%= subject.id %>" class="list<%= cycle('even','odd')%>" >
+      <div class="category-name"><%= truncate(subject.name, :length => 30) %></div>
+      <div class="category-code"><%= truncate(subject.code, :length => 13) %></div>
+      <div class="category-edit"><%= link_to_remote("#{t('edit_text')} ",
+          :url => { :controller=>"elective_groups",:action => 'edit_elective_subject', :id=>@elective_group, :id2 =>subject, :batch_id => @batch.id},
+          :method => 'get' ) %> </div>
+      <div class="category-delete">
+        <% subject_exams = Exam.find_by_subject_id(subject.id) %>
+        <% subject_timetables =TimetableEntry.find_by_subject_id(subject.id) %>
+        <% if subject_exams.nil? and subject_timetables.nil? and subject.students.empty?  %>
+          <%= link_to_remote("#{t('delete_text')}",
+            :url => subject_path(subject),
+            :method => 'delete',
+            :confirm => t('delete_confirm_msg'),
+            :update => "subject-#{subject.id}") %>
+        <% else %>
+          <s> <%= t('delete_text') %> </s>
+        <% end %>
+      </div>
+      <div class="category-assign"><%= link_to " #{t('assign_student')}", :controller=>"student", :action=>"electives",:id=>@batch,:id2=>subject.id%>
+      </div>
+    </li>
+  <% end %>
+</ul>

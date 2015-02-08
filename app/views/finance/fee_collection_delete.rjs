@@ -1,0 +1,2 @@
+page.replace_html 'fee_collection_dates', :partial => 'fee_collection_list'
+page.replace_html 'flash_box', :text => "<p class='flash-msg'>#{t('flash_msg34')}</p>"

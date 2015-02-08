@@ -1,0 +1,83 @@
+#content-header img {
+    margin: 0;
+    padding: 2px;
+    width:auto;
+    padding: 0 10px;
+}
+#category-list .listeven {
+    background: none repeat scroll 0 0 #EEF2FD;
+    border-bottom: 1px solid #BECFFB;
+    color: #444444;
+    list-style-type: none;
+    min-height: 1.5em;
+    overflow: auto;
+    padding: 0.5em 0 0 1em;
+}
+#category-list .listodd {
+    background: none repeat scroll 0 0 #DFEAFF;
+    border-bottom: 1px solid #BECFFB;
+    color: #444444;
+    list-style-type: none;
+    min-height: 1.5em;
+    overflow: auto;
+    padding: 0.5em 0 0 1em;
+}
+.submit_button {
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 10px;
+    margin-top:20px;
+}
+#category-list {
+    clear: both;
+    margin: 0 auto;
+    padding: 20px 0 40px 0;
+    width: 960px;
+}
+#category-list .heading {
+    background: none repeat scroll 0 0 #BECFFB;
+    border-bottom: 2px solid #BECFFB;
+    color: #444444;
+    font-size: 13px;
+    font-weight: bold;
+    height: 1.5em;
+    list-style-type: none;
+    padding: 0.5em 0 0 1em;
+}
+.numbering {
+    font-size: 14px;
+    list-style: none outside none;
+    width: 44px;
+    float: left;
+}
+#category-list a{
+    text-decoration: none;
+    color:#000000;
+}
+
+#category-list a:hover{
+    text-decoration: underline;    
+}
+.list-odd span, .list-even span{
+    float:left;
+}
+span.report-link{
+    width:600px;
+    font-size: 13px;
+}
+span.report-actions {
+    float: right;
+    font-size: 12px;
+    margin-right: 20px;
+    text-align: right;
+    width: 300px;
+}
+span.report-actions a{
+    text-decoration: underline;    
+}

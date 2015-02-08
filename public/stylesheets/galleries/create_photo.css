@@ -1,0 +1,245 @@
+/*
+    Document   : add_photo
+    Created on : 26 Nov, 2011, 12:58:15 PM
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root {
+    display: block;
+}
+input#photo_photo {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 23px;
+    margin: 5px 0px 10 0;
+    padding: 5px;
+    width: 200px;
+}
+.necessary-field {
+    color: #FF0000;
+    font-size: 1.1em;
+}
+#select-employee-department{
+    padding-top: 30px
+}
+.label-field-pair label {
+   color: #444444;
+    font-size:  13px;
+}
+.label-field-pair1 {
+    height: 40px;
+    padding-top: 3px;
+    width: 600px;
+}
+.label-field-pair1 label {
+    color: #444444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    width: 150px;
+}
+.submit_button {
+    margin-top:15px;
+    margin-left:160px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+}
+
+.span-sub-heading {
+    font-weight: bold;
+    padding-top: 10px;
+}
+.label-underline {
+    -moz-background-clip: border;
+    -moz-background-origin: padding;
+    -moz-background-size: auto auto;
+    background-attachment: scroll;
+    background-color: #EEEEEE;
+    background-image: none;
+    background-position: 0 0;
+    background-repeat: repeat;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: medium;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: medium;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: medium;
+    height: 1px;
+}
+#page-yield1{
+    padding-top: 20px;
+    width: 450px;
+}
+.create-options{
+
+}
+
+.to-options{
+    float:left;
+    width:385px;
+    margin: 8px 0 5px 0;
+}
+
+.to-options a{
+    color:#9D0E00;
+    font-weight:bold;
+}
+.text-area-bg {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:transparent none repeat scroll 0 0;
+    float:left;
+    width:250px;
+}
+.label-field-pair textarea {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:10px;
+    -moz-border-radius-bottomright:10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-radius:10px;
+    background:#EEEEEE none repeat scroll 0 0;
+    border:1px solid #C6C6C6;
+    margin:5px 0 0px 10px;
+    padding:5px;
+    width:205px;
+}
+.button {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:10px;
+    -moz-border-radius-bottomright:10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    border:medium none;
+    color:#FFFFFF;
+    cursor:pointer;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin:30px 0 0 280px;
+    padding:7px 12px;
+    text-align:center;
+    width:auto;
+}
+.scrolable{
+    float:left;
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:10px;
+    -moz-border-radius-bottomright:10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-radius:10px;
+    background:#EEEEEE none repeat scroll 0 0;
+    border:1px solid #C6C6C6;
+    margin:5px 0 15px 10px;
+    padding:7px;
+    width:200px;
+    overflow:auto;
+    max-height:100px;
+}
+.scroll-inside{
+    max-height:100px;
+    overflow:auto;
+}
+.scroll-inside a.all {
+    color:#444444;
+    font-weight:bold;
+    font-size:14px;
+    text-decoration:none;
+}
+.scroll-inside a.individual{
+    font-size:14px;
+    text-decoration:none;
+    color:#444444;
+}
+.scroll-inside .hover span{
+    display: none;
+}
+.scroll-inside .hover:hover a{
+    text-decoration:underline;
+    color:#9f0c14;
+}
+
+.scroll-inside .hover:hover span{
+    display:block;
+    float:right;
+    color:#444444;
+    font-size:13px;
+    padding-top:2px;
+}
+.hover{
+    border-bottom:1px solid #dddddd;
+}
+#form{
+    width:500px;
+    float:left;
+}
+.message{
+    width:400px;
+    float:right;
+    padding-left: 20px;
+}
+.label-field-pair textarea:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+.label-field-pair label{
+    width:150px;
+}
+.label-field-pair input, .label-field-pair textarea{
+    width:200px;
+}
+#left_field{
+    width: 480px;
+    float: left;
+    border-right: 1px solid #C6C6C6;
+}
+

@@ -1,0 +1,24 @@
+root {
+    display: block;
+}
+
+#content-header img {
+    border: 0 none;
+    float: right;
+    margin: 0;
+    padding: 2px;
+}
+
+.submit-button{
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background: #27292B;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right:210px;
+    padding: 5px;
+    float: right;
+    cursor:pointer;
+}

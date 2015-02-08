@@ -1,0 +1,78 @@
+.blog_notification{
+    font-family: Arial;
+    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    float: right;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.blog_notification .in_line .who a{
+    text-decoration: none;
+    width: auto;
+    float: right;
+    font-weight: bold;
+    color: black;
+}
+
+.blog_notification .in_line .who span{
+    text-decoration: none;
+    width: auto;
+    float: right;
+    font-weight: bold;
+    color: black;
+}
+
+.blog_notification .in_line .who a:hover{
+    text-decoration: underline;
+}
+
+.blog_notification .in_line .what{
+    width: auto;
+    float: right;
+    margin-right: 5px;
+}
+
+.blog_notification .in_line .notification_content{
+    width: auto;
+    float:right;
+}
+.blog_notification .in_line .notification_content a{
+    text-decoration: none;
+    color: #bb0000;
+    font-weight: bold;
+}
+
+.blog_notification .in_line .notification_content a:hover{
+    text-decoration: underline;
+}
+
+.blog_notification .in_line .timestamp{
+    width: auto;
+    float: right;
+    margin-right: 5px;
+}
+
+.in_line{
+    width: 100%;
+    float: right;
+    margin-top: 20px;
+}
+
+.blog_notification .pagination {
+    float: none;
+    margin-right: 360px;
+    margin-top: 16px;
+    position: relative;
+    width: auto;
+}
+.blog_paginator {
+    border-bottom: 0 !important;
+}
+
+#content-header img {
+    border: 0 none;
+    float: right;
+    margin: 0;
+    padding: 2px;
+}

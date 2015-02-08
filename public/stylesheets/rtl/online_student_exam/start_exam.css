@@ -1,0 +1,180 @@
+.label-field-pair1 label {
+    color: #444444;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding-top: 10px;
+    width: 110px;
+}
+
+.label-field-pair1 {
+    height: auto;
+    padding-top: 4px;
+    width: 800px;
+}
+
+#content {
+    padding-bottom: 33px;
+}
+
+#content {
+    float: right;
+    width: 980px;
+}
+
+.label-field-pair1 input {
+    -moz-border-radius: 10px 10px 10px 10px;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 17px;
+    margin: -13px 8px 0 0;
+    padding: 5px;
+    width: 30px;
+}
+
+#page-yield {
+    margin: 0 auto;
+    width:850px;
+    margin-bottom: 70px;
+}
+
+#page-yield h3{
+    text-align: center;
+
+}
+#page-yield h4{
+    color: #444444;
+    text-align: center;
+    font-size: 15px;
+}
+
+.q-label{
+    display: block;
+    float: right;
+    font-size: 14px;
+    margin: 0 0 14px;
+    padding-top: 10px;
+    width: 110px;
+}
+.op-label{
+    color: #444444;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: -1px 107px 2px;
+    padding-top: 0;
+    text-align: right;
+    width: 110px;
+}
+.question{
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.option{
+    float: right;
+    margin-right: 138px;
+    text-align: right;
+    width: 500px;
+}
+
+.text-input-bg {
+    background: none repeat scroll 0 0 transparent;
+    float: right;
+    height: 28px;
+    width: 40px;
+    margin-top: 17px;
+    padding-top: 3px;
+}
+
+
+#submit-button input{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin-left:375px;
+    margin-top:76px;
+    padding:7px 10px;
+    border:none;
+    cursor:pointer;
+}
+
+.extender{
+    width:auto;
+    height:0px;
+}
+
+.errorExplanation {
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius:10px 10px 10px 10px;
+    background: url("/images/_global/error.png") no-repeat scroll 10px 14px #FFDEDF;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px 132px 20px 0;
+    width: 510px;
+}
+
+#error-div{
+    margin-top: 206px;
+}
+
+#page-yield{
+    min-height: 550px;
+}
+
+.time{
+    width: 166px;
+    height: 85px;
+    background: #fff url("/images/examination/time left.png") no-repeat;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    color: #fff;
+    font-weight: bold;
+    padding-top: 16px;
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+#the-time{
+    margin: 0px;
+}
+.time p{
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.question-content{
+    float: right;
+    width:500px;
+
+}
+
+.mark{
+    float: right;
+    width: 100px;
+    color: #444444;
+
+}
+
+.question-content p {
+    margin-right: 21px;
+    margin-top: 1px !important;
+    text-align: right;
+}
+.horizontal-line{
+    border-right-width: 0px;
+    margin-right: 0px;
+}
+.pagination {
+    margin-left: 10px;
+    margin-top: -100px;
+    position: relative;
+}

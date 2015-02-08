@@ -1,0 +1,299 @@
+/* 
+    Document   : index
+    Created on : 19 Aug, 2011, 4:29:17 PM
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+.red_heading
+{
+    font-weight: bold;
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 15px;
+}
+#leftmargin
+{
+    margin-top: 10px;
+    float:right;
+    width:750px;
+    margin-right: 10px;
+}
+#rightmargin
+{
+    margin-top: 20px;
+    width:200px;
+    float:right;
+    border-right:#c6c6c6 solid 1px;
+}
+.right_sub
+{
+    margin-top: 15px;
+    font-size: 13px;
+    font-family: "Arial"
+}
+.right_sub a
+{
+    text-decoration: none;
+    color:#333333;
+    font-size: 13px;
+}
+#horizantal_bar
+{
+    height:1px;
+    width:700px;
+
+}
+#horizantal_bar_top
+{
+    height:1px;
+    width:700px;
+    border-bottom:  1px solid #d4d4d4;
+    margin-bottom: 20px;
+}
+#right_content
+{
+    margin-right:30px;
+}
+.comments
+{
+    float:left;
+    margin-left: 50px;
+    color:#b00;
+    font-weight: bold;
+}
+.posted_by
+{
+    font-family: 'Arial';
+    font-size: 13px;
+    color:#333333;
+    float : right;
+}
+
+.posted_by a
+{
+    color:#b00;
+    text-decoration: none;
+    font-size: 13px;
+}
+.group_name
+{
+    color:#b00;
+}
+.left_sub a
+{
+
+    text-decoration: none;
+}
+.paginate
+{
+    margin-top: 15px;
+    margin-left:250px;
+    width:auto;
+    color:#b00;
+}
+.pagination
+{
+    float:right;
+    margin-left:0px !important;
+    margin-right: 0px !important;
+    margin-top:15px;
+    position:relative;
+    width: 100% !important;
+    font-weight: normal;
+}
+
+.pagination a {
+    background:none repeat scroll 0 0 #FFFFFF;
+    border:1px solid #A6C7FF;
+    color:#27292B;
+    font-size:15px;
+    font-weight:normal;
+    padding:3px;
+    text-decoration:none;
+}
+#read_more a
+{
+    color:#989FA9;
+}
+#read_more
+{
+    width:700px;
+}
+.discussions
+{
+    width: 700px;
+    font-size: 12px;
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom:  1px solid #d4d4d4;
+}
+#post_title a
+{
+    font-family: 'Arial';
+    font-size: 13px;
+    font-weight: bold;
+    color:#333333;
+}
+#post_title_recent a
+{
+    font-family: 'Arial';
+    font-size: 15px;
+    font-weight: bold;
+    color:#333333;
+    font-size: 15px;
+}
+#post_title_recent
+{
+    margin-bottom: 5px;
+}
+#discussion
+{
+    margin-top: 5px;
+    margin-bottom:25px;
+    font-size: 17px;
+    font-family: "Arial";
+    font-weight: bold;
+}
+#discussion a
+{
+    padding:5px 17px;
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 17px;
+}
+.each_group
+{
+    margin-bottom: 10px;
+}
+#comments:hover
+{
+    cursor: pointer;
+}
+#discussions:hover
+{
+    cursor: pointer;
+}
+.displayBlack
+{
+    color: #333;
+}
+.displayRed
+{
+    color:#b30000;
+}
+#comments_heading
+{
+    background:#f2f2f2;
+    color:#000000;
+    width: 700px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+    border-bottom:  1px solid #d4d4d4;
+}
+#comment
+{
+    margin-right: 5px;
+    font-weight: bold;
+    font-family: 'Arial';
+    font-size: 15px;
+    float: right;
+}
+#activity
+{
+    margin-right: 580px;
+    font-weight: bold;
+    font-family: 'Arial';
+    font-size: 15px;
+}
+.right_discussion
+{
+    font-family: 'Arial';
+    font-size: 13px;
+    color:#333333;
+    float: left;
+}
+.left_discussion
+{
+    width:500px;
+    float: right;
+}
+.left_discussion_recent
+{
+    width:300px;
+    float: right;
+}
+.time_name
+{
+    width: 120px;
+    float: right;
+}
+#post_recent
+{
+    margin-right: 5px;
+    float: right;
+    font-weight: bold;
+    font-family: 'Arial';
+    font-size: 15px;
+}
+#comment_recent
+{
+    color:#000000;
+    font-weight: bold;
+    font-family: 'Arial';
+    font-size: 15px;
+    margin-right:400px;
+    width:100px;
+}
+#activity_recent
+{
+    margin-right: 580px;
+    font-weight: bold;
+    font-family: 'Arial';
+    font-size: 15px;
+    float: right;
+    margin-top: -17px;
+    margin-left: 20px;
+}
+.middle_discussion
+{
+    font-family: 'Arial';
+    font-size: 13px;
+    color: #333333;
+    width: 50px;
+    float: right;
+    margin-right: 135px;
+}
+.post_comment 
+{
+    font-family: 'Arial';
+    font-size: 13px;
+    color: #333333;
+    margin-bottom:5px;
+}
+.post_comment a
+{
+    font-family: 'Arial';
+    font-size: 13px;
+    color: #333333;
+    margin-bottom:5px;
+}
+#commenter_name
+{
+    margin-top: 5px;
+}
+.post_comment .link{
+    text-decoration: none;
+    color: blue;
+}

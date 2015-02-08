@@ -1,0 +1,65 @@
+<div id="page-yield" class="available_sections">
+  <div class="section" >
+    <center>
+      <div class="hor_line"></div>
+      <h2>Assessment Wise Report</h2>
+      <div class="hor_line"></div>
+      <div class="extender"> </div>
+      <div id ="main_info">
+        <h4><%= @batch.full_name %>-<%=params[:assessment_group] %></h4>
+      </div>
+    </center>
+  </div>
+
+  <div class="section" id="table-headers" >
+    <center>
+      <table id="pdf-table" width="100%">
+        <tr class="table-header">
+          <td class="name-td">Students</td>
+          <% @subjects.each do |s| %>
+            <td class="mark-td" colspan="2"><%= s.name %></td>
+          <% end %>
+        </tr>
+        <tr class="table-header">
+          <td class="name-td"> </td>
+          <% @subjects.each do |s| %>
+            <td class="mark-td">Grade</td>
+            <td class="mark-td">Marks  (%)</td>
+          <% end %>
+        </tr>
+        <% c = 'even' %>
+        <% @students.each_with_index do |s,i| %>
+          <tr class="<%= cycle('even', 'odd') %>">
+            <td class="col-pdf name-td"><%= s.full_name %> (<%= s.admission_no %>)</td>
+            <% st=@fa_score_hash.find{|c,v| c==s.id} %>
+            <% if st %>
+              <% @subjects.each do |sub| %>
+                <% sc=@fa_score_hash[s.id][sub.id.to_s] %>
+                <% if sc  %>
+                  <td class="col-pdf mark-td"><%= @fa_score_hash[s.id][sub.id.to_s]['grade'] %></td>
+                  <td class="col-pdf mark-td"><%= @fa_score_hash[s.id][sub.id.to_s]['mark'] %></td>
+                <% else %>
+                  <td class="col-pdf mark-td">-</td>
+                  <td class="col-pdf mark-td">-</td>
+                <% end %>
+              <% end %>
+            <% else %>
+              <% @subjects.each do |s| %>
+                <td class="col-pdf mark-td">-</td>
+                <td class="col-pdf mark-td">-</td>
+              <% end %>
+            <% end %>
+          </tr>
+          <% if ((i+1)%1)==0 %>
+          </table>
+        </center>
+      </div>
+      <div class="section">
+        <center>
+          <table id="pdf-table" width="100%">
+          <% end %>
+        <% end %>
+      </table>
+    </center>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<% remote_form_for :manage_payroll do |s| %>
+  <div class="payslip-field-pair">
+    <label for="salary_date"><%= t('salary_date') %></label>
+    <div class="payslip-input-bg">
+      <%= calendar_date_select_tag 'salary_date', I18n.l(Date.today,:format=>:default),
+        :year_range => 2.years.ago..0.years.from_now , :readonly=>true, :popup=>"force",:onChange=>"new_categoy_date_set();"%></div>
+  </div>
+
+  <% @payroll_categories.each do |c| %>
+    <%- val = @employee_salary_structure[c.id] -%>
+    <div class="payslip-field-pair">
+      <label for="payroll_category_name"><%= c.name %></label>
+      <div class="payslip-input-bg"><%= text_field_tag  "manage_payroll[monthly_payslips_attributes][#{c.id}][amount]",value=precision_label(val.nil? ? 0 : val[0].amount),:class=>'precision_text',
+          :onChange=> "#{remote_function(:url  => {:controller=>"payroll",:action => "update_dependent_payslip_fields"},
+        :with => "'amount='+ value + '&cat_id=' + #{c.id}")}"%></div>
+      <%= hidden_field_tag "manage_payroll[monthly_payslips_attributes][#{c.id}][payroll_category_id]",value= "#{c.id}"%>
+      <%= hidden_field_tag "manage_payroll[monthly_payslips_attributes][#{c.id}][salary_date]",value= "#{Date.today}" ,options={:class=>"salary_date"}%>
+    </div>
+  <% end %>
+
+  <div class="extender"></div>
+  <hr></hr>
+  <div id="add"></div>
+  <div id="link">
+    <%= link_to_function "#{image_tag "buttons/add_2.png" } #{t('add_individual_category')}","add_individual_category();"%>
+  </div>
+
+  <div id="submit-button">
+    <%=submit_tag("► #{t('create_text')}", :disable_with => "► #{t('please_wait')}" ,:onClick=>"new_categoy_date_set();") %>
+  </div>
+  <div class="extender"></div>
+<% end %>

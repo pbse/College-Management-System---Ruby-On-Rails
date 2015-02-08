@@ -1,0 +1,15 @@
+if @error.nil?
+	page.replace_html 'form-errors', :text => ''
+  page.replace_html 'descriptive_indicators', :partial => 'descriptive_indicators', :locals=>{:descriptives=>@descriptives}
+  #  page.replace_html 'descriptive_indicators', :partial => 'descriptive_indicators', :object => @descriptives
+  page.replace_html 'flash-box', :text=>"<p class='flash-msg'>#{flash[:notice]}</p>" unless flash[:notice].nil?
+  page << "Modalbox.hide();"
+  if params[:observation_id].present?
+    page.redirect_to observation_descriptive_indicators_path(:observation_id => params[:observation_id])
+  elsif params[:fa_criteria_id].present?
+    page.redirect_to fa_criteria_descriptive_indicators_path(:fa_criteria_id => params[:fa_criteria_id])
+  end
+else
+	page.replace_html 'form-errors', :partial => 'errors', :object => @descriptive
+  page.visual_effect(:highlight, 'form-errors')
+end

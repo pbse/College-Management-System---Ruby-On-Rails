@@ -1,0 +1,321 @@
+/*#page-yield {
+    margin : 30px 0;
+    padding:0px 12px 0px 12px;
+}*/
+.label_field_pair {
+    width:600px;
+    height: 40px;
+    padding-top: 3px;
+}
+.label_field_pair input[type="text"] {
+    width:210px;height:28px;
+    background:transparent;
+    border:none;
+    padding-right:10px;
+    padding-top:5px;
+}
+.label_field_pair select {
+    background : #eee;
+    border: none;
+    height: auto;
+    margin: 5px 5px 0 0;
+    width: 220px;
+}
+#address_text_area {
+    width:232px;
+    height:162px;
+    background:#fff url(../../images/admission/address_area_bg.jpg) no-repeat;
+    margin-bottom:40px;
+}
+.submit_button {
+    float:right;
+    margin-top:0px;
+    margin-left:20px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+.necessary-field {
+    color: #FF0000;
+    font-size: 1.1em;
+}
+label-field-pair-text-area{
+    height:110px;
+    padding-top:3px;
+    width:600px;
+}
+
+.label-field-pair-text-area label{
+    color:#444444;
+    display:block;
+    float:right;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px;
+    padding-top:10px;
+    width:200px;
+}
+.textarea-input-bg {
+    background:none repeat scroll 0 0 transparent;
+    float:right;
+}
+.label-field-pair-text-area textarea {
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px;
+    background:none repeat scroll 0 0 #EEEEEE;
+    border:1px solid #C6C6C6;
+    margin:5px 10px 0 0;
+    padding:5px;
+    width:205px;
+}
+.label-field-pair-text-area textarea:focus{
+    background:#FFFFFF;
+    border: 1px solid #9E0F15;
+}
+#search_box_bg{
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+#search_box_bg label{
+    padding-top:0px;
+    color:#555;
+    font-size:16px;
+    float:right;
+    width:50px;
+    font-weight: bold;}
+#search_textbox input {
+    background: #EEE;
+    float: right;
+    border: 1px solid #C6C6C6;
+    width: 200px;
+    height: 22px;
+    padding-right:5px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#search_textbox input:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+.autocomplete-w1 {
+    position:absolute;
+    top:0px; right:0px;
+    margin:6px -200px 0 0;
+    _background:none;
+    _margin:1px 0 0 0;
+}
+.autocomplete {
+    border:1px solid #C6C6C6;
+    background:#fff;
+    cursor:default;
+    color:#000;
+    text-align:right;
+    max-height:350px;
+    overflow:auto;
+    margin:-7px -7px 6px 5px;
+    _height:350px;
+    _margin:0;
+    _overflow-x:hidden;
+}
+.autocomplete .selected {
+    background:#F8F1D1;
+    color:#BB0000;
+
+    /*    border-top:1px solid #990A10;
+        border-bottom:1px solid #990A10;*/
+}
+.autocomplete div {
+    padding:2px 5px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.autocomplete strong {
+    font-weight:bold;
+}
+
+.cancel_btn a {
+    float:right;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    float: right;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    margin-top:0px;
+    text-decoration: none;
+}
+.cancel_btn a:hover{
+    background:  #373B3F;
+}
+
+.buttons{
+    margin: 40px 221px;
+    width: 300px;
+}
+
+.listodd{
+    background: white;
+    border: 1px solid #BECFFB;
+    color: #444;
+    height: auto;
+    width: 190px;
+    list-style-type: none;
+    margin-right: -43px;
+    padding: 5px 0px 1px 0px;
+    padding-right: 10px;
+    margin-bottom:6px;
+    font-weight: bold;
+    overflow: hidden;
+}
+#category-list_accused {
+    width:223px;
+    margin-right: -4px;
+    color : #444;
+    font-size:14px;
+    margin-top:6px;
+    margin-bottom:0;
+
+}
+#category-list_jury {
+    width:223px;
+    margin-right: -11px;
+    color : #444;
+    font-size:14px;
+    margin-top:6px;
+    margin-bottom:0;
+}
+#category-list_members {
+    width:223px;
+    margin-right:-18px;
+    color : #444;
+    font-size:14px;
+    margin-top:6px;
+    margin-bottom:0;
+}
+#category-list_complainee {
+    width:223px;
+    margin-right:0px;
+    color : #444;
+    font-size:14px;
+    margin-top:6px;
+    margin-bottom:0;
+
+}
+.list_btn{
+    float:right;
+    width:0px;
+    padding:8px;
+    background-image: url(/images/discipline/delete_2.png);
+    background-repeat:no-repeat;
+    margin-top:3px
+}
+
+#complainee{
+    float:right;
+    width: 219px;
+    margin-right:13px;
+}
+#jury{
+    float:right;
+    width: 194px;
+    margin-right: 18px;
+}
+#accused{
+    float:right;
+    width: 219px;
+    margin-right: 13px;
+}
+#members{
+    float:right;
+    width: 188px;
+    margin-right: 41px;
+}
+.titles{
+    color:#b00;
+}
+#participants{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    width:100%;
+    background-color: #c3d9ff;
+    float:right;
+    margin-top:-40px;
+    padding-bottom: 23px;
+}
+.participants1{
+    width:96%;
+    background-color: #fff;
+    float:right;
+    margin-top:8px;
+    padding:5px 0px 5px 0px;
+    margin-right: 20px;
+}
+.col-11{
+    width:25%;
+    text-align: right;
+    padding: 5px;
+    padding-right: 10px;
+}
+#discipline_complaint_attachment{
+    padding-top:5px;
+    padding-bottom:12px
+}
+#label-field-pair_browse input {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 23px;
+    margin: 5px 10px 0 0;
+    padding: 5px;
+    width: 205px;
+}
+.label-field-pair label {
+    color: #444;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 0px 0;
+    float: right;
+    width: 200px;
+    padding-top: 10px;
+    font-weight: 600;
+}
+.download_file{
+    color: #444;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 0px 0;
+    float: right;
+    width: 390px;
+    padding-top: 10px;
+    font-weight: 600;
+}
+.download_file a{
+    color:#555;
+    font-size: 80%;
+    text-decoration: none;
+}
+.download_btn{
+    float:left;
+    padding:10px;
+    background-image: url(/images/discipline/tt_delete.png);
+    background-repeat:no-repeat;
+}
+.list_c{
+    float:right;
+    width: 171px;
+}

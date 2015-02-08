@@ -1,0 +1,116 @@
+#fees-table{
+    padding-top:10px;
+}
+.fees-th {
+    background: none repeat scroll 0 0 #BECFFB;
+    border-bottom: 1px solid #BECFFB;
+    color : #444;
+    height : auto;
+    width : 938px;
+    list-style-type : none;
+    padding: 14px 0 16px 16px;
+    font-size: 14px;
+    overflow: hidden;
+    font-weight:bold;
+}
+.fees-tr {
+    background-color: #E7EEFF;
+    border-bottom: 1px solid #C4D2FE;
+    font-size:0.9em;
+    height: auto;
+    padding: 0.5em 0 0 0;
+    width:700px;
+    overflow: hidden;
+}
+.fees-table-description {
+    float:left;
+    padding: 0 0 0 19px;
+    width: 198px;
+}
+.fees-table-head-desc {
+    float:left;
+    padding: 0 0 0 60px;
+    width: 254px;
+}
+.fees-table-expenses {
+    float:left;
+    width: 80px;
+    padding: 0 0 0 41px;
+    text-align:right;
+    height: 16px;
+}
+.fees-table-income {
+    float:left;
+    width: 120px;
+    padding: 0 0 0 0px;
+    text-align:right;
+    height: 16px;
+}
+.fees-table-date {
+    float:left;
+    width: 80px;
+    text-align:center;
+    margin-right: 40px;
+}
+.fees-table-payment_mode {
+    float:left;
+    width: 120px;
+    text-align:center;
+    margin-right: 26px;
+}
+.fees-table-payment_note {
+    float: left;
+    padding: 0 0 0 19px;
+    width: 180px;
+}
+.fees-table-payment_note p{
+    display: block;
+    float: left;
+    padding: 0 0 0 0px;
+    width: 190px;
+    margin: 0px;
+}
+
+.listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : auto;
+    width : 938px;
+    list-style-type : none;
+    padding: 10px 0 10px 16px;
+    font-size: 14px;
+    overflow: hidden;
+
+}
+
+.listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : auto;
+    width : 938px;
+    list-style-type : none;
+    padding: 10px 0 10px 16px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.fees-table-description p{
+    display: block;
+    float:left;
+    padding: 0 0 0 0px;
+    width: 254px;
+    margin: 0px;
+}
+#transaction-report-title{
+    color: #444;
+    font-size: 15px;
+}
+.fees-table-receipt-no{
+    float:left;
+    width: 120px;
+    padding: 0 0 0 0px;
+    text-align:center;
+    height: 16px;
+}

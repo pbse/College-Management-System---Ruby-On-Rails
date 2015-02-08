@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.school_detail{
+  @xml.school do
+    @configuration = Array.new
+    @configuration = Configuration.get_school_details
+    @xml.institute_name(@configuration.first)
+    @xml.institute_address(@configuration.second)
+    @xml.institute_phone(@configuration[2])
+    @xml.institute_language(@configuration[3])
+    @xml.institute_currency(@configuration[4])
+    @xml.institute_time_zone(@configuration[5])
+    begin
+      current_school_detail = SchoolDetail.first||SchoolDetail.new
+      unless current_school_detail.logo.path.nil?
+        @xml.image(ActiveSupport::Base64.encode64(File.read("#{Rails.root}/public" + current_school_detail.logo.url)))
+      else
+        @xml.image("No logo uploaded")
+      end
+    rescue Errno::ENOENT
+      logger.info "Binary data not found"
+    end
+  end
+}%>

@@ -1,0 +1,77 @@
+.submit_button {
+    margin-top:153px;
+    margin-right:-214px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+
+.batches {
+    /*float: none;
+    height: 115px;
+    margin-left: 210px;
+    overflow: auto;
+    width: 220px;*/
+    -moz-background-inline-policy: continuous;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    float: right;
+    margin: 5px 10px 15px 0;
+    max-height: 100px;
+    overflow: auto;
+    padding: 7px;
+    width: 200px;
+}
+.label-field-pair {
+    height:auto;
+    padding-top:3px;
+    width:600px;
+    margin-top: 20px;
+}
+.sel-list {
+    margin-bottom:2px;
+    width:190px;
+}
+
+.opt{
+    margin-right:200px;
+    width:226px;
+}
+.each_batch{
+    font-size: 12px;
+    overflow:auto;
+    width:194px;
+    border-bottom: 1px solid #DDDDDD;
+
+}
+.each_batch input{
+    float:right;
+    width:auto;
+}
+.each_batch label {
+    float: right;
+    margin-right: 10px;
+    margin-top: -6px;
+    width: 152px;
+    overflow-x: hidden;
+}
+
+.button{
+    width: 100%;
+    margin-top: 20px;
+    float: right;
+}
+#applicant_form{
+    margin: 0 auto;
+    width: -moz-max-content;
+}

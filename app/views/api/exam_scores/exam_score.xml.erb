@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.exam_score_detail{
+  @xml.exam_score do
+    @xml.student(@exam_score.student.try(:admission_no))
+    @xml.exam_group(@exam_score.exam.try(:exam_group).try(:name))
+    @xml.batch(@exam_score.exam.try(:exam_group).try(:batch).try(:full_name))
+    @xml.subject(@exam_score.exam.try(:subject).try(:code))
+    @xml.marks(@exam_score.marks)
+    @xml.grading_level(@exam_score.grading_level.try(:name))
+    @xml.remarks(@exam_score.remarks)
+  end
+}%>
+
+

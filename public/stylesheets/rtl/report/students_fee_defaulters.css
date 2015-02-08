@@ -1,0 +1,211 @@
+table#report_table{
+    background: #dcdcdc;
+}
+table#report_table tr.tr-head{
+    color:#fff!important;
+    font-weight:bold;
+    text-align:right;
+    font-size: 14px;
+}
+table#report_table .tr-head td{
+    padding:5px;
+    padding-right:10px;
+
+}
+table#report_table .tr-odd{
+    background: #efefef;
+    text-align:right;
+    padding:50px;
+    font-weight:700;
+    font-size:13px;
+    color: #333333;
+}
+table#report_table .tr-even{
+    background: #f8f8f8;
+    text-align:right;
+    padding:50px;
+    color:#27292b;
+    font-weight:700;
+    font-size:13px;
+}
+table#report_table .tr-read-odd{
+    background: #fff;
+    text-align:right;
+    padding:50px;
+    color:#27292b;
+    font-weight:normal;
+    font-size:14px;
+}
+table#report_table .tr-read-even{
+    background: #f1f6ff;
+    text-align:right;
+    padding:50px;
+    color:#27292b;
+    font-weight:normal;
+    font-size:14px;
+}
+table#report_table td.col-1{
+    width:10%;
+    padding: 5px;
+    padding-right:10px;
+}
+table#report_table td.col-2{
+    width: 20%;
+    text-align:right;
+    padding: 5px;
+    padding-right:10px;
+    word-break: break-word;
+}
+table#report_table td a{
+    text-decoration:none;
+    color:#27292b;
+}
+table#report_table td a:hover{
+    color:#990a10;
+    text-decoration:underline;
+}
+table#report_table td.col-3{
+    width: 12%;
+    padding: 5px;
+    padding-right:10px;
+    word-break: break-word;
+}
+table#report_table td.col-4{
+    width:13%;
+    text-align:right;
+    padding: 5px;
+    padding-right:10px;
+    word-break: break-word;
+}
+table#report_table td.col-5{
+    width:7%;
+    text-align:right;
+    padding: 5px;
+    padding-right:10px;
+    word-break: break-word;
+}
+table#report_table td.col-6{
+    width: 5%;
+    text-align:right;
+    padding: 5px;
+    padding-right:10px;
+    word-break: break-word;
+}
+
+table#report_table td.col-7{
+    width:20%;
+    text-align:right;
+    padding: 5px;
+    padding-right:10px;
+    word-break: break-word;
+}
+.pagination_list{
+    width:100%;
+    height:25px;
+    border:1px solid #CCCCCC;
+    margin-top:30px;
+    background:#efefef
+}
+.pagination {
+    float: left;
+    position: relative;
+    margin-top: 4px;
+    margin-left: 15px;
+}
+.pagination a.prev_page,.pagination a.next_page{
+    color:#27292b;
+    font-weight:bold;
+    text-transform: none;
+    background: none;
+    text-decoration:none;
+    border:none;
+    font-size: 13px;
+}
+.pagination .disabled {
+    color: #27292b;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: none;
+    background: none;
+    text-decoration: none;
+    border: none;
+}
+.pagination_text{
+    float:right;
+    margin-right: 600px;
+    font-size: 13px;
+    color:#333333;
+    margin-top: 5px;
+}
+#page-yield {
+/*    margin-left: 10px;*/
+    margin-top: 12px;
+}
+.submit-button {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    background: #27292B;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 210px 0 0;
+    padding: 7px;
+    float: right;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 4px;
+/*    margin-left: 12px;*/
+    padding-right: 13px;
+    padding-left: 10px;
+}
+.submit-button a {
+    text-decoration: none;
+    color:#fff;
+    font-size: 14px;
+}
+.submit-button a:hover{
+    color:#fff !important
+}
+table#report_table tr.tr-head a{
+    color:#fff !important;
+}
+table#report_table tr.tr-head a:hover{
+    color:#fff !important;
+    text-decoration: none;
+
+}
+.batch_order:hover{
+    background: rgba(0, 0, 0, .2)
+}
+.batch_order_select{
+    background: rgba(0, 0, 0, .2)
+}
+.top_heading{
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin-right: 12px;
+    float: right;
+    margin-top: 10px;
+}
+#information{
+    margin-top: 17px;}
+.field_pair{
+    width: 265px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #444;
+    padding: 10px;
+    height: 8px;
+    float: right;
+}
+.label1{
+    float:right;
+    width:150px
+}
+.label2{
+    float:right;
+    word-break: break-all;
+    font-weight: bold;
+}

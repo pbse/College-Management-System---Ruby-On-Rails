@@ -1,0 +1,8 @@
+<%if @particulars.present?%>
+<div class="label-field-pair">
+    <label for="reason">  <%= t('particular') %><span class="necessary-field">*</span> </label>
+<div class="text-input-bg"><%= select "fee_discount","finance_fee_particular_id", @particulars.map { |c| [c.name , c.id] },{}%></div>
+</div>
+<%else%>
+<p class="flash-msg"><%=t('no_particulars_to_display')%></p>
+<%end%>

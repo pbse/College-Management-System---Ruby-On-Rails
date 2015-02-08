@@ -1,0 +1,89 @@
+<% unless @courses.empty? %>
+  <div class="field_pair">
+    <div class="label1"><%="#{t('total_amount')}" %></div>
+    <div class="label2"><%=": #{currency} #{ precision_label(@total_amount)}" %></div>
+  </div>
+  <div class="submit-button">
+    <%= link_to "#{t('export_as_csv')}" ,{:action=>'course_fee_defaulters_csv',:sort_order=>@sort_order},:target=>'_blank'  %>
+  </div>
+  <div class="extender"></div>
+  <div id="page-yield">
+    <table id="report_table" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head sub-heading">
+        <td><%= t('no_text') %></td>
+
+        <% if @sort_order=="course_name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8595;", :url=>{:action=>"course_fee_defaulters",:sort_order=>"course_name ASC"} %>
+          </td>
+        <% elsif @sort_order=="course_name ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8593;", :url=>{:action=>"course_fee_defaulters",:sort_order=>"course_name DESC"} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('name')}", :url=>{:action=>"course_fee_defaulters",:sort_order=>"course_name DESC"} %>
+          </td>
+        <% end %>
+
+        <td><%= t('code')  %></td>
+        <td><%= t('section')  %></td>
+
+        <% if @sort_order=="batch_count DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('batches_text')} &#8595;", :url=>{:action=>"course_fee_defaulters",:sort_order=>"batch_count ASC"} %>
+          </td>
+        <% elsif @sort_order=="batch_count ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('batches_text')} &#8593;", :url=>{:action=>"course_fee_defaulters",:sort_order=>"batch_count DESC"} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('batches_text')}", :url=>{:action=>"course_fee_defaulters",:sort_order=>"batch_count DESC"} %>
+          </td>
+        <% end %>
+        <td><%= "#{t('balance')} &#x200E;(#{currency})&#x200E;" %></td>
+    </tr>
+    <% page_count=0 %>
+    <% @courses.each_with_index do |c,@i| %>
+      <% if params[:page].present? %>
+        <% if params[:page].to_i >= 1 %>
+          <% @i = @i  + (params[:page].to_i - 1) * @courses.per_page.to_i %>
+        <% end %> <%else %> <% @i = @i %>
+      <% end %>
+      <% page_count+=1 %>
+      <tr class="tr-<%= cycle('odd', 'even') %>">
+        <td class="col-5"> <%= @i+1 %></td>
+        <% if @sort_order=="course_name ASC" or @sort_order=="course_name DESC" %>
+          <td class="col-2 batch_order_select"><%= link_to  "#{c.course_name}",{:action=>"batch_fee_defaulters",:id=>c.id} %></td>
+        <% else %>
+          <td class="col-2"><%= link_to  "#{c.course_name}",{:action=>"batch_fee_defaulters",:id=>c.id} %></td>
+        <% end %>
+        <td class="col-4"><%= c.code %></td>
+        <td class="col-3"><%= c.section_name %></td>
+        <% if @sort_order=="batch_count ASC" or @sort_order=="batch_count DESC" %>
+          <td class="col-6 batch_order_select"><%= c.batch_count %></td>
+        <% else %>
+          <td class="col-6"><%= c.batch_count %></td>
+        <% end %>
+
+        <% if @sort_order=="balance DESC" or @sort_order=="balance ASC" %>
+          <td class="col-4 batch_order_select"><%= link_to "#{precision_label(c.balance.nil?? 0.0 : c.balance)}" ,{:action=>"batch_fee_defaulters",:id=>c.id} %></td>
+        <% else %>
+          <td class="col-4"><%= link_to "#{precision_label(c.balance.nil?? 0.0 : c.balance)}" ,{:action=>"batch_fee_defaulters",:id=>c.id}%></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+  <% unless @courses.per_page.to_i > @courses.total_entries.to_i %>
+    <div class="pagination_list">
+      <div class="pagination_text">
+        <%= "#{t('showing')} #{@i+1-(page_count-1)}-#{@i+1} #{t('of')} #{@courses.total_entries}" %>
+      </div>
+      <%= will_paginate @courses,:renderer => 'RemoteLinkRenderer' ,:page_links=>false ,:params=>{:sort_order=>@sort_order}%>
+    </div>
+  <% end %>
+</div>
+<% else %>
+<p class="flash-msg"> <%= t('no_record_found') %></p>
+<% end %>

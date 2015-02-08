@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.student_category_detail{
+  @student_categories.each do |student_category|
+    @student_category = student_category
+    @xml.student_category do
+      @xml.name(@student_category.name)
+    end
+  end
+}%>
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.event_detail{
+  @events.each do |event|
+    @event = event
+    @xml.event do
+      @xml.title(@event.title)
+      @xml.description(@event.description)
+      @xml.start_date(@event.start_date)
+      @xml.end_date(@event.end_date)
+      @xml.is_holiday(@event.is_holiday)
+      @xml.is_exam(@event.is_exam)
+      @xml.is_due(@event.is_due)
+    end
+  end
+}%>
+
+

@@ -1,0 +1,16 @@
+#MB_frame .submit-button, .submit-button {
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 210px 0 0;
+    padding: 7px 10px;
+}
+
+.necessary-field {
+    color : #f00;
+    font-size : 1.1em;
+}

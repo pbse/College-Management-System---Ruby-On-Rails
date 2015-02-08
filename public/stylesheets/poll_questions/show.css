@@ -1,0 +1,64 @@
+h3{
+    margin-left:10px;
+    font-size:14px;
+    font-family: Arial;
+}
+
+.options {
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 972px;
+}
+
+.category-name{
+    width:auto;
+    float:left;
+}
+#category-list{
+    display:block;
+    list-style-type : none;
+}
+
+#category-list li{
+    float:left;
+    margin-left: -27px;
+}
+
+label{
+    color:#383838;
+    margin-right:5px;
+    font-size:12px;
+    font-family: Arial;
+}
+.votes {
+    color: #666666;
+    float: right;
+    font-family: Arial;
+    font-size: 12px;
+    margin-left: 6px;
+    margin-top: 2px;
+}
+.indicator-container{
+    width:955px;
+    height:18px;
+    background-color: #f8f8f8;
+    margin-top:30px;
+    margin-bottom:15px;
+}
+.indicate{
+    border:1px solid #50a128;
+    height:17px;
+    float:left;
+    background: #50a128 url(/images/buttons/gradient_poll_result.png) repeat;
+}
+
+.total-votes{
+    float:right;
+    margin-right:10px;
+    color:#383838;
+}
+b{
+    font-size:12px;
+    font-family:Arial;
+}

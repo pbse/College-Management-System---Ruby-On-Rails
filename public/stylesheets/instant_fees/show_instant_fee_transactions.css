@@ -1,0 +1,131 @@
+.filter_category{
+    height: 40px;
+width: auto;
+padding-top: 3px;
+}
+.filter_category label{
+    color: #444;
+display: block;
+font-size: 14px;
+margin: 0 0 0px 0;
+float: left;
+/*width: 100px;*/
+padding-top: 10px;
+font-weight: 600
+}
+.box{
+    float: left;
+}
+.date-select label{
+    float:left;
+    font-size: 15px;
+}
+.date-search{
+/*    margin-left:-3px;*/
+/*    width: 300px;*/
+float: left;
+}
+.date-search2{
+margin-left: 30px;
+float: left;
+}
+.date-select input{
+    background: #eee;
+border: 1px solid #c6c6c6;
+margin: 4px 0 0 5px;
+width: 120px;
+height: 17px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+padding: 5px;
+}
+.pagination{
+/*    margin-top: -2px !important;*/
+    margin-right: 10px !important;
+
+}
+.pagination_div{
+    margin-top: -30px;
+    float:right;
+/*    width:200px;*/
+}
+.div1{
+    width:auto;
+    float:left;
+    margin-right:10px;
+}
+.div2{
+    margin-right:10px;
+    width:30px;
+    float:right;
+    margin-top: -30px;
+}
+table#listing1 tr.tr-head {
+ height: 30px;
+background: #fff;
+color: #990a10;
+font-weight: bold;
+text-align: left;
+}
+tr.tr-blank {
+height: 10px;
+}
+table#listing1 .tr-odd {
+background: #fff;
+text-align: left;
+padding: 50px;
+color: #27292b;
+font-weight: 600;
+font-size: 14px;
+}
+table#listing1 .tr-even {
+background: #f1f6ff;
+text-align: left;
+padding: 50px;
+color: #27292b;
+font-weight: 600;
+font-size: 14px;
+}
+table#listing1 {
+background: #c3d9ff;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+padding: 20px 20px 40px;
+}
+table#listing1 td a {
+background: none repeat scroll 0 0 #27292B;
+border: medium none;
+cursor: pointer;
+float: right;
+font-family: arial;
+font-size: 14px;
+font-weight: bold;
+margin: -34px auto 0;
+padding: 7px 10px;
+text-decoration: none;
+}
+table#listing1 td.col-1 {
+padding: 5px;
+padding-left: 10px;
+}
+.cancel a{
+    background:none !important;
+
+    margin: -10px 4px 2px 0px !important;
+padding: 0!important
+
+}
+.cancel{
+ margin-top: 10px;
+}
+table#listing1 td.col-2 {
+width: 40%;
+text-align: left;
+padding: 5px;
+padding-left: 10px;
+}
+table#listing1 td.col-3 {
+width: 13%;
+padding: 5px;
+padding-left: 10px;
+}

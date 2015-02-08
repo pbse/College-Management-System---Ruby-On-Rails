@@ -1,0 +1,328 @@
+.form {
+    font-size: 16px;
+    color:#000;
+    text-align: justify;
+    float:left;
+    height: auto;
+}
+
+.question-header{
+    padding-top:10px;
+    padding-bottom: 10px;
+    height:20px;
+    width:970px;
+    float:left;
+    background: #f1f6ff;
+    margin-bottom:20px;
+    margin-top:20px;
+}
+
+.question-header b{
+    margin-left:15px;
+}
+
+.submit_button {
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 112px;
+    margin-top: -1px;
+    padding: 7px 10px;
+}
+
+.submit_button:hover{
+    background:  #373B3F;
+}
+
+root {
+    display: block;
+}
+
+.text-input-bg {
+    background: none repeat scroll 0 0 transparent;
+    float: left;
+    height: 28px;
+    width: 250px;
+    margin-top: 0px;
+}
+
+.label-field-pair-for-poll{
+    width:100%;
+    float:left;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.label-field-pair-for-poll label {
+    color: #444444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    padding-top: 10px;
+    width: 100px;
+}
+
+.label-field-pair-for-poll input {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    height: 24px;
+    padding: 5px;
+    width: 850px;
+}
+.label-field-pair-for-poll input:focus{
+    border:2px solid #b00;
+    background:#FFFFFF;
+}
+
+.label-field-pair-text-area-for-poll{
+    width:100%;
+    float:left;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.label-field-pair-text-area-for-poll label{
+    color: #444444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    padding-top: 10px;
+    width: 100px;
+}
+
+.label-field-pair-text-area textarea {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    margin-left: 110px;
+    margin-top: -16px;
+    padding: 5px;
+    width: 850px;
+}
+
+.label-field-pair-text-area textarea:focus{
+    background:#FFFFFF;
+    border:2px solid #b00;
+}
+
+.label-field-pair-for-poll-option{
+    width:100%;
+    float:left;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.label-field-pair-for-poll-option label{
+    color: #444444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    padding-top: 10px;
+    width: 100px;
+}
+
+.label-field-pair-for-poll-option input{
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    height: 24px;
+    padding: 5px;
+    width: 800px;
+    float:left;
+    margin-left:110px;
+    margin-top:-16px;
+}
+
+.label-field-pair-for-poll-option input:focus{
+    background:#FFFFFF;
+    border:2px solid #b00;
+}
+
+.label-field-pair-for-poll-option a{
+    margin-left:950px;
+    margin-top:-20px;
+}
+
+.text-input-bg select {
+    background-color : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width : 215px;
+    height:27px;
+    padding:3px 6px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+
+
+.delete_button_img {
+    background:#fff url(/images/buttons/delete_poll.png) no-repeat;
+    display: block;
+    float: left;
+    height: 12px;
+    width: 12px;
+    margin-top: 13px;
+    margin-left: 5px;
+}
+
+.add_button_img {
+    background: none repeat scroll 0 0 transparent;
+    color: #008800;
+    display: inline;
+    float: none;
+    font-size: 14px;
+    height: 12px;
+    margin-left: 109px;
+    margin-top: 9px;
+    text-decoration: none;
+    width: 100px;
+}
+
+.customization{
+    height:20px;
+    width:700px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.customization a{
+    width:100px;
+    float:left;
+    margin-right:10px;
+}
+
+.custom-answer{
+    height:auto;
+    float:left;
+    margin-left:10px;
+    margin-top:8px;
+}
+.custom-answer label{
+    margin-left:10px;
+    width:170px;
+    float:right;
+}
+
+.custom-answer input{
+    width:15px;
+    float:left;
+    margin-right:10px;
+}
+
+.open-polling{
+    height:auto;
+    float:left;
+    margin-left:10px;
+    margin-top:8px;
+}
+
+.open-polling label{
+    float:right;
+    width:170px;
+    margin-left:10px;
+}
+
+.open-polling input{
+    float:left;
+    width:15px;
+    margin-right:10px;
+}
+
+.label-field-pair{
+    color: #444444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.poll-batch{
+    height:auto;
+    width:auto;
+    float:left;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.poll-department{
+    height: auto;
+    width: auto;
+    float: left;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.fee_category_scroll {
+    -moz-background-inline-policy: continuous;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-background-inline-policy: continuous;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 93px;
+    margin-left: 112px;
+    margin-top:10px;
+    overflow: auto;
+    width: 850px;
+    padding-left: 10px
+}
+
+.sel-list {
+    margin-bottom: 4px;
+    width: 215px;
+    color: #444444;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.sel-list a {
+    color: #444444;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+.sel-list a:hover {
+    color: #9D0E00;
+    text-decoration: none;
+}
+
+.each_batch {
+    border-bottom: 1px solid #DDDDDD;
+    color: #444444;
+    font-size: 14px;
+}
+.each_batch span{
+    width: auto;
+}
+.batches_box{
+    width: auto;
+}
+
+.submit-header{
+    padding-top:10px;
+    padding-bottom: 10px;
+    height:30px;
+    width:970px;
+    float:left;
+    background: #f1f6ff;
+    margin-bottom:20px;
+    margin-top:20px;
+}
+#page-yield .customization a:hover{
+    color: green !important;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.employee do
+  @xml.employee_number()
+  @xml.first_name()
+  @xml.middle_name()
+  @xml.last_name()
+  @xml.joining_date()
+  @xml.employee_department()
+  @xml.employee_category()
+  @xml.employee_position()
+  @xml.employee_grade()
+  @xml.job_title()
+  @xml.reporting_manager()
+  @xml.gender()
+  @xml.qualification()
+  @xml.experience_year()
+  @xml.experience_month()
+  @xml.experience_detail()
+  @xml.date_of_birth()
+  @xml.marital_status()
+  @xml.children_count()
+  @xml.father_name()
+  @xml.mother_name()
+  @xml.husband_name()
+  @xml.blood_group()
+  @xml.nationality()
+  @xml.home_address_line1()
+  @xml.home_address_line2()
+  @xml.home_city()
+  @xml.home_state()
+  @xml.home_country()
+  @xml.home_pin_code()
+  @xml.office_address_line1()
+  @xml.office_address_line2()
+  @xml.office_city()
+  @xml.office_country()
+  @xml.office_pin_code()
+  @xml.office_phone1()
+  @xml.office_phone2()
+  @xml.mobile_phone()
+  @xml.home_phone()
+  @xml.email()
+  @xml.fax()
+  @xml.biometric_id()
+  @xml.photo()
+  @xml.employee_additional_details do
+    @additional_fields.each do |additional_field|
+      @xml.additional_field do
+        @xml.name(additional_field.name)
+        @xml.value()
+      end
+    end
+  end
+  @xml.employee_bank_details do
+    @bank_fields.each do |bank_field|
+      @xml.bank_field do
+        @xml.name(bank_field.name)
+        @xml.value()
+      end
+    end
+  end
+end
+%>

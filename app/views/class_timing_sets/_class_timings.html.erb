@@ -1,0 +1,30 @@
+<% unless @class_timings.empty?  %>
+  <table id ="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+    <tr class="tr-head">
+      <td class="sl_no"><%= t('sl_no') %></td>
+      <td class="name"><%= t('name') %></td>
+      <td class="start_time"><%= t('start_time') %></td>
+      <td class="end_time"><%= t('end_time') %></td>
+      <td class="options"><%= t('options') %></td>
+    </tr>
+    <tr class="tr-blank"></tr>
+    <% @class_timings.each_with_index do |ct,index| %>
+      <tr class="tr-<%= cycle('odd', 'even') %>">
+        <td class="sl_no"><%= index + 1 %></td>
+        <td class="name"><%= ct.name %></td>
+        <td class="start_time"><%= ct.start_time.strftime("%I:%M %p") unless ct.start_time.nil? %></td>
+        <td class="end_time"><%= ct.end_time.strftime("%I:%M %p") unless ct.end_time.nil? %></td>
+        <td class="options">
+          <small>
+            <%= link_to_remote "#{t('edit')}", :url => edit_class_timings_class_timing_set_url(:id => ct.id,:class_timing_set_id => @class_timing_set) %> |
+            <% if ct.total_entries == "0"  %>
+              <%= link_to_remote "#{t('delete')}", :url => delete_class_timings_class_timing_set_url(:id => ct.id,:class_timing_set_id => @class_timing_set), :confirm => t('sure_delete') %>
+            <% else %>
+              <s><%= t('delete_text') %></s>
+            <% end %>
+          </small>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

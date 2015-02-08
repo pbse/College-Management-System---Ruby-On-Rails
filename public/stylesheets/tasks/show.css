@@ -1,0 +1,217 @@
+#news_area {
+    margin-top:50px;
+}
+#news_title {
+    font-size: 20px;
+    font-weight: bold;
+}
+#task_creator {
+    font-size:14px;
+    font-weight:bold;
+    color:#888888;
+}
+#create_date {
+    color: #000000;
+    font-size: 90%;
+    padding-top: 5px;
+}
+#news_content {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    margin-top:25px;
+    padding: 20px 50px;
+    background-color:#eee;
+    text-align:justify;
+    line-height:1.5em;
+    width: 870px;
+    overflow:auto;
+}
+#attachment
+{
+    margin-top:15px;
+    font-size:14px;
+    font-weight: bold;
+}
+#attachment a
+{
+    font-size:17px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #b00;
+}
+#attachment a:hover{
+    text-decoration: underline;
+}
+#status-toggle{
+    font-size:14px;
+    float:left;
+    margin-top:7px;
+}
+#status-toggle a{
+    text-decoration:none;
+}
+#status-toggle a:hover{
+    text-decoration:underline;
+}
+#task_status{
+    height:25px;
+    width:260px;
+    margin-left:709px;
+    margin-top:-30px;
+}
+#task-status-assigned
+{
+    font-size:17px;
+    font-weight:bold;
+    background:#009cbe;
+    height:25px;
+    width:110px;
+    color:#ffffff;
+    text-align:center;
+    padding-top:4px;
+    float:right;
+}
+#task-status-completed
+{
+    font-size:17px;
+    font-weight:bold;
+    background:#4ebc67;
+    height:25px;
+    width:110px;
+    color:#ffffff;
+    text-align:center;
+    padding-top:4px;
+    float:right;
+}
+#comments-heading {
+    border-bottom: 2px solid gray;
+    padding: 0 0 10px 0;
+    margin-top: 50px;
+   }
+#leave-a-comment {
+    margin: 50px 0 0 0;
+    color: #444;
+}
+
+#comments-list {
+    padding: 0 0 20px 0;
+}
+#comments-list li {
+    border-bottom: 1px solid #aaa;
+    list-style-type: none;
+    margin: 20px 0 0 0;
+    padding: 10px 0 10px 0;
+}
+#comments-list li .comment-details {
+    color: #888;
+    font-size: 80%;
+    height: 15px;
+    margin: 0 0 10px 0;
+}
+.comment-details .commenter {
+    float: left;
+    width: 200px;
+}
+.comment-details .comment-posted-at {
+    float: right;
+    margin-left: 20px;
+}
+.comment-details .delete-comment {
+    float: right;
+    margin: 0 0 0 20px;
+}
+.comment-details .delete-comment a {
+    text-decoration: none;
+    color: #000000;
+}
+.comment-details .delete-comment a:hover {
+    text-decoration: underline;
+    color: #b00;
+}
+.comment-details .download-attachment {
+    float: right;
+    margin: 0 0 0 20px;
+}
+.comment-details .download-attachment a
+{
+    text-decoration: none;
+    color : #b00;
+}
+.comment-details .download-attachment a:hover{
+    text-decoration: underline;
+}
+.comment-content {
+
+    width: 600px;
+    margin-top:5px;
+    font-size: 14px;
+
+}
+
+.comment-content textarea  {
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px;
+    border:1px solid #C6C6C6;
+    background-color:#EEEEEE;
+    width: 593px;
+    height: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.comment-content textarea:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+
+#submit-button {
+    margin-top: -28px;
+    margin-right: 375px;
+    float: right;
+}
+.submit-button {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin-top: 10px;
+    padding:7px 7px;
+    border:none;
+    float:left;
+    text-align:center;
+    width:auto;
+    cursor:pointer;
+}
+#file_attachment
+{
+    margin-top:20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+#cmnt_attachment {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+.title {
+    margin-top:-2px;
+    font-weight:bold;
+    width:600px;
+}
+#due_date{
+    font-size:14px;
+    color:#000000;
+    float:right;
+    margin-top: -16px;
+    margin-right: 9px;
+}
+#due_date1{
+    font-size:14px;
+    color:#b00;
+    float:right;
+    margin-top: -16px;
+    margin-right: 9px;
+}

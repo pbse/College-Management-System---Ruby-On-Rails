@@ -1,0 +1,98 @@
+<div id="page-yield" class="available_sections">
+  <div class="section" >
+    <center>
+      <div class="hor_line"></div>
+      <h2>Subject Wise Report</h2>
+      <div class="hor_line"></div>
+      <div class="extender"> </div>
+      <div id ="main_info">
+        <h4> <%= @batch.full_name%>-<%= @subject.name %></h4>
+      </div>
+    </center>
+  </div>
+
+  <div class="section" id="table-headers" >
+    <center>
+      <table id="pdf-table" width="100%">
+        <tr class="table-header">
+          <td class="name-td">Students</td>
+          <td class="mark-td" colspan="2">FA1</td>
+          <td class="mark-td" colspan="2">FA2</td>
+          <td class="mark-td" colspan="2">FA3</td>
+          <td class="mark-td" colspan="2">FA4</td>
+          <td class="mark-td" colspan="2">SA1</td>
+          <td class="mark-td" colspan="2">SA2</td>
+        </tr>
+        <tr class="table-header">
+          <td class="name-td"> </td>
+          <% 6.times.each do %>
+            <td class="mark-td">Grade</td>
+            <td class="mark-td">Marks  (%)</td>
+          <% end %>
+        </tr>
+        <% @students.each_with_index do |s,i| %>
+          <tr class="<%= cycle('odd', 'even') %>">
+            <td class="name-td"><%= s.full_name %> (<%= s.admission_no %>)</td>
+            <% st=@score_hash.find{|c,v| c==s.id} %>
+            <% if st %>
+              <% if @score_hash[s.id][@fa1.to_s].nil?%>
+                <td class="mark-td">-</td>
+                <td class="mark-td">-</td>
+              <% else %>
+                <td class="mark-td"><%= @score_hash[s.id][@fa1.to_s]['grade'] %></td>
+                <td class="mark-td"><%= @score_hash[s.id][@fa1.to_s]['mark'] %></td>
+              <% end %>
+              <% if @score_hash[s.id][@fa2.to_s].nil?%>
+                <td class="mark-td">-</td>
+                <td class="mark-td">-</td>
+              <% else %>
+                <td class="mark-td"><%= @score_hash[s.id][@fa2.to_s]['grade'] %></td>
+                <td class="mark-td"><%= @score_hash[s.id][@fa2.to_s]['mark'] %></td>
+              <% end %>
+              <% if @score_hash[s.id][@fa3.to_s].nil?%>
+                <td class="mark-td">-</td>
+                <td class="mark-td">-</td>
+              <% else %>
+                <td class="mark-td"><%= @score_hash[s.id][@fa3.to_s]['grade'] %></td>
+                <td class="mark-td"><%= @score_hash[s.id][@fa3.to_s]['mark'] %></td>
+              <% end %>
+              <% if @score_hash[s.id][@fa4.to_s].nil?%>
+                <td class="mark-td">-</td>
+                <td class="mark-td">-</td>
+              <% else %>
+                <td class="mark-td"><%= @score_hash[s.id][@fa4.to_s]['grade'] %></td>
+                <td class="mark-td"><%= @score_hash[s.id][@fa4.to_s]['mark'] %></td>
+              <% end %>
+              <% if @score_hash[s.id][@sa1.to_s].nil?%>
+                <td class="mark-td">-</td>
+                <td class="mark-td">-</td>
+              <% else %>
+                <td class="mark-td"><%= @score_hash[s.id][@sa1.to_s]['grade'] %></td>
+                <td class="mark-td"><%= @score_hash[s.id][@sa1.to_s]['mark'] %></td>
+              <% end %>
+              <% if @score_hash[s.id][@sa2.to_s].nil?%>
+                <td class="mark-td">-</td>
+                <td class="mark-td">-</td>
+              <% else %>
+                <td class="mark-td"><%= @score_hash[s.id][@sa2.to_s]['grade'] %></td>
+                <td class="mark-td"><%= @score_hash[s.id][@sa2.to_s]['mark'] %></td>
+              <% end %>
+            <% else %>
+              <% 12.times.each do %>
+                <td class="mark-td">-</td>
+              <% end %>
+            <% end %>
+          </tr>
+          <% if ((i+1)%1)==0 %>
+          </table>
+        </center>
+      </div>
+      <div class="section">
+        <center>
+          <table id="pdf-table" width="100%">
+          <% end %>
+        <% end %>
+      </table>
+    </center>
+  </div>
+</div>

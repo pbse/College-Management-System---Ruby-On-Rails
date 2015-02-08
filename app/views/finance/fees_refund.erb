@@ -1,0 +1,27 @@
+<div id="content-header">
+  <%= show_header_icon %>
+  <h1><%= t('fees_refund') %></h1>
+  <div class='header-sep'>|</div>
+  <div class='sub-header'><%= t('fees_refund') %></div>
+
+</div>
+<div id="page-yield">
+  <div class="box">
+  <% unless flash[:notice].nil? %><p class="flash-msg"><%= flash[:notice] %></p><% end %>
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "#{t('view_refunds')}", :action => "view_refunds" %> </div>
+    <div class="link-descr"><%= t('lists_all_refunds') %></div>
+  </div>
+
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "#{t('create_refund_rule')}", :action => "create_refund" %> </div>
+    <div class="link-descr"><%= t('create_refund_rules_for_collection') %></div>
+  </div>
+
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "#{t('apply_refund')}", :action => "apply_refund" %> </div>
+    <div class="link-descr"><%= t('student_applies_for_refund') %></div>
+  </div>
+
+</div>
+</div>

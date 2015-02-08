@@ -1,0 +1,58 @@
+.openid_identifier{
+    margin-top: 38px;
+    overflow: hidden;
+    padding: 0 !important;
+    width: 350px !important;
+}
+.openid_identifier a{
+    color: #b00;
+    text-decoration: none;
+}
+.openid_identifier a:hover{
+    text-decoration: underline;
+}
+#google_login_area {
+    height:45px;
+    font-size:13px;
+    width:245px;
+/*    background:#fff url(/images/login/google_login_box.png) no-repeat;*/
+/*    margin:20px auto;*/
+    margin-right:10px;
+    color: #666666;
+    border-top:1px solid #CCCCCC;
+    padding-top:5px;
+    margin-top:10px;
+    float:right;
+}
+#google_login_area a{
+    overflow: hidden;
+    float: right;
+    text-decoration: none;
+    color: #666666;
+}
+#google_login_area a span, #google_login_area span{
+    float: right;
+/*    color: #666666;*/
+    margin: 2px 0 0 4px;
+}
+#google_login_area a img{
+    float: right;
+    margin: 2px 0 0 4px;
+}
+#login_area_bg{
+/*    height: 400px !important;*/
+}
+#notice {
+
+}
+#notice-box {
+    margin: 20px 52px !important;
+    overflow: hidden;
+    width: 510px !important;
+}
+#submit_area input {
+    margin-top: 0 !important;
+}
+.clearfooter {
+    float:right;
+}

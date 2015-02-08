@@ -1,0 +1,25 @@
+development:
+      host: localhost
+      adapter: mysql
+      database: crosstr_new
+      port: 3306
+      username: crosstr_new
+      password: newcross
+
+test: &test
+      host: localhost
+      adapter: mysql
+      database: crosstr_new
+      port: 3306
+      username: crosstr_new
+      password: newcross
+
+production:
+      host: localhost
+      adapter: mysql
+      database: crosstr_new
+      port: 3306
+      username: crosstr_new
+      password: newcross
+cucumber:
+  <<: *test

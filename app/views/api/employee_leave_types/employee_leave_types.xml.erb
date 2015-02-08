@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.employee_leave_type_detail{
+  @employee_leave_types.each do |employee_leave_type|
+    @employee_leave_type = employee_leave_type
+    @xml.employee_leave_type do
+      @xml.name(@employee_leave_type.name)
+      @xml.code(@employee_leave_type.code)
+      @xml.status(@employee_leave_type.status)
+      @xml.max_leave_count(@employee_leave_type.max_leave_count)
+      @xml.carry_forward(@employee_leave_type.carry_forward)
+    end
+  end
+}%>
+
+

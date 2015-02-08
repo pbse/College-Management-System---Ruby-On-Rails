@@ -1,0 +1,132 @@
+
+table#listing{
+   overflow: hidden;
+    background: #c3d9ff;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding:10px 10px 10px;
+}
+.submit_button {
+    margin-top:20px;
+    margin-left:0px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    text-decoration:none;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+.label-indent
+{
+    color: #444444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding-top: 10px;
+    width: 200px;
+}
+
+.label-field-show {
+   min-height: 20px;
+    width : 470px;
+    padding: 3px 0 17px 0;
+    float:left;
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+.label-container1 {
+color:#444444;
+display:block;
+float:left;
+font-size:14px;
+font-weight:60;
+ padding: 0px;
+padding-top:5px;
+width:180px;
+margin : 5px 0 0 10px;
+ height:17px;
+}
+
+.label-output {
+    float:left;
+    margin : 5px 0 0 10px;
+    width : 180px;
+    height:17px;
+    font-size:14px;
+    padding: 5px;
+    display:block;
+    font-weight: bold;
+}
+
+.label-field-nest {
+    height : 20px;
+    width : 240px;
+    padding: 3px 0 17px 0;
+    float:left;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.label-cont {
+    float:left;
+    margin : 5px 0 0 10px;
+    width : 60px;
+    height:16px;
+    font-size:14px;
+    padding: 0px;
+    color:#444444;
+   display:block;
+   
+  font-weight:30;
+}
+.label-nest {
+    float:left;
+    margin : 5px 0 0 10px;
+    width : 80px;
+    height:17px;
+    font-size:14px;
+    padding: 0px;
+   display:block;
+   font-weight: bold;
+  
+}
+
+.label-field-total {
+    height : 20px;
+    width : 170px;
+    padding: 3px 0 17px 0;
+    float:right;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+
+.submit_pdf {
+    margin-top:20px;
+    margin-left:10px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    text-decoration:none;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}

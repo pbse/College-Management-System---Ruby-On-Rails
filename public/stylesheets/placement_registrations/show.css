@@ -1,0 +1,38 @@
+#invitation-details{
+    background-color: #eee;
+    -moz-border-radius :10px;
+    -webkit-border-radius :10px;
+    padding:20px;
+}
+#details-list li{
+    list-style: none;
+    overflow:hidden;
+    height: auto;
+}
+#details-list li label{
+    float: left;
+    width:150px;
+    color:#444444;
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px;
+}
+#details-list li span{
+    font-size:14px;
+    margin:0 0 10px;
+    float:left;
+    width:500px;
+}
+#details-list {
+    width: 650px;
+    overflow:hidden;
+    height: auto;
+}
+.user_button{
+    margin: 20px 0 0 210px;
+}
+
+#status p{
+    padding-left: 61px;
+}

@@ -1,0 +1,38 @@
+<% form_remote_for :timetable, :url => {:action => 'timetable_swap',:timetable_entry_id=>params[:timetable_entry_id],:date=>params[:date],:timetable_swap_id=>params[:timetable_swap_id],:batch_id=>params[:batch_id]} ,:loaded=>"$('entry_#{params[:timetable_entry_id]}').show(); $('link_#{params[:timetable_entry_id]}').hide();" do |form| %>
+  <div class="label-field-pair1">
+    <div class="text-input-bg1"><%= select :timetable, :department_id,
+        @departments.map {|d| [d.name, d.id]},
+        {:prompt => "#{t('select_department')}"},
+        {:onChange => "#{remote_function(:url => {:action => "list_employees"},
+        :with=>"'department_id='+value+ '&timetable_entry_id='+#{params[:timetable_entry_id]}",
+        :before => "Element.show('loader_#{params[:timetable_entry_id]}')",
+        :success => "Element.hide('loader_#{params[:timetable_entry_id]}')"
+        )}"} %></div>
+  </div>
+  <div id=<%= "employee_list_#{params[:timetable_entry_id]}" %>>
+    <div class="label-field-pair1">
+      <% @employees=[] %>
+      <div class="text-input-bg1"><%= select :timetable, :employee_id,
+          @employees.map {|d| [d.name, d.id]},
+          {:prompt => "#{t('select_employee')}"}%></div>
+    </div>
+  </div>
+  <div class="label-field-pair1">
+    <div class="text-input-bg1"><%= select :timetable, :subject_id,
+        @subjects.map {|s| [s.name, s.id]},
+        {:prompt => "#{t('select_subject')}"}%></div>
+  </div>
+  <div class="image_loading">
+    <%= image_tag("loader.gif",
+      :align => "absmiddle",
+      :border => 0,
+      :id => "loader_#{params[:timetable_entry_id]}",
+      :style =>"display: none;" ) %>
+  </div>
+  <div class="submit">
+    <%= submit_tag "► #{t('ok')}",:class=>'submit_button' %>
+  </div>
+  <div class="cancel_link">
+    <%= link_to_function "#{t('cancel')}",:onclick=>"$('link_#{params[:timetable_entry_id]}').hide();$('entry_#{params[:timetable_entry_id]}').show();",:class=>"themed_text"%>
+  </div>
+<% end %>

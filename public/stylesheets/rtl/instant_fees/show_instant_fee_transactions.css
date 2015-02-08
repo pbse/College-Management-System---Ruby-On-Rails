@@ -1,0 +1,62 @@
+.filter_category{
+    height: 40px;
+width: auto;
+padding-top: 3px;
+}
+.filter_category label{
+    color: #444;
+display: block;
+font-size: 14px;
+margin: 0 0 0px 0;
+float: right;
+/*width: 100px;*/
+padding-top: 10px;
+font-weight: 600
+}
+.box{
+    float: right;
+}
+.date-select label{
+    float:right;
+    font-size: 15px;
+}
+.date-search{
+/*    margin-left:-3px;*/
+/*    width: 300px;*/
+float: right;
+}
+.date-search2{
+margin-right: 30px;
+float: right;
+}
+.date-select input{
+    background: #eee;
+border: 1px solid #c6c6c6;
+margin: 4px 5px 0 0;
+width: 120px;
+height: 17px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+padding: 5px;
+}
+.pagination{
+/*    margin-top: -2px !important;*/
+    margin-left: 10px !important;
+
+}
+.pagination_div{
+    margin-top: -30px;
+    float:left;
+/*    width:200px;*/
+}
+.div1{
+    width:auto;
+    float:right;
+    margin-left:10px;
+}
+.div2{
+    margin-left:10px;
+    width:30px;
+    float:left;
+    margin-top: -30px;
+}

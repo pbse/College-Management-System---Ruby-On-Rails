@@ -1,0 +1,76 @@
+
+root { 
+    display: block;
+}
+.group_members
+{
+
+}
+.td-name{
+    padding:5px;
+    color:#2D2D2D;
+    padding-left:0px;
+    width:90px;
+    font-size:12px;
+    height:15px;
+    cursor:pointer;
+}
+.td-name .date{
+    position: relative;
+}
+.td-name:hover{
+    color: #b30000;
+}
+.td-name .date span{
+    display: none;
+    color: #FFFFFF;
+}
+.td-name:hover .date span{
+    color: #000000;
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    background-color: #fff;
+    border:1px solid #000000;
+    min-height: 20px;
+    left: 50px;
+    top: -10px;
+    color: #FFFFFF;
+    padding: 5px;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    padding-top:10px;
+    color:#000000;
+    font-weight:bold;
+    font-size: 11px;
+    font-family: arial;
+}
+#group_mem
+{
+    font-size: 20px;
+    color: #b30;
+    font-weight: bold;
+    font-family: Arial;
+    text-align: center;
+     padding-bottom: 20px;
+}
+
+
+.pagination {
+    float: none;
+    margin-right: 0px;
+    margin-top: 0px;
+    position: none;
+    text-align: center;
+    margin-top: 50px;
+}
+.label-field-pair label {
+    color: #444444;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding-top: 10px;
+    width: 80px;
+}

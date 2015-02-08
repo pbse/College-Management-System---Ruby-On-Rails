@@ -1,0 +1,51 @@
+body{
+    font-size: 9px;
+}
+#content-header h3{
+    color: #000;
+    font-size: 17px;
+    margin: 0;
+    padding: 0 0 0 0;
+}
+.tables {
+    margin:0;
+}
+table.report-table{    
+    padding:10px 0 ;
+    float: left;
+}
+.report-table th,.report-table td{
+    max-width:100px;
+}
+.report-table th,.report-table th a{
+    background-color: #BECFF3;
+    padding:6px 8px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #000;
+}
+.report-table th a:hover{
+    text-decoration: underline;
+}
+.report-table th a{
+    background:none;
+}
+.report-table td{
+    border: 1px solid #BECFFB;
+    padding:3px 2px 5px 2px;
+    font-size:13px;
+    text-align: left;
+}
+.sortarrow{
+    font-size: 14px;
+    color: #bb0000;
+    font-weight: bolder;
+}
+.slno th{
+    padding-top: 6px !important;
+}
+.query_review .sql_disabled #query_review_header_0{
+    display: none;
+}
+.scroll{    
+}

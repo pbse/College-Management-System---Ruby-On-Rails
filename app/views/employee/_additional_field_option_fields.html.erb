@@ -1,0 +1,10 @@
+<% if c.object._destroy and c.object._destroy==true %>
+  <div class="fields label-field-pair" style ="display:none;"/>
+<% else%>
+  <div class="fields label-field-pair">
+  <% end %>
+  <%= c.label '' %>
+  <div class="text-input-bg">
+    <%= c.text_field :field_option %></div>
+    <%= link_to_remove_fields "", c %>
+</div>

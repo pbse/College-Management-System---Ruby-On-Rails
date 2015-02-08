@@ -1,0 +1,136 @@
+#page-yield {
+    width:100%;
+    margin: 0 auto;
+}
+
+.hor_line{
+    width:100%;
+    background: #333333;
+    height: 1px;
+}
+
+h2{
+    text-align: center;
+    font-size: 15px;
+}
+
+#main_info h4{
+    color: #555555;
+    margin-top: 18px;
+    font-weight: normal;
+    font-size: 12px;
+}
+.odd{
+    height:auto;
+    background: #EEEEEE;
+    font-size: 9px;
+
+}
+
+.even{
+
+    height:auto;
+    background: #fff;
+    font-size: 9px;
+
+
+}
+tr.even{
+    border: 1px solid #ADACAB;
+}
+
+tr.odd{
+    border: 1px solid #ADACAB;
+}
+
+.even td{
+
+    padding: 12px 12px 12px 15px;
+    border: 1px solid #ADACAB;
+    border-right: 0px solid #fff;
+    border-top: 0px solid #fff;
+
+}
+
+.odd td{
+    padding: 12px 12px 12px 15px;
+    border: 1px solid #ADACAB;
+    border-right: 0px solid #fff;
+    border-top: 0px solid #fff;
+
+}
+
+td.col-pdf-bold{
+    font-weight: bold !important;
+}
+
+.table-header td{
+    padding: 10px 10px 10px 13px;
+    border-top: 1px solid #ADACAB;
+    border-left: 1px solid #ADACAB;
+    border-right: 1px solid #ADACAB;
+    color: #97080e;
+    background: #EEEEEE;
+    font-size: 10px;
+    text-align: center;
+}
+
+table#pdf-table{
+    border-top: 1px solid #ADACAB;
+    border-collapse:collapse;
+    width:100%;
+}
+#signature{
+    text-align: right;
+    width: 10700px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 12px !important;
+}
+#pdf-footer{
+    text-align: right;
+    width: 1300px;
+    padding-right: 100px;
+    padding: 10px;
+    margin: 0 auto;
+    color: #999999;
+    font-size: 13px;
+
+}
+
+#pdf-footer{
+    text-align: right;
+    font-size: 18px;
+
+}
+
+.grand_total
+{
+    border-bottom: 1px solid #ADACAB;
+}
+.mark-td{
+    width: 6%;
+    min-width: 6%;
+    max-width: 6%;
+    word-break:break-all;
+
+
+}
+.name-td{
+    width: 15%;
+    min-width: 15%;
+    max-width: 15%;
+    word-break:break-word;
+}
+.avg-td{
+    width:10%;
+    min-width:10%;
+    max-width:10%;
+    word-break:break-word;
+}
+.section {
+    margin-top: 0px !important;
+}
+#content_top{
+    margin-top:-15px
+}

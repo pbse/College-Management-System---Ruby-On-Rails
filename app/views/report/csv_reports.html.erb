@@ -1,0 +1,41 @@
+<div id="content-header">
+  <%= show_header_icon %>
+  <h1><%="#{t('csv_reports')}" %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%="#{t('csv_reports')}" %></div>
+</div>
+<% unless flash[:notice].nil? %>
+  <p class="flash-msg"> <%= flash[:notice] %> </p>
+<% end %>
+<div id="information">
+  <% unless @csv_report.nil? %>
+    <div id="page-yield">
+      <table id="report_table" align="center" width="100%" cellpadding="1" cellspacing="1">
+        <tr class="tr-head sub-heading">
+          <td><%= t('file_name') %></td>
+          <td><%= t('status') %></td>
+        </tr>
+        <tr class="tr-<%= cycle('odd', 'even') %>">
+          <td class="col-2"><%=@csv_report.method_name%>.csv</td>
+          <% if @jobs.empty? %>
+            <td class="col-4"><%= link_to "#{t('download')}" ,@csv_report.csv_report.url(:original, false)%></td>
+          <% else %>
+            <% down_load_satus="-" %>
+            <% @jobs.each do |job| %>
+              <% if !job.failed_at.nil? %>
+                <% down_load_satus="#{t('failed')}" %>
+              <% elsif !job.locked_by.nil? %>
+                <% down_load_satus="#{t('running')}"%>
+              <% else %>
+                <% down_load_satus="#{t('in_queue')}" %>
+              <% end %>
+            <% end %>
+            <td class="col-4"><%= down_load_satus %></td>
+          <% end %>
+        </tr>
+      </table>
+    </div>
+  <% else %>
+    <p class="flash-msg"> <%= t('no_record_found') %></p>
+  <% end %>
+</div>

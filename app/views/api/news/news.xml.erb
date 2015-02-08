@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.news_detail{
+  @news.each do |news|
+    @news = news
+    @xml.news do
+      @xml.title(@news.title)
+      @xml.content(@news.content)
+      @xml.author(@news.author.try(:username))
+    end
+  end
+}%>
+
+

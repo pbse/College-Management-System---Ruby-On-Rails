@@ -1,0 +1,36 @@
+#content-header img {
+    margin: 0;
+    padding: 2px;
+}
+.sl_no{
+    width: 10%;
+    padding: 10px;
+    padding-right: 10px;
+}
+.name{
+    width: 50%;
+    padding: 10px;
+}
+.options{
+    width: 30%;
+    padding: 10px;
+}
+.options a{
+    font-size: 12px;
+    font-family: Arial;
+    color: #444444;
+    font-style: normal;
+    font-weight: bold;
+}
+.options a:hover{
+    font-family: Arial;
+    color: #bbb;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.pagination{
+    float: left;
+    margin-top: 30px;
+    margin-left: 17px;
+}

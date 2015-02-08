@@ -1,0 +1,73 @@
+#placement-title{
+    font-weight: bold;
+    font-size: 30px;
+}
+#placement-time{
+ font-size:90%;
+padding-top:5px;
+}
+#placement-description{
+-webkit-border-radius :10px;
+-moz-border-radius:10px;
+background-color:#EEEEEE;
+line-height:1.5em;
+margin-top:25px;
+padding:20px 50px;
+text-align:justify;
+}
+#action-buttons{
+    padding: 10px;
+    height: auto;
+    overflow: hidden;
+    padding: 10px 330px;
+}
+#action-buttons .submit-button{
+margin-right: 20px;
+min-width:50px;
+}
+
+#action-buttons .submit-button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.label-field-pair label {
+color:#444444;
+display:block;
+float:right;
+font-size:14px;
+font-weight:600;
+margin:0 100px 10px 0;
+padding-top:10px;
+width:220px;
+}
+
+.submit-button{
+    float: right;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+background:none repeat scroll 0 0 #27292B;
+border:medium none;
+color:#FFFFFF;
+cursor:pointer;
+font-family:arial;
+font-size:14px;
+font-weight:bold;
+padding:7px 10px;
+min-width:50px;
+}
+ .submit-button:hover { background: #373b3f; }
+#report-form .label-field-pair{
+    float: right;
+    
+}
+#report-submit{
+     float: right;
+         padding:4px;
+}
+#report-form{
+    margin-top: 20px;
+}
+.label-field-pair {
+    width:571px;
+}

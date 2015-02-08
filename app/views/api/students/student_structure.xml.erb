@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.student do
+  @xml.admission_no()
+  @xml.class_roll_no()
+  @xml.admission_date()
+  @xml.first_name()
+  @xml.middle_name()
+  @xml.last_name()
+  @xml.batch()
+  @xml.date_of_birth()
+  @xml.gender()
+  @xml.blood_group()
+  @xml.birth_place()
+  @xml.nationality()
+  @xml.language()
+  @xml.religion()
+  @xml.student_category()
+  @xml.address_line1()
+  @xml.address_line2()
+  @xml.city()
+  @xml.state()
+  @xml.pin_code()
+  @xml.country()
+  @xml.phone1()
+  @xml.phone2()
+  @xml.email()
+  @xml.biometric_id()
+  @xml.is_sms_enabled()
+  @xml.is_email_enabled()
+  @xml.photo()
+  @xml.student_additional_details do
+    @additional_fields.each do |additional_field|
+      @xml.additional_field do
+        @xml.name(additional_field.name)
+        @xml.value()
+      end
+    end
+  end
+end
+%>

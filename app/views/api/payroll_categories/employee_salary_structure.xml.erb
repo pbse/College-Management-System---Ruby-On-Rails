@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.employee_salary_structure_detail{
+  @employee_salary_structures.each do |employee_salary_structure|
+    @employee_salary_structure = employee_salary_structure
+    @xml.employee_salary_structure do
+      @xml.payroll_category(@employee_salary_structure.payroll_category.try(:name))
+      @xml.amount(@employee_salary_structure.amount)
+    end
+  end
+}%>
+
+

@@ -1,0 +1,37 @@
+<% unless @employees.blank? %>
+  <div class="submit-button">
+    <%= link_to "#{t('export_as_csv')}" ,{:action=>'swaped_timetable_report_csv',:employee_details=>@date} %>
+  </div>
+  <div class ="extender"></div>
+  <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+    <tr class="tr-head">
+      <td><%= t('employee_text') %></td>
+      <td><%=t('department')%></td>
+      <td><%= t('replacement_status') %></td>
+    </tr>
+    <tr class="tr-blank">
+    </tr>
+    <% @employees.each do |employee| %>
+      <tr class="tr-<%= cycle('odd', 'even')%>">
+        <td class="col-1"><%="#{employee.first_name} #{employee.middle_name} #{employee.last_name} - #{employee.emp_id}" %></td>
+        <td class="col-2"><%= employee.department %></td>
+        <td class="col-3">
+          <div id=<%="entry_#{employee.employee_id}"  %> >
+            <div class="ot"><%="#{employee.over_time} +" unless employee.over_time.blank?%></div>
+            <div class="lag"><%= "#{employee.lagging} -" unless employee.lagging.blank?%></div>
+            <div class="close_link"><%= link_to_remote "#{t('view_details')}",:url=>{:action=>:employee_report_details ,:employee_id=>employee.employee_id ,:date=>@date},:html=>{:class=>"themed_text"},:before=>"$('loader_#{employee.employee_id}').show();",:success=>"$(entry_#{employee.employee_id}).hide(); $(list_#{employee.employee_id}).show();$('loader_#{employee.employee_id}').hide();" %></div>
+            <%= image_tag("loader.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "loader_#{employee.employee_id}",
+              :class=>'loader1',
+              :style =>"display: none;" ) %>
+          </div>
+          <div id=<%= "list_#{employee.employee_id}" %>></div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p class="flash-msg"> <%= t('no_record_found') %></p>
+<% end %>

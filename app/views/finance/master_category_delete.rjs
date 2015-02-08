@@ -1,0 +1,8 @@
+
+page.replace_html 'categories', :partial => 'master_category_list'
+
+unless @error
+page.replace_html 'flash_box', :text => "<p class='flash-msg'>#{t('category_deleted_successfully')}.</p>"
+else
+page.replace_html 'flash_box', :partial => 'errors', :object => @catbatch
+end

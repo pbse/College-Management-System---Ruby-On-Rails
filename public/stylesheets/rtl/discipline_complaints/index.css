@@ -1,0 +1,83 @@
+/*#page-yield {
+    margin : 30px 0;
+    padding:0px 12px 0px 12px;
+}*/
+#search_textbox input{
+    background : #eee;
+    float:right;
+    border : 1px solid #c6c6c6;
+    margin : -5px 10px 0 0;
+    width : 180px;
+    height:22px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 4px 5px 0 0;
+}
+
+#search_textbox input:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+
+.col-1{
+    width:25%;
+    padding: 5px;
+}
+td.col-2{
+    width:40%;
+    text-align:right;
+    padding: 5px;
+    padding-right:10px;
+    font-weight: bold;
+    color:#fff;
+}
+td.col-3{
+    width:13%;
+    padding: 5px;
+}
+td.col-4{
+    width:30%;
+    padding: 5px;
+}
+
+#c_search {
+    float:right;
+    height:43px;
+    width:100%;
+    margin-top:19px;
+}
+#c_search label {
+    color:#444444;
+    display:block;
+    float:right;
+    width:85px;
+    margin:0 0 10px;
+    padding-top: 2px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#pending{
+float:left;
+}
+.text-input-bg {
+    margin-top:-9px;
+    background : transparent;
+    height : 28px;
+    width : 148px;
+    float:right;
+}
+.text-input-bg select {
+background-color: #EEE;
+border: 1px solid #C6C6C6;
+margin: 5px 10px 0 0;
+width: 135px;
+height: 27px;
+padding: 3px 6px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+}
+.links{
+    font-size: 10px;
+    color:#666;
+}

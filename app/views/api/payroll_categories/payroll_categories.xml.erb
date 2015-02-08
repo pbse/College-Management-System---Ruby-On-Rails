@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.payroll_category_detail{
+  @payroll_categories.each do |payroll_category|
+    @payroll_category = payroll_category
+    @xml.payroll_category do
+      @xml.name(@payroll_category.name)
+      @xml.percentage(@payroll_category.percentage)
+      @xml.payroll_category(@payroll_category.payroll_category.try(:name))
+      @xml.is_deduction(@payroll_category.is_deduction)
+      @xml.status(@payroll_category.status)
+    end
+  end
+}%>
+
+

@@ -1,0 +1,98 @@
+# Logfile created on Thu Apr 24 21:59:20 +0530 2014
+
+Processing UserController#login (for 122.168.51.58 at 2014-04-24 22:00:39) [GET]
+  Parameters: {"controller"=>"user", "action"=>"login"}
+Username : admin Role : Admin
+Redirected to http://check.crosstreat.com/user/dashboard
+Filter chain halted as [:check_if_loggedin] rendered_or_redirected.
+Completed in 23ms (DB: 5) | 302 Found [http://check.crosstreat.com/]
+
+
+Processing UserController#dashboard (for 122.168.51.58 at 2014-04-24 22:00:39) [GET]
+  Parameters: {"controller"=>"user", "action"=>"dashboard"}
+Username : admin Role : Admin
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 383ms (View: 355, DB: 9) | 200 OK [http://check.crosstreat.com/user/dashboard]
+
+
+Processing StudentController#index (for 122.168.51.58 at 2014-04-24 22:00:43) [GET]
+  Parameters: {"controller"=>"student", "action"=>"index"}
+Username : admin Role : Admin
+Rendering template within layouts/application
+Rendering student/index
+Completed in 77ms (View: 52, DB: 7) | 200 OK [http://check.crosstreat.com/student]
+
+
+Processing StudentController#view_all (for 122.168.51.58 at 2014-04-24 22:00:45) [GET]
+  Parameters: {"controller"=>"student", "action"=>"view_all"}
+Username : admin Role : Admin
+Rendering template within layouts/application
+Rendering student/view_all
+Completed in 57ms (View: 40, DB: 6) | 200 OK [http://check.crosstreat.com/student/view_all]
+
+
+Processing StudentController#list_students_by_course (for 122.168.51.58 at 2014-04-24 22:00:47) [POST]
+  Parameters: {"controller"=>"student", "authenticity_token"=>"1q8aFltIDirtgwUvYeH/12Ed+dx7qPOMgi5xTi+Wm6U=", "action"=>"list_students_by_course", "batch_id"=>"1"}
+Username : admin Role : Admin
+Completed in 41ms (View: 19, DB: 6) | 200 OK [http://check.crosstreat.com/student/list_students_by_course]
+
+
+Processing StudentController#profile (for 122.168.51.58 at 2014-04-24 22:00:49) [GET]
+  Parameters: {"id"=>"1", "controller"=>"student", "action"=>"profile"}
+Username : admin Role : Admin
+Rendering template within layouts/application
+Rendering student/profile
+Completed in 173ms (View: 121, DB: 27) | 200 OK [http://check.crosstreat.com/student/profile/1]
+
+
+Processing StudentController#profile_pdf (for 122.168.51.58 at 2014-04-24 22:00:51) [GET]
+  Parameters: {"id"=>"1", "controller"=>"student", "action"=>"profile_pdf"}
+Username : admin Role : Admin
+***************WICKED***************
+Rendering template within layouts/pdf
+Rendering student/profile_pdf
+Rendering template within layouts/pdf
+Rendering layouts/pdf_header.html
+Rendering template within layouts/pdf
+Rendering layouts/pdf_footer.html
+Sending data profile_pdf.pdf
+Completed in 1547ms (View: 1, DB: 0) | 200 OK [http://check.crosstreat.com/student/profile_pdf/1]
+
+
+Processing StudentController#profile_pdf (for 122.168.51.58 at 2014-04-24 22:00:53) [GET]
+  Parameters: {"id"=>"1", "controller"=>"student", "action"=>"profile_pdf"}
+Username : admin Role : Admin
+***************WICKED***************
+Rendering template within layouts/pdf
+Rendering student/profile_pdf
+Rendering template within layouts/pdf
+Rendering layouts/pdf_header.html
+Rendering template within layouts/pdf
+Rendering layouts/pdf_footer.html
+Sending data profile_pdf.pdf
+Completed in 1348ms (View: 1, DB: 0) | 200 OK [http://check.crosstreat.com/student/profile_pdf/1]
+
+
+Processing StudentController#fees (for 122.168.51.58 at 2014-04-24 22:02:21) [GET]
+  Parameters: {"id"=>"1", "controller"=>"student", "action"=>"fees"}
+Username : admin Role : Admin
+Rendering template within layouts/application
+Rendering student/fees
+Completed in 65ms (View: 47, DB: 4) | 200 OK [http://check.crosstreat.com/student/fees/1]
+
+
+Processing FinanceController#refund_student_view (for 122.168.51.58 at 2014-04-24 22:02:28) [GET]
+  Parameters: {"id"=>"1", "controller"=>"finance", "action"=>"refund_student_view"}
+Username : admin Role : Admin
+Rendering template within layouts/application
+Rendering finance/refund_student_view
+Completed in 60ms (View: 32, DB: 7) | 200 OK [http://check.crosstreat.com/finance/refund_student_view/1]
+
+
+Processing UserController#dashboard (for 122.168.51.58 at 2014-04-24 22:02:31) [GET]
+  Parameters: {"controller"=>"user", "action"=>"dashboard"}
+Username : admin Role : Admin
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 287ms (View: 258, DB: 16) | 200 OK [http://check.crosstreat.com/user/dashboard]

@@ -1,0 +1,131 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('sibling') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%= t('step_2') %></div>
+
+
+</div>
+<div id="page-yield">
+ <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+  <div id="form-content">
+    <% form_for :student,:html=>{:onsubmit=>"return sibling_value('#{@student.guardians}');"} do |e| %>
+    <script> function update_sibling_selected(id,name)
+  {
+    $$('.not-selected')[0].innerHTML=name;
+    s= new Element('input',{'type':'hidden','value':id,'name':'sibling_no'})
+     $('update-button').appendChild(s)
+}
+function sibling_value(guardians){
+  if (guardians.length > 0){
+  if (confirm('<%= "#{t('it_will_delete_all_the_current_guardians_of')}#{@student.full_name}"%>')) {
+
+
+ 
+ if ($$('.not-selected')[0].innerHTML=="(<%= t('not_selected') %>)")
+ {
+   alert('<%= "#{t('please_select_a_sibling_and_proceed')}"%>');
+   return false;
+ }
+ else
+ {
+   return true
+ }
+}else{return false}
+}else{
+  if ($$('.not-selected')[0].innerHTML=="(<%= t('not_selected') %>)")
+ {
+   alert('<%= "#{t('please_select_a_sibling_and_proceed')}"%>');
+   return false;
+ }
+ else
+ {
+   return true
+ }
+
+}}
+</script>
+    <%=hidden_field_tag :configure,params[:configure]%>
+    <div class="sibling">
+          <div id="sibling-selected"><%= t('sibling_selected') %>:</div>
+          <div id="sibling-selected-name" class="themed_text"><span class="not-selected">(<%= t('not_selected') %>)</span></div>
+          <div id="update-button"><%=submit_tag  ("► #{t('save_and_proceed')}"),  :class => "user_button"%>
+            <%if params[:configure].present?%>
+            <%=link_to ("► #{t('cancel')}"),{:action=>"guardians",:id=>params[:id]},:class => "user_button"%></div>
+            <%else%>
+          <%=link_to ("► #{t('skip')}"),{:action=>"admission2",:id=>params[:id]},:class => "user_button"%></div>
+          <%end%>
+    </div>
+          <div class="extender"></div>
+        
+     <%end%>
+
+  <div id="search_box_bg">
+    <form id="sibling-form" name="search_form" action="" style="display:inline;">
+      <%= hidden_field_tag("option", params['option'], :value => "active") %>
+      <label for="user_name"><%= t('search_text') %>:
+        <%= image_tag("loader.gif",
+          :align => "absmiddle",
+          :border => 0,
+          :id => "loader",
+          :style =>"display: none;" ) %>
+      </label> 
+      <div id="search_textbox">
+        <%= text_field_tag("query", params['query'], :autocomplete => 'off') %>
+
+      </div>
+
+      <div class="extender"></div>
+       
+    </form>
+  </div>
+ 
+
+  <div id="view_all">
+
+  </div>
+
+
+  <script type="text/javascript">
+    function search_ajax(){
+      if ($('query').value.include("%")) return;
+<%="#{remote_function(:url => {:action => "search_ajax"},
+:with => "'query='+$('query').value + '&option='+'sibling'",
+:before => "Element.show('loader')",
+:success => "Element.hide('loader')",
+:update=>"information"
+)}"%>
+  }
+
+  document.observe("dom:loaded", function() {
+    new Form.Element.Observer('query', 1, search_ajax);
+    new Form.Element.Observer('option', 0.5, search_ajax);
+  });
+
+  </script>
+
+  </div>
+
+
+  <div id="information"></div>
+
+</div>

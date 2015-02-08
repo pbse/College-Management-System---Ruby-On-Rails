@@ -1,0 +1,71 @@
+table {
+text-align:right;
+width:715px;
+}
+table#listing td.col-1 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:20%;
+font-weight: bold;
+color:#444;
+}
+table#listing td.col-2 {
+padding:5px 10px 5px 5px;
+text-align:center;
+width:10%;
+}
+table#listing td.col-3 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:10%;
+}
+table#listing td.col-4 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:10%;
+}
+table#listing td.col-5 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:40%;
+}
+table#listing td a {
+color:#990A10;
+font-size:13px;
+text-decoration:none;
+}
+.name{
+    color: #000;
+    float: right;
+    width: 132px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.val {
+    width:auto;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+table#listing tr.tr-head {
+    background:#dfeaff;
+}
+table#listing .tr-odd {
+    background:#eef2fd;
+}
+table#listing .tr-even {
+    background:#dfeaff;
+}
+table#listing {
+    border-radius:none;
+    padding:0;
+    background: none;
+    margin-top: 25px;
+}
+.name,.val{
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 143px;
+}
+table#listing tr td{
+    border-bottom: 1px solid #becffb;
+}

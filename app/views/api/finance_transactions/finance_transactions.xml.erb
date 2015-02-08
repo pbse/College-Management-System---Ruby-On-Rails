@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.finance_transaction_detail{
+  @finance_transactions.each do |finance_transaction|
+    @finance_transaction = finance_transaction
+    @xml.finance_transaction do
+      @xml.title(@finance_transaction.title)
+      @xml.description(@finance_transaction.description)
+      @xml.amount(FedenaPrecision.set_and_modify_precision(@finance_transaction.amount).to_f)
+      @xml.fine_included(@finance_transaction.fine_included)
+      @xml.transaction_date(@finance_transaction.transaction_date)
+      @xml.fine_amount(FedenaPrecision.set_and_modify_precision(@finance_transaction.fine_amount).try(:to_f))
+      @xml.master_transaction(@finance_transaction.master_transaction.try(:title))
+      @xml.finance(@finance_transaction.finance_type)
+      payee = @finance_transaction.fetch_payee
+      payee_no = payee.nil? ? "NA" : (payee.class.name == "Student" or payee.class.name == "ArchivedStudent") ? payee.admission_no : (payee.class.name == "Employee" or payee.class.name == "ArchivedEmployee") ? payee.employee_number : payee.reg_no
+      @xml.payee("#{payee.try(:full_name)}(#{payee.nil? ? 'NA' : payee_no})")
+      @xml.receipt_no(@finance_transaction.receipt_no)
+      @xml.voucher_no(@finance_transaction.voucher_no) 
+    end
+  end
+}%>
+

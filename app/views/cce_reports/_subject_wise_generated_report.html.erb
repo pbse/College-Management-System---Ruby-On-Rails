@@ -1,0 +1,89 @@
+<table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+  <%  if  @students.empty? or @score_hash.empty?%>
+    <tr class="tr-head">
+      <td>No reports found for the search</td>
+    </tr>
+  <% else %>
+    <tr class="tr-head">
+      <td>Students</td>
+      <td colspan="2">FA1</td>
+      <td colspan="2">FA2</td>
+      <td colspan="2">FA3</td>
+      <td colspan="2">FA4</td>
+      <td colspan="2">SA1</td>
+      <td colspan="2">SA2</td>
+    </tr>
+    <tr class="tr-head">
+      <td></td>
+      <% 6.times.each do %>
+        <td>Grade</td>
+        <td>Mark(%)</td>
+      <% end %>
+    </tr>
+    <tr class="blank"></tr>
+    <% @students.each do |s| %>
+      <tr class="tr-<%= cycle('odd', 'even') %>">
+        <td class="col-2"><%= s.full_name %> (<%= s.admission_no %>)</td>
+        <% st=@score_hash.find{|c,v| c==s.id} %>
+        <% if st %>
+          <% if @score_hash[s.id][@fa1.to_s].nil?%>
+            <td class="col-3">-</td>
+            <td class="col-3">-</td>
+          <% else %>
+            <td class="col-3"><%= @score_hash[s.id][@fa1.to_s]['grade'] %></td>
+            <td class="col-3"><%= @score_hash[s.id][@fa1.to_s]['mark'] %></td>
+          <% end %>
+          <% if @score_hash[s.id][@fa2.to_s].nil?%>
+            <td class="col-3">-</td>
+            <td class="col-3">-</td>
+          <% else %>
+            <td class="col-3"><%= @score_hash[s.id][@fa2.to_s]['grade'] %></td>
+            <td class="col-3"><%= @score_hash[s.id][@fa2.to_s]['mark'] %></td>
+          <% end %>
+          <% if @score_hash[s.id][@fa3.to_s].nil?%>
+            <td class="col-3">-</td>
+            <td class="col-3">-</td>
+          <% else %>
+            <td class="col-3"><%= @score_hash[s.id][@fa3.to_s]['grade'] %></td>
+            <td class="col-3"><%= @score_hash[s.id][@fa3.to_s]['mark'] %></td>
+          <% end %>
+          <% if @score_hash[s.id][@fa4.to_s].nil?%>
+            <td class="col-3">-</td>
+            <td class="col-3">-</td>
+          <% else %>
+            <td class="col-3"><%= @score_hash[s.id][@fa4.to_s]['grade'] %></td>
+            <td class="col-3"><%= @score_hash[s.id][@fa4.to_s]['mark'] %></td>
+          <% end %>
+          <% if @score_hash[s.id][@sa1.to_s].nil?%>
+            <td class="col-3">-</td>
+            <td class="col-3">-</td>
+          <% else %>
+            <td class="col-3"><%= @score_hash[s.id][@sa1.to_s]['grade'] %></td>
+            <td class="col-3"><%= @score_hash[s.id][@sa1.to_s]['mark'] %></td>
+          <% end %>
+          <% if @score_hash[s.id][@sa2.to_s].nil?%>
+            <td class="col-3">-</td>
+            <td class="col-3">-</td>
+          <% else %>
+            <td class="col-3"><%= @score_hash[s.id][@sa2.to_s]['grade'] %></td>
+            <td class="col-3"><%= @score_hash[s.id][@sa2.to_s]['mark'] %></td>
+          <% end %>
+        <% else %>
+          <% 12.times.each do %>
+            <td class="col-3">-</td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+<%  unless @students.empty? or @score_hash.empty?%>
+  <div class="button">
+    <div class="pdf-button">
+      <%= link_to "► CSV Export", {:controller => "cce_reports", :action => "subject_wise_generated_report_csv",:batch_id=>params[:subject_report][:batch_id],:student_category_id=>params[:subject_report][:student_category_id],:subject_id=>params[:subject_report][:subject_id],:gender=>params[:subject_report][:gender]},:target => '_blank' %>
+    </div>
+    <div class="pdf-button">
+      <%= link_to "► PDF Report", {:controller => "cce_reports", :action => "subject_wise_generated_report_pdf",:batch_id=>params[:subject_report][:batch_id],:student_category_id=>params[:subject_report][:student_category_id],:subject_id=>params[:subject_report][:subject_id],:gender=>params[:subject_report][:gender],:page_height=>800},:target => '_blank' %>
+    </div>
+  </div>
+<% end %>

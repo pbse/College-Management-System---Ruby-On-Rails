@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+}
+html, body {
+/*    height: 100%;*/
+height:auto !important;
+}
+body {
+    font-family:arial;
+    margin: 0;
+    background-color:#eeeeee;
+    height:auto !important;
+}
+#content_wrapper {
+    height:auto !important;
+}
+#top_logo {
+    float:left;
+    height:115px; width:155px;
+    margin-top:15px;
+    /*background:#fff url(../../images/login/fedena_logo.jpg) no-repeat;*/
+}
+#top_logo h1 {
+    text-indent:-9999px;
+}
+#help_top {
+    margin:0px auto;
+    width:614px;height:1.5em;
+}
+#help_top #help_link {float:right;}
+#help_top #help_link a {color:#b00;padding-right:10px;}
+
+#login_strip {
+    margin-top: 34px;
+    height: 156px;
+    width: 100%;
+/*    background: #B00 url(/images/application/bg_pattern.png) repeat;*/
+}
+/*#login_area_bg{margin-top: -175px; height:362px;}*/
+#login_area {width:255px;float:left;padding-left:30px;}
+#login_area label {display:block;width:200px;margin-left:25px;padding-top:20px;font-weight:bold;color:#333333;padding-bottom:5px;font-size:13px;}
+
+#username_textbox_bg, #password_textbox_bg {height:30px;margin:0px auto;margin-left:10px;width:250px;}
+#username_textbox_bg input{width:235px;height:25px;font-family:arial !important;margin:0 0 20px 0px;float:left;background-color:#f9f9f9;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;font-size:13px;color:#333333;padding-left:5px;padding-right:5px;}
+
+#password_textbox_bg input {
+    width:235px;
+    height:25px;
+    margin:0px;
+    float:left;background-color:#f9f9f9;
+    border:1px solid #d9d9d9;
+    border-top:1px solid #c0c0c0;
+    font-size:13px;
+    color:#333333;
+    padding-left:5px;
+    padding-right:5px;
+    font-family:arial !important;
+}
+
+#login_box {
+    margin:0px auto;
+    margin-top:150px;
+    background-color:#ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius:3px;
+    width:540px;
+}
+#login-input-box {
+    height:170px;
+    padding:30px;
+    width:480px;
+}
+#school-name {
+    font-weight:bold;
+    font-size:15px;
+    text-align:center;
+    color:#333333;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:20px;
+}
+#logo_area {
+    float:left;
+    width:160px;
+    padding-right:30px;
+    border-right: 1px solid #CCCCCC;
+    height:170px;
+}
+
+#submit_area {
+    padding-left:10px;
+    margin-top:10px;
+    float:left;
+    width:245px;
+}
+.openid_identifier {
+    margin-top: 38px;
+    overflow: hidden;
+    padding: 0 !important;
+    width: 350px !important;
+}
+#submit_area input {
+    border: medium none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 15px;
+    font-weight:bold;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-family: arial !important;
+
+}
+.forgot_pwd {
+  float:right;
+  text-decoration:none;
+  display:block;
+  font-size:11px;
+  cursor:pointer;
+  color:#666666;
+  padding-top:10px;
+}
+#powered_by_div{
+    color: #666666;
+    float: left;
+    font-size: 11px;
+    height: 20px;
+    margin: 10px auto 0;
+    text-align: center;
+    width: 100%;
+}
+#powered_by_div a{
+    text-decoration:none;
+}
+
+#resetpw_area input {width:85px;height:38px;float:right;margin-right:58px;margin-top:55px;}
+
+#checkbox_area {width:300px;float:left;}
+#checkbox_area label {margin:0;display:inline;padding-left:5px;}
+#checkbox_area input {margin:25px 5px 0 50px;padding:0;}
+
+#notice {
+    color: #DD0000;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 20px 0 0;
+    text-align:center;
+    margin-top:5px;
+    height:13px;
+    margin-left:10px;
+}
+#wrapper {
+    height:auto !important;
+}
+#wrapper  #help_forgot_pw {margin:50px auto;text-align:center;width:614px;}
+#wrapper  #help_forgot_pw a {text-decoration:none;font-weight:bold;color:#b00;}
+#wrapper  #help_forgot_pw a:hover {text-decoration:underline;font-weight:bold;color:#b00;}
+
+#username_texbox_bg input{border:none;margin:0px; padding:0px;text-align:center;}
+
+input[type="text"], input[type="password"], textarea, select {outline: none;}
+
+#footer {
+    /* position : relative;
+    margin-top : -33px; */
+    height : 38px;
+    clear : both;
+    background-color:#323232;
+    width:100%;
+    margin-top:40px;
+    border-top: 2px solid #4d4d4d;
+}
+#footer_logo {
+    height:38px;
+    width:980px;
+    margin:0 auto;
+}
+
+#footer_logo a.footer-logo{
+    display:block;
+    float:right;
+    height:38px;
+    margin-top:-55px;
+    width:210px;
+}
+
+#footer_logo a.footer-logo:hover {
+
+}
+
+#powered_by {
+    height:20px;
+    width:auto;
+    margin:10px auto 0;
+    color:#999999;
+    font-size:13px;
+    float: right;
+}
+#powered_by a {
+    color:#fff;
+    font-size:13px;
+    text-decoration:none;
+}
+#powered_by a:hover {
+    color:#fff;
+    font-size:13px;
+    text-decoration:underline;
+}
+#wrapper {
+    min-height: 100%;
+    margin-bottom:-55px;
+    position:relative;
+}
+.clearfooter {
+height: 25px;
+clear: both;
+}
+#username_textbox_bg input:focus,#password_textbox_bg input:focus{
+    border: 1px solid #9e0f15;
+    background: #fff;
+}
+.themed-dark-hover-background:hover{
+    background-color: #7e0000;
+}

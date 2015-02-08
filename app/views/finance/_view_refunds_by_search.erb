@@ -1,0 +1,51 @@
+<script type="text/javascript">
+        Element.hide('loader_date');
+        </script>
+<%if @refunds.present?%>
+<div id="payments_details">
+    <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td><%= t('sl_no') %></td>
+        <td><%= t('student_name') %></td>
+        <td><%= t('amount') %></td>
+        <td><%= t('date_text') %> </td>
+        <td ><%= t('fee_collection_name') %></td>
+        <td ><%= t('refund_done') %></td>
+      </tr>
+      <%i=@page*5%>
+      <tr class="tr-blank"></tr>
+      <% @refunds.each do |f| %>
+        <tr class="tr-<%= cycle("odd","even") %>">
+
+          <td class="col-1"><%= i +=1 %></td>
+         <td class="col-3" style="width:20%"> <%=f.finance_transaction.student_payee.full_name%></td>
+          <td class="col-3"><%= precision_label(f.amount).to_f %></td>
+          <td class="col-3" ><%= f.created_at.strftime("%d-%m-%Y") %></td>
+          <td class="col-3" style="width:20%" ><div class="cancel" ><%= f.refund_rule.present?? f.refund_rule.finance_fee_collection.name : "#{t('no_fee_collection_present')}"  %></div></td>
+          <td class="col-3" ><%= f.refunded_by %></td>
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+<div class="pagination_div"><div class="div1"><%= will_paginate @refunds, :previous_label=>"<", :next_label=>">", :renderer => 'RemoteLinkRenderer' ,:remote => { :loading =>  "$('loader_paginate').show();",:complete =>"$('loader').hide();"  }, :params => {:controller=>:finance,:action => "search_fee_refunds",:option=>params[:option],:query=>params[:query]} %></div><div class="div2"><%= image_tag("loader.gif",
+          :align => "absmiddle",
+          :border => 0,
+          :id => "loader_paginate",
+          :style =>"display: none;" ) %></div></div>
+<%if permitted_to? :refund_search_pdf,:finance%>
+<div class="pdf-center" >
+<%= link_to "► #{t('view')} #{t('pdf_report')}",   {:action => "refund_search_pdf",:option=>params[:option],:query=>params[:query]}, :target => '_blank' , :class=> 'user_button' %>
+</div>
+<%end%>
+
+<%else%>
+<div id="payments_details">
+<table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+  <tr class="tr-head">
+    <td style="text-align:center;">
+<%=t('no_refunds_exists')%></td>
+  </tr>
+</table></div>
+<%end%>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.employee_detail{
+  @employees.each do |employee|
+    @employee = employee
+    @xml.employee do
+      @xml.employee_number(@employee.employee_number)
+      @xml.employee_name(@employee.full_name)
+      @xml.employee_department_name(@employee.employee_department.name)
+    end
+  end
+}%>
+
+

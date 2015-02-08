@@ -1,0 +1,78 @@
+.submit_button {
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 10px;
+}
+#category-list {
+    width: 300px;
+    margin: 10px 0 10px 210px;
+    padding: 0 0 0 0;
+}
+
+#category-list li div{
+    /*    float: right;*/
+}
+#category-list li div.category-name{
+    width: 250px;
+}
+#category-list .listeven,#category-list .listodd{
+    padding-left: 5px;
+}
+.check_box_container{
+    margin-left: 210px;
+    margin-right: 125px;
+    background-color: #EEE;
+    float:left;
+    height: auto;
+    border: 1px solid silver;
+}
+.check_box_container .label-field-pair{
+    /*    height: 30px;*/
+    padding-top: 0px;
+}
+.check_box_container .label-field-pair input {
+    width: 20px;
+    float: left;
+}
+.check_box_container  .label-field-pair label {
+    padding-top: 6px;
+    font-size: 13px;
+}
+.submit_button{
+    float: left;
+    margin-left: 225px;
+    margin-top: 30px;
+}
+.check_box_container .label-field-pair{
+    width: 300px;
+    margin: 0 0 0 0;
+    float:left;
+}
+
+.left{
+    float: left;
+    width: 250px;
+}
+.right{
+    float: left;
+    /*    float: right;*/
+    width: 250px;
+}
+.text-input-bg select ,.label-field-pair input{
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+fieldset{
+    border: none;
+    width: 100%;
+}
+.text-input-bg {
+    height: 40px;
+}

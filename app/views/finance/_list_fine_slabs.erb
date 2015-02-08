@@ -1,0 +1,41 @@
+
+
+<%= hidden_field_tag :fine_id,@fine.id %>
+  <div id="add">
+   
+  <%@fine.fine_rules.each_with_index do |slab,i|%>
+    <%= hidden_field_tag "fine[fine_rules_attributes][#{i}][id]",slab.id %>
+    
+<div class="slab<%=i%>"  id="remove-slab">
+      <hr  />
+      
+      <div class="label-field-pair">
+        <label for="reason">  <%= t('days_after_due_date') %> <span class="necessary-field">*</span></label>
+        <div class="text-input-bg"><%= text_field_tag  "fine[fine_rules_attributes][#{i}][fine_days]",value=slab.fine_days,options={:class=>"precision_text"}%></div>
+      </div>
+      <div class="label-field-pair">
+          <%=link_to_function "&times",  "slab_delete('#{i}');", {:class => 'list_btn themed_text'} %>
+        <label for="reason">  <%= t('fine_amount') %> <span class="necessary-field">*</span></label>
+        <div class="text-input-bg"><%= text_field_tag  "fine[fine_rules_attributes][#{i}][fine_amount]",value=precision_label(slab.fine_amount),options={:class=>"precision_text"}%></div>
+      </div>
+      <div class="label_field_pair">
+        <div class="fine-mode" >
+          <label class="label_for_student_gender" for="is_amount"><%= t('discount_type') %></label>
+        </div>
+        <div class="student_gender_value" >
+          <label class="label_for_gender" for="is_amount_false"> <%= t('percentage') %></label>
+          <%= radio_button_tag   "fine[fine_rules_attributes][#{i}][is_amount]", value =false ,checked=!(slab.is_amount),options={"id"=>"slab"+i.to_s} %>
+          <label class="label_for_gender" for="is_amount_true"><%= t('amount') %></label>
+          <%= radio_button_tag "fine[fine_rules_attributes][#{i}][is_amount]" ,value =true,checked=slab.is_amount,options={ "id"=>"slab"+i.to_s} %>
+        </div>
+      </div></div><%end%></div>
+  <hr  />
+  <div class="extender"></div>
+  <div id="link">
+    <%= link_to_function "#{image_tag "buttons/add_2.png" } #{t('add_fine_slab')}","add_fine_slab(this);"%>
+  </div>
+  <div id="submit-button">
+    <%=  submit_tag "► #{t('update')}",:class=>'submit_button',:disable_with => "► #{t('create_text')}" %>
+  </div>
+
+

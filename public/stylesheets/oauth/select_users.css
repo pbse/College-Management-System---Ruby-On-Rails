@@ -1,0 +1,60 @@
+body {
+    background-color: #EEEEEE;
+    font-family: arial;
+    height: 100% !important;
+    margin: 0;
+}
+.outer-main {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.middle-main {
+    display: table-cell;
+    vertical-align: middle;
+    background-color:#eeeeee;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.user-select-box {
+    width: 530px;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+.user-heading {
+    font-size:13px;
+    font-weight:bold;
+    width:100%;
+    text-align:center;
+    margin-bottom:20px;
+}
+.user-list {
+    width:100%;
+    height:auto;
+}
+.user_col {
+    float:left;
+    width:255px;
+    height:auto;
+}
+.user_col a{
+    text-decoration:none;
+}
+.single-link {
+    font-size:13px;
+    color:#000000;
+    padding:15px 20px;
+    background-color:#ffffff;
+    border: 1px solid #cccccc;
+    margin-bottom:20px;
+    width:215px;
+}
+.single-link:hover {
+    background-color:#eeeeee;
+}
+
+#col-1 {
+    margin-left:20px;
+}

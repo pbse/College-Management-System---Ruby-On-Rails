@@ -1,0 +1,328 @@
+.title {
+    color: #BB0000;
+    font-family: Arial;
+    font-size: 22px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.title_content{
+    min-width: 67%;
+    max-width: 67%;
+    float: right;
+}
+
+.favourite_bar{
+    min-width: 17%;
+    max-width: 17%;
+    float:left;
+    margin-right:100px;
+}
+.blog_details{
+    margin-top: 5px;
+    min-width:67%;
+    max-width: 67%;
+    float: right;
+    font-size: 11px;
+    text-align:justify;
+}
+
+.blog_details span{
+    font-style: italic;
+}
+
+.blog_details a{
+    color: #bb0000;
+    text-decoration: none;
+}
+
+.blog_details span b{
+    color: #b00;
+    font-weight: normal;
+}
+
+.blog_details small{
+    font-size: 13px;
+    color: #b00;
+    font-style: normal;
+}
+
+.favourite {
+    border-radius: 5px 5px 5px 5px;
+    margin-right: -36px;
+    max-height: 30px;
+    min-height: 30px;
+    width: -moz-max-content;
+    float:left;
+    margin-left: 7px;
+}
+
+.favourite_content {
+    background: none repeat scroll 0 0 #DADADA;
+    border-radius: 5px 5px 0 0;
+    float: right;
+    margin-left: 1px;
+    max-height: 30px;
+    max-width: 114px;
+    min-height: 30px;
+    min-width: 114px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.favourite_content span {
+    color: #656565;
+    font-size: 12px;
+    font-weight: normal;
+    height: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.favourite_link{
+    min-height: 30px;
+    max-height: 30px;
+    min-width: 35px;
+    max-width: 35px;
+    background:#fff url(/images/blogs/favourite_button.png) 0 0 no-repeat;
+    float:right;
+}
+
+.favourite_link:hover{
+    background:#fff url(/images/blogs/favourite_button.png) -35px 0 no-repeat;
+}
+
+.favourite_link_active{
+    min-height: 30px;
+    max-height: 30px;
+    min-width: 35px;
+    max-width: 35px;
+    background:#fff url(/images/blogs/favourite_button.png) -35px 0 no-repeat;
+    float:right;
+}
+
+.favourite_link a{
+    min-height: 30px;
+    max-height: 30px;
+    min-width: 35px;
+    max-width: 35px;
+}
+
+
+
+.ban_link {
+    background: url(/images/blogs/ban_post_button.png) no-repeat scroll 0 0 #FFFFFF;
+    float: right;
+    max-height: 30px;
+    max-width: 35px;
+    min-height: 30px;
+    min-width: 35px;
+}
+
+.ban_link:hover{
+    background:#fff url(/images/blogs/ban_post_button.png) -35px 0 no-repeat;
+}
+
+.ban_link_active{
+    min-height: 30px;
+    max-height: 30px;
+    min-width: 35px;
+    max-width: 35px;
+    background:#fff url(/images/blogs/ban_post_button.png) -35px 0 no-repeat;
+    float:left;
+}
+
+.ban_link a{
+    min-height: 30px;
+    max-height: 30px;
+    min-width: 35px;
+    max-width: 35px;
+}
+
+
+.blog_content {
+    border-radius: 10px 10px 10px 10px;
+    color: #222222;
+    float: right;
+    font-family: Arial;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: justify;
+    width: 99%;
+}
+
+.blog_content a{
+    font-size: 12px;
+    font-family: Arial;
+    color: #bb0000;
+}
+
+#leave-a-comment {
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+#comment_content textarea {
+    background-color: #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 75px;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 593px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+#comment_content textarea:focus {
+    background-color: #FFFFFF;
+    border: 1px solid #b00;
+}
+#comment_heading {
+    color: #000000;
+    float: right;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 0px;
+    width: 100%;
+}
+.comment_form{
+    width: 100%;
+    height: auto;
+    float: right;
+    margin-bottom: 10px;
+}
+
+#comments_list {
+    width: 67%;
+    float: right;
+    background: #f1f1f1;
+    padding: 20px;
+}
+
+
+#comments_list li {
+    border-bottom: 1px solid #AAAAAA;
+    list-style-type: none;
+    width: 100%;
+    float: right;
+    padding: 10px 0;
+}
+
+#comments_list li .comment_details {
+    color: #888888;
+    font-size: 80%;
+    height: 15px;
+    width: 100%;
+    float: right;
+    margin: 0 0 0;
+}
+
+.comment_details .commentor {
+    color: #BB0000;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    width: auto;
+}
+
+
+.comment_content {
+    float: right;
+    font-size: 12px;
+    margin-top: 5px;
+    width: 655px;
+    color: #666666;
+    text-align: justify;
+}
+
+.comment_posted_at {
+    float: left;
+    color: #2f2f2f;
+    font-weight: bold;
+    font-size: 11px;
+    font-style: italic;
+}
+
+.errorExplanation {
+    background: url("/images/_global/error.png") no-repeat scroll 10px 14px #FFDEDF;
+    float: right;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px 20px 20px 0;
+    width: 510px;
+}
+
+.comment_details .delete_comment {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+
+.comment_details .delete_comment a {
+    color: #a5a5a5;
+    text-decoration: none;
+}
+
+.comment_details .delete_comment a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+.pagination {
+    float: left;
+    margin-left: 0;
+    margin-top: 10px;
+}
+.like_link{
+    width: auto;
+    float: right;
+    margin-right: 450px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.like_link a{
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0063DC;
+}
+
+.like_link span{
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0063DC;
+}
+
+.submit-button {
+    background: none repeat scroll 0 0 #27292B;
+    color: #FFFFFF;
+    margin-right: 630px;
+    padding: 7px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin: -34px 630px 0 0;
+    cursor: pointer;
+    float: right;
+}
+
+#content-header img {
+    border: 0 none;
+    float: right;
+    margin: 0;
+    padding: 2px;
+}

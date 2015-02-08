@@ -1,0 +1,33 @@
+#content-header img {
+    margin: 0;
+    padding: 2px;
+}
+.box{
+    width:700px;
+    margin:0px auto;
+    margin-left: 10px;
+}
+
+#errorExplanation{
+}
+
+.submit_button {
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    margin-left: 211px;
+    margin-top: 20px;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+.label-field-pair input {
+    height: auto;
+}

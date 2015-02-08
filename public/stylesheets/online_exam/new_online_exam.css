@@ -1,0 +1,97 @@
+.fee_category_scroll1 {
+    height: 93px;
+    margin-left: 201px;
+    margin-top: -30px;
+    overflow: auto;
+    width: 266px;
+    padding-left: 10px
+}
+
+.fee_category_scroll {
+    -moz-background-inline-policy: continuous;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 150px;
+    margin-left: 209px;
+    margin-top: -30px;
+    overflow: auto;
+    width: 206px;
+    padding-top: 8px;
+    padding-left: 10px
+}
+
+.sel-list {
+    margin-bottom: 4px;
+    width: 215px;
+    color: #444444;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.sel-list a {
+    color: #444444;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+.sel-list a:hover {
+    color: #9D0E00;
+    text-decoration: none;
+}
+
+.each_batch {
+    border-bottom: 1px solid #DDDDDD;
+    color: #444444;
+    font-size: 14px;
+}
+.each_batch span{
+    width: auto;
+}
+.batches_box{
+    width: auto;
+}
+
+#submit-button input{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin-left:212px;
+    margin-top:34px;
+    padding:7px 10px;
+    border:none;
+    cursor:pointer;
+}
+
+.fieldWithErrors,#online_exam_group_start_date,#online_exam_group_end_date{
+    float: left;
+}
+.calendar_date_select_popup_icon{
+    float: left;
+    margin-top: 12px;
+    margin-left: 4px;
+}
+.text-input-bg {
+     background: none repeat scroll 0 0 transparent;
+    float: left;
+    height: 35px;
+    overflow: hidden;
+    width: 270px;
+}
+.calendar_date_select {
+    border: 1px solid #777777;
+    color: white;
+    display: block;
+    width: 205px;
+    z-index: 10001;
+}
+
+#box{
+    margin:0 auto;
+    width:600px;
+}

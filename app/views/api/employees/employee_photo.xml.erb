@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.employee_photo do
+  @xml.employee_number(@employee.employee_number)
+  @xml.photo_file_name(@employee.photo_file_name)
+  @xml.photo_content_type(@employee.photo_content_type)
+  @xml.photo_file_size(@employee.photo_file_size)
+end
+%>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.reminder_detail{
+  @xml.reminder do
+    @xml.sender(@reminder.user.try(:username))
+    @xml.receiver(@reminder.to_user.try(:username))
+    @xml.subject(@reminder.subject)
+    @xml.body(@reminder.body)
+    @xml.created_at(@reminder.created_at)
+    @xml.is_read(@reminder.is_read)
+  end
+}%>
+
+

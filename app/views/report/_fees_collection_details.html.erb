@@ -1,0 +1,153 @@
+<% unless @fee_collection.blank? %>
+  <div class="info">
+    <div class="field_pair">
+      <div class="label1"><%= "#{t('total')} #{t('fee_collection')}" %></div>
+      <div class="label2"><%=": #{@fee_collection.total_entries}" %></div>
+    </div>
+  </div>
+  <div class="submit-button">
+    <%= link_to "#{t('export_as_csv')}" ,{:action=>'fee_collection_details_csv',:sort_order=>@sort_order,:batch_id=>params[:batch_id]} ,:target=>'_blank' %>
+  </div>
+  <div class="extender"></div>
+  <div id="page-yield">
+    <table id="report_table" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head sub-heading">
+        <td><%= t('no_text') %></td>
+        <% if @sort_order=="name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('fee_collection')} #{t('name')} &#8595;", :url=>{:action=>"fee_collection_details",:sort_order=>"name ASC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% elsif @sort_order=="name ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('fee_collection')} #{t('name')} &#8593;", :url=>{:action=>"fee_collection_details",:sort_order=>"name DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('fee_collection')} #{t('name')}", :url=>{:action=>"fee_collection_details",:sort_order=>"name DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% end %>
+        <% if @sort_order=="batch_name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('batch_name')} &#8595;", :url=>{:action=>"fee_collection_details",:sort_order=>"batch_name ASC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% elsif @sort_order=="batch_name ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('batch_name')} &#8593;", :url=>{:action=>"fee_collection_details",:sort_order=>"batch_name DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('batch_name')}", :url=>{:action=>"fee_collection_details",:sort_order=>"batch_name DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="category_name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('category_name')} &#8595;", :url=>{:action=>"fee_collection_details",:sort_order=>"category_name ASC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% elsif @sort_order=="joining_date ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('category_name')} &#8593;", :url=>{:action=>"fee_collection_details",:sort_order=>"category_name DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('category_name')}", :url=>{:action=>"fee_collection_details",:sort_order=>"category_name DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="start_date DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('start_date')} &#8595;", :url=>{:action=>"fee_collection_details",:sort_order=>"start_date ASC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% elsif @sort_order=="start_date ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('start_date')} &#8593;", :url=>{:action=>"fee_collection_details",:sort_order=>"start_date DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('start_date')}", :url=>{:action=>"fee_collection_details",:sort_order=>"start_date DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="end_date DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('end_date')} &#8595;", :url=>{:action=>"fee_collection_details",:sort_order=>"end_date ASC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% elsif @sort_order=="end_date ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('end_date')} &#8593;", :url=>{:action=>"fee_collection_details",:sort_order=>"end_date DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('end_date')}", :url=>{:action=>"fee_collection_details",:sort_order=>"end_date DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="due_date DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('end_date')} &#8595;", :url=>{:action=>"fee_collection_details",:sort_order=>"due_date ASC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% elsif @sort_order=="due_date ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('due_date')} &#8593;", :url=>{:action=>"fee_collection_details",:sort_order=>"due_date DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('due_date')}", :url=>{:action=>"fee_collection_details",:sort_order=>"due_date DESC",:batch_id=>params[:batch_id]} %>
+          </td>
+        <% end %>
+      </tr>
+      <% page_count=0 %>
+      <% @fee_collection.each_with_index do |f,@i| %>
+        <% if params[:page].present? %>
+          <% if params[:page].to_i >= 1 %>
+            <% @i = @i  + (params[:page].to_i - 1) * @fee_collection.per_page.to_i %>
+          <% end %> <%else %> <% @i = @i %>
+        <% end %>
+        <% page_count+=1 %>
+        <tr class="tr-<%= cycle('odd', 'even') %>">
+          <td class="col-5"> <%=@i+1 %></td>
+          <% if @sort_order=="name ASC" or @sort_order=="name DESC" %>
+            <td class="col-2 batch_order_select"><%= f.name %></td>
+          <% else %>
+            <td class="col-2"><%= f.name %></td>
+          <% end %>
+          <% if @sort_order=="batch_name ASC" or @sort_order=="batch_name DESC" %>
+            <td class="col-2 batch_order_select"><%=link_to  "#{f.code}-#{f.batch_name}" ,{:action=>'batch_students',:id=>f.batch_id} %></td>
+          <% else %>
+            <td class="col-2"><%=link_to  "#{f.code}-#{f.batch_name}" ,{:action=>'batch_students',:id=>f.batch_id} %></td>
+          <% end %>
+          <% if @sort_order=="category_name ASC" or @sort_order=="category_name DESC" %>
+            <td class="col-2 batch_order_select"><%= f.category_name %></td>
+          <% else %>
+            <td class="col-2"><%= f.category_name %></td>
+          <% end %>
+          <% if @sort_order=="start_date ASC" or @sort_order=="start_date DESC" %>
+            <td class="col-4 batch_order_select"><%=f.start_date %></td>
+          <% else %>
+            <td class="col-4"><%= f.start_date %></td>
+          <% end %>
+          <% if @sort_order=="end_date ASC" or @sort_order=="end_date DESC" %>
+            <td class="col-4 batch_order_select"><%=f.end_date %></td>
+          <% else %>
+            <td class="col-4"><%= f.end_date %></td>
+          <% end %>
+          <% if @sort_order=="due_date ASC" or @sort_order=="due_date DESC" %>
+            <td class="col-4 batch_order_select"><%=f.due_date %></td>
+          <% else %>
+            <td class="col-4"><%= f.due_date %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+    <% unless @fee_collection.per_page.to_i > @fee_collection.total_entries.to_i %>
+      <div class="pagination_list">
+        <div class="pagination_text">
+          <%= "#{t('showing')} #{@i+1-(page_count-1)}-#{@i+1} #{t('of')} #{@fee_collection.total_entries}" %>
+        </div>
+        <%= will_paginate @fee_collection,:renderer => 'RemoteLinkRenderer' ,:page_links=>false ,:params=>{:sort_order=>@sort_order,:batch_id=>params[:batch_id]}%>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="flash-msg"> <%= t('no_fee_collection_present') %></p>
+  <% end %>
+</div>

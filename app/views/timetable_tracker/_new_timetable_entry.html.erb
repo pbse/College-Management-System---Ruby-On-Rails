@@ -1,0 +1,11 @@
+<div class="change_title"><%= "#{t('changed_to')} "%></div>
+<div class="new_entry">
+  <div class="subject"><%= @timetable_swap.subject.name%></div>
+  <div class="teacher"><%= "#{t('teacher')} :"%> <span class="teacher_name"><%= @timetable_swap.employee.full_name %></span></div>
+</div>
+<div class="edit_link">
+  <%=link_to_remote "#{t('delete_text')}", :url=>{:action=>'timetable_swap_delete',:timetable_entry_id=>params[:timetable_entry_id],:batch_id=>params[:batch_id],:date=>params[:date],:timetable_swap_id=>@timetable_swap.id},:html=>{:class=>"themed_text"},:confirm => t('delete_confirm_msg')%>
+</div>
+<div class="edit_link">
+  <%=link_to_remote "#{t('edit_text')}", :url=>{:action=>'timetable_swap_from',:timetable_entry_id=>params[:timetable_entry_id],:batch_id=>params[:batch_id],:date=>params[:date],:timetable_swap_id=>@timetable_swap.id},:success=>"$('link_#{params[:timetable_entry_id]}').show();$('entry_#{params[:timetable_entry_id]}').hide();" ,:html=>{:class=>"themed_text"}%>
+</div>

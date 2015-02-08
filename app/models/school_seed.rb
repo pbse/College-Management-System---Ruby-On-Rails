@@ -1,0 +1,3 @@
+class SchoolSeed < RecordUpdate
+
+end

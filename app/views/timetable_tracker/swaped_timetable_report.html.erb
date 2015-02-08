@@ -1,0 +1,44 @@
+<div id="content-header">
+
+  <%= show_header_icon %>
+  <h1><%= t('timetable_text') %></h1>
+  <div class='header-sep'>|</div>
+  <div class='sub-header'><%= "#{t('swaped_timetable')} #{t('report')}" %> </div>
+
+</div>
+
+<div id="page-yield">
+  <div class="bread_crumb">
+    <%= link_to "#{t('timetable_tracker')}",:action => "index" %> <div class = "bread-crumb-separator"> > </div>
+    <%= "#{t('swaped_timetable')} #{t('report')}" %>
+  </div>
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+  <% form_remote_for :employee_details ,:url=>{:action=>'swaped_timetable_report'} ,:loading=>"$('loader').show();",:loaded=>"$('loader').hide();" do |f| %>
+    <div class="filter">
+      <div class="label-field-pair">
+        <label for="employee_detais"><%= t('from') %></label>
+        <div class="text-input-bg">
+          <%= calendar_date_select_tag 'employee_details[from]', I18n.l(Date.today,:format=>:default),:year_range => 15.years.ago..0.years.from_now,:popup=>"force" %>
+        </div>
+      </div>
+      <div class="label-field-pair">
+        <label for="employee_detais"><%= t('to') %></label>
+        <div class="text-input-bg">
+          <%= calendar_date_select_tag 'employee_details[to]', I18n.l(Date.today,:format=>:default),:year_range => 15.years.ago..0.years.from_now,:popup=>"force" %>
+        </div>
+      </div>
+    </div>
+    <%= submit_tag "► #{t('search_text')}", :class=> 'submit_button', :disable_with => "#{t('please_wait')}"  %>  <%= image_tag("loader.gif",
+      :align => "absmiddle",
+      :border => 0,
+      :id => "loader",
+      :style =>"display: none;" ) %>
+  <% end %>
+  <div class="extender"></div>
+  <div class="hor_line1"></div>
+  <div id="information">
+    <%= render  :partial => 'employee_details'%>
+  </div>
+</div>

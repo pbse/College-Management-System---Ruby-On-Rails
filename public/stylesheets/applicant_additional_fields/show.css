@@ -1,0 +1,119 @@
+
+#category-list {
+    clear : both;
+    padding : 10px 0 40px 0px;
+    width:960px;
+    margin:0px auto;
+}
+
+#category-list .listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    min-height : 1.5em;
+    overflow: auto;
+    list-style-type : none;
+    padding : 0.5em 0 0 1em;
+}
+
+#category-list .listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    min-height : 1.5em;
+    overflow: auto;
+    list-style-type : none;
+    padding : 0.5em 0 0 1em;
+}
+
+#category-list .heading {
+    background:none repeat scroll 0 0 #BECFFB;
+    border-bottom:2px solid #BECFFB;
+    color:#444444;
+    height:1.5em;
+    list-style-type:none;
+    padding:0.5em 0 0 1em;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#category-list li div {
+    float : left;
+}
+#category-list li div.category-name {
+    width : 230px;
+    font-weight: bold;
+    font-size:13px;
+}
+#category-list li div a {
+    color: #444;
+    font-size: 14px;
+    text-decoration: none;
+}
+.category-list li div a:hover {
+    color : #d00;
+    text-decoration: underline;
+}
+
+#category-list li div.category-name,  #category-list li div.field-value{
+    width: 300px;
+    font-size: 13px;
+    text-align: left;
+}
+#category-list li div.category-type {
+    width: 80px;
+    font-size: 13px;
+    text-align: left;
+}
+
+#category-list li div a {
+    color: #444;
+    font-size: 13px;
+    text-decoration: none;
+}
+.heading{
+    text-align: left;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+.sl_no{
+    width: 50px;
+    color: #444;
+    font-size: 13px;
+    text-decoration: none;
+}
+.message_count{
+    background-color: white;
+    color: #444;
+    text-align: left;
+    font-size: 13px;
+    height: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+#category-list li div.category-toggle{
+    font-size: 13px ;
+    width: 100px;
+    text-align: left;
+}
+#category-list li div.category-edit, #category-list div.category-delete{
+    font-size: 13px ;
+    width: 50px;
+    text-align: left;
+}
+#category-list div.pos {
+    font-size: 13px ;
+    width: 50px;
+    padding-right: 10px;
+    text-align: left;
+}
+#category-list li div.category-edit, #category-list li div.category-delete {
+    font-size: 13px;
+}
+.inactive{
+    visibility: hidden;
+}
+.category-status{
+    width: 60px;
+    font-size: 13px;
+}

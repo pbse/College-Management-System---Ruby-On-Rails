@@ -1,0 +1,50 @@
+
+<div id="right-inner-div" class="less-height">
+<%# all_links = all_links + all_links + all_links %>
+  <% parent_links = all_links.select{|s| s.higher_link_id.nil?}.sort_by{|a|a.name} %>
+  <div id="col_0" class="menu_cols"></div>
+  <div id="col_1" class="menu_cols"></div>
+  <div id="col_2" class="menu_cols"></div>
+  <% parent_links.each do|link| %>
+    <% allowed_sub_links = all_links.select{|s| s.higher_link_id == link.id}.sort_by{|a|a.name}  %>
+    <% own_sub_links = own_links.select{|s| s.higher_link_id == link.id}.sort_by{|a|a.name} %>
+    <% field_value = 0 %>
+    <% if own_links.include?(link) %>
+      <% selected_sub_links = allowed_sub_links.collect(&:id) & own_sub_links.collect(&:id) %>
+      <% if allowed_sub_links.collect(&:id).sort == selected_sub_links.sort %>
+        <% field_value = 1 %>
+      <% else %>
+        <% field_value = 2 %>
+      <% end %>
+    <% end %>
+    <div class="parent-link">
+      <div class="box-check img-<%= field_value.to_s %>" onclick="modify_parent_field_value(this)">
+        <%= hidden_field_tag "#{link.name}", field_value, :class=>"hidden-box", :id=>"hidden-#{link.id}", :autocomplete=>:off %>
+      </div>
+      <% unless allowed_sub_links.empty? %>
+        <%= link_to "<div class='parent-text themed_hover_text'><label class='parent-label'>#{link.name.titleize}</label></div>", "#" %>
+        <div class="child-link-box" style="display:none;">
+          <% allowed_sub_links.each do|sub_link| %>
+            <% sub_field_value = 0 %>
+            <% if own_sub_links.collect(&:id).include?(sub_link.id) %>
+              <% sub_field_value = 1 %>
+            <% end %>
+            <div class="check-text-pair">
+              <div class="sub-box-check img-<%= sub_field_value.to_s %>" onclick="modify_field_value(this)">
+                <%= hidden_field_tag "#{sub_link.name}", sub_field_value, :class=>"sub-hidden-box", :id=>"hidden-#{sub_link.id}", :autocomplete=>:off %>
+              </div>
+              <div class='sub-link-text'><%=sub_link.name.titleize%></div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class='parent-text'><label class='plain-text-label'><%=link.name.titleize%></label></div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="arrow-right" style="display:none;"></div>
+  <div class="arrow-left" style="display:none;"></div>
+</div>
+<div class="right-bottom-text">
+  Enable or disable the features you want to see in Quick Links. Click on the feature name to access submenu items.
+</div>

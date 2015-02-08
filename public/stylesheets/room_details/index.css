@@ -1,0 +1,105 @@
+.name{
+    color: #000;
+    float: left;
+    width: 181px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.val {
+    width:auto;
+     font-size: 14px;
+    margin-bottom: 21px;
+}
+.val span{
+    margin-right:12px;
+   float:left;
+}
+.links a {
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    margin: 0 auto;
+    text-decoration: none;
+    float:left;
+}
+.links a:hover{
+    background:  #373B3F;
+}
+.links .delete_link{margin-left: 30px;}
+
+.reserve_button {
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    margin: 0 auto;
+    margin-right:20px;
+    text-decoration: none;
+    float:left;
+}
+.reserve_button:hover{
+    background:  #373B3F;
+}
+.links {
+margin:0 auto;
+padding-top:30px;
+text-align:center;
+width:339px;
+margin-bottom: 20px;
+clear:both;
+}
+.detail_box{
+    width:330px;
+    float:left;
+}
+#book_reserve{
+    margin-top:40px;
+}
+#book_reserve p{
+    color:#bb0000;
+    font-weight:bold;
+}
+table#list_warden{
+    padding:5px 5px 5px 10px;
+text-align:left;
+width:200px;
+}
+table#list_warden td a {
+color:#27292B;
+font-size:11px;
+text-decoration:none;
+}
+span.row_{
+    float:left;
+    width:440px;
+}
+.val .cont{
+    width:240px;
+    word-wrap: break-word;
+    color: #bb0000;
+}
+table#listing{
+    margin-right:12px;
+}
+#page-yield {
+    margin-top: 50px;
+}
+.pagination {
+    float: right;
+    margin-right: 75px;
+    margin-top: -30px;
+    position: relative;
+}

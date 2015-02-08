@@ -1,0 +1,10 @@
+root {
+    display: block;
+}
+
+#content-header img {
+    border: 0 none;
+    float: right;
+    margin: 0;
+    padding: 2px;
+}

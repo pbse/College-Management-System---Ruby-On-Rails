@@ -1,0 +1,171 @@
+#fees-table{
+    padding-top: 10px;
+    width: 840px;
+    height:auto;
+    margin-bottom: 35px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.fees-th {
+    background: none repeat scroll 0 0 #BECFFB;
+    border-bottom: 1px solid #BECFFB;
+    font-weight: normal;
+    height: 1.5em;
+    list-style-type: none;
+    padding: 0.5em 1em 0 0;
+}
+
+.fees-table-payee{
+    float:right;
+    width:305px;
+    padding-right:65px;
+}
+.fees-table-category{
+    padding-right:100px;
+    float:right;
+    width:150px;
+}
+.fees-table-amount{
+    padding-right:50px;
+    float:right;
+    width:75px;
+}
+.fees-table-date{
+    padding-right:50px;
+    float:right;
+    width:75px;
+}
+.fees-table-reciept{
+    margin-right:50px;
+    float:right;
+    width:75px;
+    text-align: left;
+}
+
+.fees-table-total-amount {
+    float: left;
+    margin-left: 75px;
+}
+.fees-table-total-name {
+    float: right;
+    margin-right: 286px;
+    width: auto;
+}
+
+.listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em;
+    list-style-type : none;
+    padding: 10px 16px 0 0;
+    font-size: 14px;
+    width:824px;
+
+}
+
+.listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em;
+    list-style-type : none;
+    padding: 10px 16px 0 0;
+    font-size: 14px;
+    width:824px;
+
+}
+
+#fees_report_title{
+}
+.fees-table-description a{
+    width: 254px;
+    text-decoration: none;
+    color: #444444;
+}
+
+.fees-table-description a:hover{
+    width: 254px;
+    text-decoration: none;
+    color: #BB0000;
+}
+
+.report-detail{
+
+    float: right;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #444;
+
+}
+
+.report-detail-left{
+    width: 440px;
+    float:right;
+    height:15px;
+    padding: 10px;
+    font-size: 13px;
+}
+.report-detail-right{
+    float: left;
+    width: 297px;
+    padding: 10px;
+    font-size: 13px;
+}
+.report-detail-right2{
+    float:right;
+    width:400px;
+}
+.report-detail-right-payment_mode{
+    float:right;
+    width: 140px;
+}
+.report-detail-right-payment_note{
+    float:right;
+    width: 140px;
+}
+.report-detail-left-name{
+    width: 140px;
+    float:right;
+    margin-right: 10px;
+}
+.report-detail-left-value{
+    width: 272px;
+    float:right;
+    word-break: break-word;
+}
+.report-detail-right-name{
+    width: 93px;
+    float:right;
+}
+.report-detail-right-value{
+    width: 440px;
+    float:right;
+    word-break: break-word;
+}
+.report-detail-right-value1{
+    width: 169px;
+    float:right;
+    word-break: break-word;
+}
+p{
+    margin-top:-15px;
+    margin-right:10px
+}
+.report_left{
+    float:right;
+    width:50%;
+}
+.report_right{
+    float:left;
+    width:48%;
+}
+.notes{
+    width: 680px;
+
+    height: 44px;
+    font-size: 13px;
+    margin-right: 10px;
+    color: #444;
+}

@@ -1,0 +1,20 @@
+table#listing .tr-odd td{
+    color: #27292B;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px;
+}
+
+table#listing .tr-even td{
+    color: #27292B;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px;
+}
+
+.necessary-field {
+    color : #f00;
+    font-size : 1.1em;
+}

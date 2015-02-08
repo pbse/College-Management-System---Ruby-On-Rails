@@ -1,0 +1,6 @@
+<div class="label-field-pair">
+  <label for="subject_id">Select Subject</label>
+  <div  class="text-input-bg" id="exam-group-select">
+    <%=select :subject_report,:subject_id, @subjects.map{|a| [a.name,a.id]},:prompt=> "Select Subject" %>
+  </div>
+</div>

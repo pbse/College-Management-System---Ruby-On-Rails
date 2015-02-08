@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.grading_level_detail{
+  @grading_levels.each do |grading_level|
+    @grading_level = grading_level
+    @xml.grading_level do
+      @xml.name(@grading_level.name)
+      @xml.batch(@grading_level.batch.try(:full_name))
+      @xml.min_score(@grading_level.min_score)
+      @xml.is_deleted(@grading_level.is_deleted)
+      @xml.credit_points(@grading_level.credit_points)
+      @xml.description(@grading_level.description)
+    end
+  end
+}%>
+
+

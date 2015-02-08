@@ -1,0 +1,232 @@
+<script type="text/javascript">
+  j(document).ready(function() {
+    j(".cat-outline").each(function(){
+      var column_no = 0;
+      j(this).find( ".parents-link" ).each(function() {
+        j(this).parent().find("#col-"+column_no).append(this);
+        column_no+=1;
+        if(column_no==4)
+          column_no=0;
+      });
+      j(this).css("display","block");
+    });
+  });
+  function modify_field_value(th_is){
+    var box = j(th_is);
+    var h_field = box.find(".sub-hidden-box");
+    if(h_field.val()==1)
+      h_field.val(0);
+    else
+      h_field.val(1);
+    modify_box_icon(h_field);
+    sync_parent_checkbox(box);
+  }
+  function modify_box_icon(th_is){
+    var h_field = j(th_is);
+    var box = h_field.parent();
+    if(h_field.val()==0){
+      box.removeClass("img-1");
+      box.addClass("img-0");
+    }
+    else {
+      box.removeClass("img-0");
+      box.addClass("img-1");
+    }
+  }
+  function modify_parent_field_value(th_is){
+    var box = j(th_is);
+    var h_field = box.find(".hidden-box");
+    if(h_field.val()==0)
+      h_field.val(1);
+    else if(h_field.val()==1){
+      var child_box = box.parent().find(".child-links");
+      if(child_box.length==0){
+        h_field.val(0);
+      }
+      else{
+        h_field.val(2);
+      }
+    }
+    else{
+      h_field.val(0);
+    }
+    modify_parent_box_icon(h_field);
+  }
+  function modify_parent_box_icon(th_is){
+    var h_field = j(th_is);
+    var box = h_field.parent();
+    var child_box = box.parent().find(".child-links");
+    if(h_field.val()==0){
+      box.removeClass("img-1");
+      box.removeClass("img-2");
+      box.addClass("img-0");
+      if(child_box.length !== 0){
+        child_box.find(".check-text-pair").each(function(){
+          var sub_hidden = j(this).find(".sub-box-check").find(".sub-hidden-box");
+          sub_hidden.val(0);
+          modify_box_icon(sub_hidden);
+        })
+      }
+    }
+    else if(h_field.val()==1){
+      box.removeClass("img-0");
+      box.removeClass("img-2");
+      box.addClass("img-1");
+      if(child_box.length !== 0){
+        child_box.find(".check-text-pair").each(function(){
+          var sub_hidden = j(this).find(".sub-box-check").find(".sub-hidden-box");
+          sub_hidden.val(1);
+          modify_box_icon(sub_hidden);
+        })
+      }
+    }
+    else {
+      box.removeClass("img-0");
+      box.removeClass("img-1");
+      box.addClass("img-2");
+      if(child_box.length !== 0){
+        child_box.find(".check-text-pair").each(function(){
+          var sub_hidden = j(this).find(".sub-box-check").find(".sub-hidden-box");
+          sub_hidden.val(0);
+          modify_box_icon(sub_hidden);
+        })
+      }
+    }
+  }
+
+  function sync_parent_checkbox(th_is){
+    var sub_check = j(th_is);
+    var h_vals = [];
+    var child_box = sub_check.parent().parent();
+    var parent_link = child_box.parent();
+    child_box.find(".check-text-pair").each(function(){
+      h_vals.push(j(this).find(".sub-box-check").find(".sub-hidden-box").val());
+    })
+    var val_flag = 0;
+    if(j.inArray("1", h_vals) !== -1){
+      val_flag += 1;
+    }
+    if(j.inArray("0", h_vals) !== -1){
+      val_flag += 2;
+    }
+    box = parent_link.find(".box-check");
+    if(val_flag==1){
+      box.find(".hidden-box").val(1);
+      box.removeClass("img-0");
+      box.removeClass("img-2");
+      box.addClass("img-1");
+    }
+    else if((val_flag==2)||(val_flag==3)){
+      box.find(".hidden-box").val(2);
+      box.removeClass("img-1");
+      box.removeClass("img-0");
+      box.addClass("img-2");
+    }
+  }
+  function show_sub_links(th_is){
+    c_link = j(th_is);
+    child_link = c_link.parent().find(".child-links")
+    if(child_link.length !== 0){
+      if(child_link.is(':hidden')){
+        j(".child-links").each(function(){
+          if(j(this).not(':hidden')){
+            j(this).slideUp();
+            j(this).parent().find(".sub-switch").html("&#9660;")
+          }
+        })
+        child_link.slideDown();
+        c_link.find(".sub-switch").html("&#9650;");
+      }
+      else{
+        child_link.slideUp();
+        c_link.find(".sub-switch").html("&#9660;");
+      }
+    }
+  }
+  function update_quick_links(){
+    var selected_options = [];
+    j(".hidden-box").each(function() {
+      if((j(this).val()==1) || (j(this).val()==2))
+      {
+        link_id = j(this).attr('id').replace("hidden-","");
+        selected_options.push(link_id);
+      }
+    })
+    j(".sub-hidden-box").each(function() {
+      if(j(this).val()==1)
+      {
+        link_id = j(this).attr('id').replace("hidden-","");
+        selected_options.push(link_id);
+      }
+    })
+    j.ajax({
+      type: 'POST' ,
+      url: "/user/update_quick_links",
+      data : {
+        selected_links : selected_options
+      },
+       success : function(data){
+         window.open("/user/manage_quick_links","_self");
+       }
+    })
+  }
+</script>
+<% unless flash[:notice].nil? %>
+  <p class="flash-msg"> <%= flash[:notice] %> </p>
+<% end %>
+<div class="header-panel">
+  <div class="bold-header"><%= t("manage_quick_links") %></div>
+  <div class="header-note"><%= t("quick_links_note") %></div>
+  <div class="button-div">
+    <%= link_to t('submit'), "#", {:class  => 'themed_bg', :id => 'save-link', :onClick=>'update_quick_links(); return false;'}%>
+    <%= link_to t('cancel'), {:controller=>"user",:action=>"dashboard"}, {:class  => 'buttons-link themed_hover_text', :id => 'menu-cancel'}%>
+  </div>
+</div>
+<% @available_categories.each do|c| %>
+  <% parent_links = @allowed_links.select{|a| (a.menu_link_category_id==c.id and a.higher_link_id.nil?)}.sort_by{|s|s.name} %>
+  <div class="cat-outline" style="display:none;">
+    <div class="cat-header"><%= t(c.name) %></div>
+    <div class="cat-cols" id="col-0"></div>
+    <div class="cat-cols" id="col-1"></div>
+    <div class="cat-cols" id="col-2"></div>
+    <div class="cat-cols" id="col-3"></div>
+    <% parent_links.each do|link| %>
+      <% allowed_sub_links = @allowed_links.select{|s| s.higher_link_id == link.id}.sort_by{|a|a.name}  %>
+      <% own_sub_links = @own_links.select{|s| s.higher_link_id == link.id} %>
+      <% field_value = 0 %>
+      <% if @own_links.include?(link) %>
+        <% selected_sub_links = allowed_sub_links.collect(&:id) & own_sub_links.collect(&:id) %>
+        <% if allowed_sub_links.collect(&:id).sort == selected_sub_links.sort %>
+          <% field_value = 1 %>
+        <% else %>
+          <% field_value = 2 %>
+        <% end %>
+      <% end %>
+      <div class="parents-link themed_hover_text">
+        <div class="box-check img-<%= field_value.to_s %>" onclick="modify_parent_field_value(this)">
+          <%= hidden_field_tag "#{link.name}", field_value, :class=>"hidden-box", :id=>"hidden-#{link.id}", :autocomplete=>:off %>
+        </div>
+        <% unless allowed_sub_links.empty? %>
+          <%= link_to "<div class='parents-text themed_hover_text'><label class='parent-label'>#{t(link.name)}</label></div><div class='sub-switch'>&#9660;</div>", "#",{:onClick=>"show_sub_links(this); return false;"} %>
+          <div class="child-links" style="display:none;">
+            <% allowed_sub_links.each do|sub_link| %>
+              <% sub_field_value = 0 %>
+              <% if own_sub_links.collect(&:id).include?(sub_link.id) %>
+                <% sub_field_value = 1 %>
+              <% end %>
+              <div class="check-text-pair">
+                <div class="sub-box-check img-<%= sub_field_value.to_s %>" onclick="modify_field_value(this)">
+                  <%= hidden_field_tag "#{sub_link.name}", sub_field_value, :class=>"sub-hidden-box", :id=>"hidden-#{sub_link.id}", :autocomplete=>:off %>
+                </div>
+                <div class='sub-link-text'><%=t(sub_link.name)%></div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class='parents-text themed_hover_text'><label class='plain-text-label'><%=t(link.name)%></label></div>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+<% end %>

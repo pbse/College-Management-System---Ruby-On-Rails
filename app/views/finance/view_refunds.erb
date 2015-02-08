@@ -1,0 +1,106 @@
+<div id="content-header">
+  <%= show_header_icon %>
+  <h1><%= t('view_refunds') %></h1>
+  <div class='header-sep'>|</div>
+  <div class='sub-header'><%= t('view_refunds') %></div>
+
+
+
+</div>
+
+<div id="page-yield">
+  <div class="bread_crumb">
+    <%= link_to t('finance_text'), :controller => "finance", :action=>"index" %> <div class = "bread-crumb-separator"> > </div>
+    <%= t('view_refunds') %>
+  </div>
+  <div class="both">
+    <div id="search_box_bg">
+      <label for="user_name"><%= t('search_by') %></label>
+      <div class="text-input-bg"><%= select :leave_management_all, :department_id, [t('date_text'),t('student_name'),t('fee_collection_name')],
+          {:selected=>'value'},
+          {:onChange => "change(value);"} %>
+        <%= image_tag("loader.gif", :align => "absmiddle", :border => 0, :id => "loader", :style =>"display: none;" ) %>
+      </div>
+    </div>
+    <div id="search_box_bg1" class="search">
+      <form name="search_form" action="" style="display:inline;">
+        <%= hidden_field_tag("option", params['option'], :value => t('student_name')) %>
+        <label for="user_name"><%= t('search_text') %>
+          <%= image_tag("loader.gif",
+            :align => "absmiddle",
+            :border => 0,
+            :id => "loader_search",
+            :style =>"display: none;" ) %>
+        </label>
+        <div id="search_textbox">
+          <%= text_field_tag("query", params['query'], :autocomplete => 'off') %>
+
+        </div>
+
+        <div class="extender"></div>
+      </form>
+    </div>
+
+    <div id="search_box_bg" class="box">
+      <% remote_form_for(:student, :url => {:action=> 'refund_filter_by_date'},:before => "Element.show('loader_date')",:success => "Element.hide('loader_date')", :html=> {:multipart=>true,:id=>"date_search_form"}) do |s| %>
+        <div class="date-select"><div class="date-search">
+            <label for="student_date_of_birth"><%= t('start_date') %> </label>
+
+            <%= calendar_date_select_tag 's_date', I18n.l(@date.present? ? @date.to_date : Date.today , :format=> :default),
+              :year_range => 15.years.ago..5.years.from_now, :readonly=>true, :popup=>"force", :onChange => ""%></div>
+          <div class="date-search2"> <label for="student_date_of_birth"><%= t('end_date') %> </label>
+            <%= calendar_date_select_tag 'e_date', I18n.l(@date.present? ? @date.to_date : Date.today , :format=> :default),
+              :year_range => 15.years.ago..5.years.from_now, :readonly=>true, :popup=>"force", :onChange => "Element.show('loader_date');date();"%>
+            <%= image_tag("loader.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "loader_date",
+              :style =>"display: none; margin-bottom:10px;" ) %>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+
+  </div>
+  <script type="text/javascript">
+    function date(){
+      $$('#date_search_form')[0].request();
+    }
+    function change(k){
+      $('option').value=k;
+      var myarr=["<%=t('student_name')%>","<%=t('fee_collection_name')%>"]
+      var contains = (myarr.indexOf(k) > -1);
+      if(contains){
+        $$('.search')[0].show();
+        $$('.box')[0].hide();
+
+      }
+      else{
+        $$('.search')[0].hide();
+        $$('.box')[0].show();
+      }
+    }
+    function search_ajax(){
+      if ($('query').value.include("%")) return;
+<%="#{remote_function(:url => {:action => "search_fee_refunds"},
+:with => "'query='+$('query').value + '&option='+$('option').value",
+:before => "Element.show('loader_search')",
+:success => "Element.hide('loader_search')",
+:update=>"deleted_transactions"
+)}"%>
+  }
+
+  document.observe("dom:loaded", function() {
+    $$('.search')[0].hide();
+    new Form.Element.Observer('query', 1, search_ajax);
+  });
+
+  </script>
+  <div class="transaction-margin" style="height:40px"></div>
+  <div id="search_div" style="margin-top:40px;">
+    <div id="deleted_transactions">
+      <%= render :partial => 'finance/view_refunds' %>
+    </div>
+  </div>
+</div>

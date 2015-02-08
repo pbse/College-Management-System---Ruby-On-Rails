@@ -1,0 +1,115 @@
+#submit-button input{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin-right:212px;
+    margin-top:34px;
+    padding:7px 10px;
+    border:none;
+    cursor:pointer;
+}
+
+#box{
+    margin: 0 auto;
+    width: 500px;
+    padding-top: 30px;
+}
+
+.text-input-bg {
+    background: none repeat scroll 0 0 transparent;
+    float: right;
+    height: 35px;
+    overflow: hidden;
+    width: 270px;
+}
+
+.option_label_field p {
+/*    float: right;*/
+    color: #444444;
+    font-size: 14px;
+    /*font-weight: 600;*/
+    margin-top: 13px;
+    width: 125px;
+}
+
+
+#option_text_field_bg {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 205px;
+    margin: 4px 0 50px;
+    padding: 8px 7px 8px 9px;
+    width: 586px;
+}
+.option_label_field {
+    width:285px;
+}
+.option_label_field label {
+    font-weight:600;
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+}
+
+#option_text_field_bg input {
+    width:615px;
+    height:33px;
+    background:transparent;
+    border:none;
+    padding-right:10px;
+    padding-top:5px;
+    font-weight:bold;
+    font-size:25px;
+}
+
+#option_text_field_bg textarea {
+    background:transparent;
+    border:2px solid #ddd;
+}
+
+
+tr.mceLast td.mceIframeContainer iframe{
+    height: 150px !important;
+}
+
+table.mceLayout{
+    height: 200px !important;
+}
+
+.label-field-pair2 {
+    height: 40px;
+    padding-top: 3px;
+    width: 600px;
+    margin-right: 466px;
+}
+
+.label-field-pair2 input {
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 17px;
+    margin: 10px 25px 0 0;
+    padding: 5px;
+    width: 27px;
+}
+
+.label-field-pair2 label {
+    color: #444444 ;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding-top: 10px;
+    width: 80px;
+}
+#option_text_field_bg .redactor_editor{
+    height: 124px !important;
+}

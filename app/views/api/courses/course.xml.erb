@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.course_detail{
+  @xml.course do
+    @xml.course_name(@course.course_name)
+    @xml.course_code(@course.code)
+    @xml.section_name(@course.section_name)
+    @xml.grading_type(@course.grading_type == 0 ? "Normal" : Course::GRADINGTYPES[@course.grading_type.to_s])
+  end
+}%>

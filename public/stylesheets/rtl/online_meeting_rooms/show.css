@@ -1,0 +1,21 @@
+.meeting
+{
+    font-size:16px;
+}
+.space
+{
+    margin-right: 23px;
+}
+.space1
+{
+    margin-right: 28px;
+}
+#page-yield {
+    margin: 59px 0;
+}
+table#listing td.col-1 {
+    width: 5%;
+}
+table#listing td.col-2 {
+    width: 25%;
+}

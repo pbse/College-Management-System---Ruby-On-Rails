@@ -1,0 +1,250 @@
+.label-indent
+{
+    color: #444444;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding-top: 10px;
+    width: 200px;
+}
+
+
+.label-field-show {
+    height : 30px;
+    width : 400px;
+    padding: 3px 0 17px 0;
+    float:right;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+.label-container1 {
+color:#444444;
+display:block;
+float:right;
+font-size:14px;
+font-weight:60;
+ padding: 0px;
+padding-top:5px;
+width:180px;
+margin : 5px 10px 0 0;
+ height:17px;
+}
+
+.label-output {
+    float:right;
+    margin : 5px 10px 0 0;
+    width : 180px;
+    height:17px;
+    font-size:14px;
+    padding: 5px;
+display:block;
+font-weight: bold;
+}
+
+
+.label-field-nest {
+    height : 20px;
+    width : 160px;
+    padding: 3px 0 17px 0;
+    float:right;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.label-cont {
+    float:right;
+    margin : 5px 10px 0 0;
+    width : 60px;
+    height:16px;
+    font-size:13px;
+    padding: 0px;
+    font-weight:30;
+   display:block;
+
+}
+.label-nest {
+    float:right;
+    margin : 5px 10px 0 0;
+    width : 80px;
+    height:17px;
+    font-size:12px;
+    padding: 0px;
+   display:block;
+   font-weight: bold;
+}
+.autofill-area-nest .label-field-nest {
+    margin:0 0 10px 95px;
+     width : 200px;
+}
+
+.label-field-total {
+    height : 20px;
+    width : 170px;
+    padding: 3px 0 17px 0;
+    float:left;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.submit_pdf {
+    margin-top:20px;
+    margin-right:10px;
+    padding: 7px 10px;
+    color: #fff;
+    float:right;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    text-decoration:none;
+
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+
+
+
+.hor_line{
+    width:800px;
+    background: #333333;
+    height: 1px;
+}
+
+h2.heading{
+    text-align: center;
+    margin:5px;
+}
+
+#main_info h4{
+    color: black;
+    margin-top: 18px;
+    font-weight: normal;
+    font-size: 25px;
+    margin-bottom: 2px;
+}
+
+
+
+#page-yield {
+    width:800px;
+    margin: 0 auto;
+    float: right;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+
+
+
+
+.odd{
+    height:auto;
+    background: #EEEEEE;
+
+}
+
+.even{
+
+    height:auto;
+    background: #fff;
+
+
+}
+tr.even{
+    border: 1px solid #ADACAB;
+}
+
+tr.odd{
+    border: 1px solid #ADACAB;
+}
+
+.even td{
+
+    padding: 12px 15px 12px 12px;
+    border: 1px solid #ADACAB;
+    border-left: 0px solid #fff;
+    border-top: 0px solid #fff;
+
+}
+
+.odd td{
+    padding: 12px 15px 12px 12px;
+    border: 1px solid #ADACAB;
+    border-left: 0px solid #fff;
+    border-top: 0px solid #fff;
+
+}
+
+.table-header td{
+    padding: 12px 15px 12px 12px;
+    border-top: 1px solid #ADACAB;
+    border-right: 1px solid #ADACAB;
+    border-left: 1px solid #ADACAB;
+    color: #97080e;
+    background: #EEEEEE;
+}
+
+table#pdf-table{
+    border-top: 1px solid #ADACAB;
+    border-collapse:collapse;
+}
+
+
+#page-extender{
+    width:100%;
+    height :300px;
+
+}
+#page-extender1{
+    width:100%;
+    height :500px;
+
+}
+
+.report{
+    min-height: 1000px;
+    margin: 0 auto;
+}
+
+#signature{
+    text-align: left;
+    width: 700px;
+    margin: 0 auto;
+    color: #999999;
+    font-size: 18px;
+}
+
+
+#page-yield h2{
+    text-align: center;
+}
+
+
+.page-break td{
+    height: 300px;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #ADACAB;
+}
+
+td span{
+    color: #990A10;
+}
+
+td.col-8 {
+    text-align: left;
+}
+
+tr.paid *{
+   font-weight: bold;
+}
+.space
+{
+    margin-right: 60px;
+}

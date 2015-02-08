@@ -1,0 +1,96 @@
+.total {
+    float:  right !important;
+    width:  947px !important;
+    height:  auto !important;
+}
+
+#fees-table{
+    padding-top: 10px;
+    width:963px;
+    height:auto;
+}
+.fees-th {
+    background: none repeat scroll 0 0 #BECFFB;
+    border-bottom: 1px solid #BECFFB;
+    font-weight: normal;
+    height: 1.5em;
+    list-style-type: none;
+    padding: 0.5em 1em 0 0;
+}
+
+.fees-table-payee {
+    float: right;
+    padding-right: 35px;
+    width: 210px;
+}
+.fees-table-category {
+    float: right;
+    padding-right: 20px;
+    width: 270px;
+}
+.fees-table-amount {
+    float: right;
+    margin-right: 20px;
+    padding-right: 30px;
+    text-align: left;
+    width: 45px;
+}
+.fees-table-date{
+    padding-right:30px;
+    float:right;
+    width:130px;
+}
+.fees-table-reciept {
+    float: right;
+    margin-right: 40px;
+    text-align: center;
+    width: 53px;
+}
+
+.fees-table-total-amount {
+    float: left;
+    margin-left: 62px;
+    margin-top: -19px;
+}
+
+.fees-table-total-name {
+    float: right;
+    margin-right: 735px;
+    margin-left: 5px;
+}
+
+.listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em;
+    list-style-type : none;
+    padding: 10px 16px 0 0;
+    font-size: 14px;
+    width:947px;
+
+}
+
+.listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em;
+    list-style-type : none;
+    padding: 10px 16px 0 0;
+    font-size: 14px;
+    width:947px;
+
+}
+
+.fees-table-payee a{
+    text-decoration: none;
+    color: #444444;
+}
+
+.fees-table-payee a:hover{
+    text-decoration: none;
+    color: #BB0000;
+}
+#fees_report_title{
+}

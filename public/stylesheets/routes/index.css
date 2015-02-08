@@ -1,0 +1,38 @@
+table {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:700px;
+}
+table#listing td.col-1 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:22%;
+}
+table#listing td.col-2 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:17%;
+}
+table#listing td.col-3 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:18%;
+}
+table#listing td.col-4 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:13%;
+}
+table#listing td.col-5 {
+padding:5px 5px 5px 10px;
+text-align:left;
+width:40%;
+}
+table#listing td a {
+color:#27292B;
+font-size:11px;
+text-decoration:none;
+}
+p{
+    font-size:13px;
+}

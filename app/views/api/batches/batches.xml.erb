@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.batch_detail{
+  @batches.each do |batch|
+    @batch = batch
+    @xml.batch do
+      @xml.name(@batch.name)
+      @xml.course_code(@batch.course.code)
+      @xml.start_date(@batch.start_date)
+      @xml.end_date(@batch.end_date)
+    end
+  end
+}%>
+
+

@@ -1,0 +1,27 @@
+<div class="extender"></div>
+<div class="close_link"><%= link_to_function "#{t('close_text')}" ,:onclick=>"$('list_#{params[:employee_id]}').hide();$('entry_#{params[:employee_id]}').show();",:class=>"themed_text" %></div>
+<% unless @over_time_details.empty?  %>
+  <div class="over_time"><%="#{@over_time_details.count} +" unless @over_time_details.count==0 %></div>
+  <% @over_time_details.each do |ot| %>
+    <div class="field_pair">
+      <div class="label1"> <%= ot.date %></div>
+      <div class="label2"> <span class="label_bold"><%=ot.timetable_entry.employee.nil?? "#{t('deleted_user')}" : ot.timetable_entry.employee.full_name%></span> <%= "&#x200E;(#{ot.timetable_entry.subject.name} -"%><span class="label_bold"><%=" #{ot.timetable_entry.batch.full_name}" %></span>)&#x200E;</div>
+      <div class="label1">  <%= "#{ot.timetable_entry.class_timing.start_time.strftime("%I:%M%P")}-#{ot.timetable_entry.class_timing.end_time.strftime("%I:%M%P")}" %></div>
+      <div class="label2">  <%= t('replaced_by') %> <span class="label_bold"> <%= ot.employee.nil?? "#{t('deleted_user')}": ot.employee.full_name %></span> <%="&#x200E;(#{ot.subject.name} - "%><span class="label_bold"><%="#{ot.timetable_entry.batch.full_name}"%></span>)&#x200E;</div>
+    </div>
+  <% end %>
+<% end %>
+<% unless @over_time_details.empty? or @lagging_details.empty? %>
+  <div class="hor_line"></div>
+<% end %>
+<% unless @lagging_details.empty?  %>
+  <div class="lagging"><%= "#{@lagging_details.count} -" unless @lagging_details.count==0%></div>
+  <%@lagging_details.each do |lag| %>
+    <div class="field_pair">
+      <div class="label1"><%=lag.date  %></div>
+      <div class="label2"><span class="label_bold"><%= lag.employee.nil?? "#{t('deleted_user')}" : lag.employee.full_name %></span><%= "&#x200E; (#{lag.subject.name} - "%><span class="label_bold"><%="#{lag.batch.full_name}" %></span>)&#x200E;</div>
+      <div class="label1"><%= "#{lag.class_timing.start_time.strftime("%I:%M%P")}-#{lag.class_timing.end_time.strftime("%I:%M%P")}" %></div>
+      <div class="label2"><%=t('replaced_by')%><span class="label_bold"> <%= lag.timetable_swaps[0].employee.nil??  "#{t('deleted_user')}" : lag.timetable_swaps[0].employee.full_name %></span> <%="&#x200E; (#{lag.timetable_swaps[0].subject.name} - "%><span class="label_bold"><%="#{lag.batch.full_name}"%></span>)&#x200E;</div>
+    </div>
+  <% end %>
+<% end %>

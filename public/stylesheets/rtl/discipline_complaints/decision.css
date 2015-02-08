@@ -1,0 +1,279 @@
+/*#page-yield {
+    margin : 30px 0;
+    padding:0px 12px 0px 12px;
+}*/
+.label_field_pair {
+    width:600px;
+    height: 40px;
+    padding-top: 3px;
+}
+.label_field_pair input[type="text"] {
+    width:210px;height:28px;
+    background:transparent;
+    border:none;
+    padding-right:10px;
+    padding-top:5px;
+}
+.label_field_pair select {
+    background : #eee;
+    border: none;
+    height: auto;
+    margin: 5px 5px 0 0;
+    width: 220px;
+}
+label-field-pair-text-area{
+    height:110px;
+    padding-top:3px;
+    width:600px;
+}
+.label-field-pair-text-area label{
+    color:#444444;
+    display:block;
+    float:right;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px;
+    padding-top:10px;
+    width:200px;
+}
+.textarea-input-bg {
+    background:none repeat scroll 0 0 transparent;
+    float:right;
+}
+.label-field-pair-text-area textarea {
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px;
+    background:none repeat scroll 0 0 #EEEEEE;
+    border:1px solid #C6C6C6;
+    margin:5px 10px 0 0;
+    padding:5px;
+    width:205px;
+}
+.label-field-pair-text-area textarea:focus{
+    background:#FFFFFF;
+    border: 1px solid #9E0F15;
+}
+.decision-content{
+
+    width:1000px;
+    height:auto;
+}
+.decision-comment{
+    width:500px;
+    height:auto;
+    float:right;
+}
+.accused{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border:1px solid #C6C6C6;
+    width: 250px;
+    height:auto;
+    background-color:#EEEEEE;
+    float:right;
+    margin-right: 9px;
+    margin-top: 7px;
+    padding: 10px;
+
+
+}
+.accused li{
+    list-style:none;
+    margin-right:8px;
+}
+.accuse{
+    float:right;
+}
+
+.message_check{
+    width: 30px;
+}
+.label-field-convicted{
+    height: 40px;
+    width: 200px;
+    padding-top: 3px;
+    float:right;
+}
+.label-field-convicted label {
+    color: #444;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 0px 0;
+    float: right;
+    width: 200px;
+    padding-top: 10px;
+    font-weight: 600;
+}
+.link_all{
+    float:right;
+    padding:10px;
+}
+.link_all a{
+    text-decoration:none;
+    color:#b00;
+    font-size: 15px;
+
+}
+.link_all a:hover{
+    color:#990a10;
+    text-decoration:underline;
+}
+.link_all label{
+    color: #444;
+    display: block;
+    font-size: 14px;
+    float: right;
+    width: 50px;
+    font-weight: 600;
+    padding-top:2px
+}
+.submit_button {
+    float:right;
+    margin-top:0px;
+    margin-left:20px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+.buttons{
+    margin-right:210px;
+    margin-top:13px;
+    width: 300px;
+}
+.cancel_button a {
+    float:right;
+    padding: 8px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    float: right;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    text-decoration: none;
+}
+.cancel_button a:hover{
+    background:  #373B3F;
+}
+#comments_div{
+    background-color:#F8F8F8 ;
+    padding: 20px 15px 20px 33px;
+    margin-top:20px;
+
+}
+.c_head {
+    display: block;
+    color: #555;
+    padding-top:20px;
+    padding-right:20px;
+    font-style: italic;
+    margin-bottom: 20px;
+
+}
+.comment_details{
+    height:auto;
+    margin-bottom:12px;
+    border-bottom: 1px solid;
+    border-color: #D5D5D5;
+}
+.commenter {
+    color:#990a10;
+    font-weight: bold;
+    font-size:14px;
+    margin-bottom: 3px;
+}
+
+.delete-comment {
+    float: left;
+    margin-top:-20px;
+}
+.delete-comment a{
+    text-decoration: none;
+    font-size: 60%;
+    color:#555;
+}
+#actions{
+    margin-right: 10px;
+    padding:10px;
+}
+.action_body{
+    padding:0px 0px 12px 12px;
+    width:93%;
+    color:#555;
+    font-size: 13px;
+}
+.convict_list{
+    width:250px;
+    height:auto;
+    color:#000;
+    font-size: 13px;
+    margin-bottom:12px;
+    font-family: Arial;
+    font-style:italic
+}
+.convict_list li{
+    list-style: none;
+    margin-top:6px;
+    font-weight: bold;
+    font-size: 12px;
+    color:#000;
+    font-style:normal;
+}
+.convict_scroll{
+    -moz-background-inline-policy:continuous;
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-background-inline-policy:continuous;
+    -webkit-border-radius:10px 10px 10px 10px;
+    background:none repeat scroll 0 0 #EEEEEE;
+    border:1px solid #C6C6C6;
+    height:86px;
+    margin-right: 210px;
+    margin-top: -36px;
+    max-height:100px;
+    overflow:auto;
+    padding:7px;
+    width:201px;
+}
+.sel-list {
+    border-bottom:1px solid #DDDDDD;
+    margin-bottom:2px;
+    width:197px;
+}
+.each_convict {
+    border-bottom:1px solid #DDDDDD;
+    font-size:12px;
+    overflow:auto;
+    width:198px;
+}
+.necessary-field {
+    color: #FF0000;
+    font-size: 1.1em;
+}
+.verdict{
+    width:600px;
+    height:auto;
+    color:black;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top:10px;
+}
+.date{
+    color: #555;
+    list-style-type: none;
+    font-size: 11px;
+    font-family: Arial;
+    margin:0px 0px 10px 0px;
+}

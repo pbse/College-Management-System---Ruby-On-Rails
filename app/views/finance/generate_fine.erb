@@ -1,0 +1,123 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "finance" %>
+<% end %>
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('fine') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%= t('generate_fine') %></div>
+
+
+
+</div>
+
+
+<div id="page-yield">
+  <div class="bread_crumb">
+    <%= link_to t('finance_text'), :controller => "finance", :action=>"index" %> <div class = "bread-crumb-separator"> > </div>
+    <%= link_to "#{t('fees_text')}", :controller => "finance", :action => "fees_index" %> <div class = "bread-crumb-separator"> > </div>
+    <%= t('generate_fine') %>
+  </div>
+  <div id="flash_box">
+  </div>
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg" id="msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div id="left-side-inputs">
+    <% remote_form_for @fine,
+  :url => {:action => 'fine_slabs_edit_or_create'},:html=>{:method=>:post} do |form1| %>
+     <div id="form-errors"><%= error_messages_for 'fine' %></div>
+    <div class="label-field-pair">
+      <label for="reason"> <%= t('fine') %>:</label>
+      <div class="text-input-bg">
+        <%= select(:fine,:id, @fines.map { |item| [item.name, item.id] }.sort_by{|x, y| x.downcase}.uniq.unshift([t("new_fine"),0]),
+          {:selected => @fine.present? ? @fine.name : nil },
+          { :include_blank => true, :onchange => "fine_select(value)"
+          })%>
+      </div>
+      <div class="loader_div">
+        <%= image_tag("loader.gif",
+          :align => "absmiddle",
+          :border => 0,
+          :id => "loader",
+          :style =>"display: none; position : absolute; " ) %>
+      </div>
+    </div>
+    <div id="select_fine">
+      <%=render :partial=>"new_fine"%>
+
+    </div><% end %>
+  </div>
+
+
+</div>
+
+<script type="text/javascript">
+
+$$('form').invoke('observe', 'submit', function(evt){
+evt.stop();
+});
+
+  function fine_select(x){
+
+  if (x){
+<%= remote_function(:url => {:action=>:fine_slabs_edit_or_create}, :with => "'id='+x" ,:method=>:get) %>
+    $$('#select_fine')[0].show();
+   
+    
+  }}
+
+  function slab_delete(slab){
+
+var slab_delete =new Element('input' , {'type':'hidden','name':'fine[fine_rules_attributes]['+slab+'][_destroy]','value':1});
+    $$('.new_fine')[0].appendChild(slab_delete);
+    j('.slab'+slab).hide();
+    alt_id = new Date().getTime();
+    j('.slab'+slab).attr('id','new_slab'+alt_id)
+   if (j('div[id^=remove-slab]').length == 0){
+    if (confirm('<%=t('it_should_delete_the_fine')%>')){
+     var fine_delete =new Element('input' , {'type':'hidden','name':'fine[is_deleted]','value':"true"});
+      $$('.new_fine')[0].appendChild(fine_delete);
+     }else{
+       
+       j('div[id^=new_slab]').show();
+       for(i=0;i<j('div[id^=new_slab]').length;i++){
+         j("#"+j('div[id^=new_slab]')[i].id).attr('id','remove-slab'+i)
+       }
+       j('.new_fine').children('[type=hidden]').remove()
+     }
+   }
+    <%#*$$('.slab'+slab)[0].hide();%>
+    
+  }
+function remove_new_slab(sl){
+  slab=j(sl).attr('id')
+  j('.slab'+slab).remove();
+  <%#*j('.slab'+slab)[0].hide();%>
+}
+
+ 
+  function add_fine_slab(link){
+    j("#add").append('<%=escape_javascript(render :partial => "fine_slab")%>');
+<%#*new_id = new Date().getTime();%>
+    regexp = new RegExp("replace_this", "g");
+<%#*j('#add').attr('id',new_id)%>
+<%#*j('.slab').attr('class',new_id)%>
+<%#*j(link).parent().before(content.replace(regexp, new_id));%>
+    alt_id = new Date().getTime();
+    
+<%#*new_id = "fine_fine_rules_attributes_"+alt_id+"_is_amount_true"%>
+<%#*new_name = "fine[fine_rules_attributes]["+alt_id+"][is_amount]_true"%>
+<%#*regexp = new RegExp("new_" + "association", "g");%>
+<%#*j('#temp_true').attr('name',new_id)%>
+<%#*j('#temp_true').attr('id',new_id)%>
+    j('.temp_name').html(j('.temp_name').html().replace(regexp,alt_id))
+    j('.temp_name').removeClass('temp_name')
+  }
+
+  $$('form').invoke('observe', 'submit', function(evt){
+    evt.stop();
+  });
+
+</script>

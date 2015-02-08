@@ -1,0 +1,271 @@
+#search_box_bg{width:714px;padding-right:50px;}
+.search_box_bg1{width:714px;}
+#search_box_bg label{padding-top:0px;color:#555;font-size:16px; float:right; width:95px; font-weight: bold;margin-right:-26px;}
+.search_box_bg1 label{padding-top:0px;color:#555;font-size:16px; float:right; width:auto; font-weight: bold;}
+#search_textbox input{
+    background : #eee;
+    float:right;
+    border : 1px solid #c6c6c6;
+    margin : -5px 10px 0 0;
+    margin-left:70px;
+    width : 180px;
+    height:22px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 4px 5px 0 0;
+}
+.search_textbox input{
+    background : #eee;
+    float:right;
+    border : 1px solid #c6c6c6;
+    margin : -5px 10px 0 0;
+    width : 180px;
+    height:22px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 4px 5px 0 0;
+}
+
+#search_textbox input:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+#pay_button{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin: 20px  0 auto;
+    float:left;
+    margin-top:10px;
+    padding:7px 12px;
+    border:none;
+    text-align:center;
+    width:124px;
+    cursor:pointer;
+}
+.add_particular_button{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin:0px auto;
+    float:left;
+    margin-top:10px;
+    padding:7px 12px;
+    border:none;
+    text-align:center;
+    width:auto;
+    cursor:pointer;
+}
+
+.submit_button input{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin:0px auto;
+    float:right;
+    margin-top:-5px;
+    margin-right: 10px;
+    padding:7px 12px;
+    border:none;
+    text-align:center;
+    width:auto;
+    cursor:pointer;
+}
+.submit_button1 input{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin-right: 209px;
+    float:right;
+    margin-top:10px;
+    padding:7px 12px;
+    border:none;
+    text-align:center;
+    width:auto;
+    cursor:pointer;
+}
+#information{width:930px;margin:0px auto;padding-right:0px; margin-top:30px;}
+#no_result{font-weight:bold;}
+#ajax_result {padding:10px 0 10px 0;width:204px;float:right;}
+#ajax_result a{color:#000;font-weight:bold; text-decoration:none;}
+#ajax_result a:hover{color:#9E0F15; text-decoration:underline;}
+
+/* ALL STUDENT CSS */
+
+#all_students{margin:0px; padding:0px; height:300px; width:725px; margin:20px 40px 0 0;}
+#student_name{padding:10px 0 10px 10px;text-decoration:none;width:230px;float:right;background:#fff url(/images/student_details/ajax_result_underline.jpg) bottom right no-repeat}
+#student_name a {text-decoration:none;color:#000;font-weight:bold}
+.students-on-one-line {
+    background : #fff url(/images/student_details/ajax_result_underline.jpg) bottom right repeat-x;
+    overflow: auto;
+    width:816px;
+    margin-bottom: 20px;
+}
+
+.radio-label{
+    color:#555555;
+    font-size: 14px;
+}
+table#listing td.col-2 {width: auto;}
+.text-input-bg_guest input{
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    float: right;
+    height: 17px;
+    margin: 0 auto;
+    margin-right:10px;
+    padding: 5px;
+    width: auto;
+}
+.text-input-bg_category input{
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    float: right;
+    height: 17px;
+    margin: 0 auto;
+    margin-right:10px;
+    padding: 5px;
+    width: 200px;
+}
+.text-input-bg input{
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    float: right;
+    height: 17px;
+    margin: 0 auto;
+    padding: 5px;
+    width: auto;
+}
+.text-input-bg1 input{
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    float: right;
+    height: 17px;
+    margin: 0 auto;
+    margin-left: 5px;
+    padding: 5px;
+    width: 75px;
+}
+.par_check{
+    float:left;
+    margin-left:10px;
+}
+.guest_category_pair{
+    width:1050px;
+}
+.select_guest_category{
+    float:left;
+    margin-top: -50px;
+    margin-left:60px;
+}
+#guest_payee {
+    float: right;
+    width: 180px;
+}
+#query{
+    margin-left:20px;
+}
+.col-select{
+    width:21px;
+}
+
+.pay_fees a{
+    font-weight:bold;
+    float:right;
+    margin-top:15px;
+    margin-left:10px;
+}
+.options-pay{
+    float:left;
+    width:275px;
+}
+.col-pay{
+    font-weight:bold;
+    padding-left: 10px;
+    text-align:left;
+}
+table#listing{
+    margin-top:40px;
+}
+table#listing td.col-select a{
+    color: #B00;
+    font-weight:bold;
+    text-decoration: none;
+    margin-right:9px;
+    margin-left:9px;
+}
+.col-head{
+    height:45px;
+}
+.text-input-bg select{
+}
+.text-input-bg_category_guest input{
+    float: right;
+    margin-right: -93px;
+    margin-left:20px;
+    width: 180px;
+}
+.align{
+    width:100%;
+}
+.align-name-left{
+    float:right;
+}
+.align_desc_right{
+    float:left;
+}
+.label-field-pair1 {
+    height: 40px;
+    margin-left: 156px;
+    margin-top: -41px;
+    padding-top: 3px;
+    width: 400px;
+}
+.label-field-pair1 label {
+    color: #444444;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 0;
+    padding-top: 10px;
+    width: 150px;
+}
+.label-field-pair1 input {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    height: 17px;
+    margin: 5px 21px 0 0;
+    padding: 5px;
+    width: 205px;
+}
+.img_loading
+{
+    width:20px;
+    height:20px;
+    float: right;
+}
+.label-field-pair label {
+    width: 140px;
+}

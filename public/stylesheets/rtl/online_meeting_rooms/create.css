@@ -1,0 +1,381 @@
+.label_field_pair {
+    height:40px;
+    padding-top:3px;
+    width:600px;
+}
+.label_field_pair label {
+    color:#444444;
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:10px;
+    padding-top:10px;
+
+}
+.label_field_pair input {
+    width:210px;height:28px;
+    background:transparent;
+    border:none;
+    padding-right:10px;
+    padding-top:5px;
+}
+.label_field_pair select {
+    background : #eee;
+    height:auto; width:220px;
+    border : none;
+    margin :5px 5px 0 0;
+}
+.submit_button {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    float:left;
+    margin-top:20px;
+    float:right;
+    padding:7px 10px;
+    border:none;
+    cursor:pointer;
+}
+.submit_button:hover{
+    background: #373b3f;
+}
+.text_display {width:230px;height:28px;background:#fff url(/images/admission/text_input.jpg) no-repeat;margin-bottom:20px;color:#b00;font-weight:bold;padding-right:10px;padding-top:3px;}
+
+.necessary-field {
+    color : #f00;
+    font-size : 1.1em;
+}
+#necessary-field-notification {
+    font-weight : bold;
+    padding : 10px 0 30px 0;
+}
+.sub-heading{
+    background:#9E0F15;
+    height: 1px;
+    border: none;
+    margin-bottom: 15px;
+}
+.span-sub-heading{
+    font-weight: bold;
+    padding-top:10px;
+}
+.label-underline{
+    background:  #eeeeee;
+    height: 1px;
+    border: none;
+}
+
+.label-field-pair-text-area{
+    height:110px;
+    padding-top:3px;
+    width:600px;
+}
+
+.label-field-pair-text-area label{
+    color:#444444;
+    display:block;
+    float:right;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px;
+    padding-top:10px;
+    width:200px;
+}
+.textarea-input-bg {
+    background:none repeat scroll 0 0 transparent;
+    float:right;
+}
+.label-field-pair-text-area textarea {
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px;
+    background:none repeat scroll 0 0 #EEEEEE;
+    border:1px solid #C6C6C6;
+    margin:5px 10px 0 0;
+    padding:5px;
+    width:205px;
+}
+.label-field-pair-text-area textarea:focus{
+    background:#FFFFFF
+}
+#member-list {
+    clear : both;
+    padding : 10px 0px 40px 0;
+    width:600px;
+    margin:0px auto;
+}
+
+#member-list .listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em; width : 30em;
+    list-style-type : none;
+    padding : 0.5em 5em 0.5em 0;
+    overflow: hidden;
+}
+
+#member-list .listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em; width : 30em;
+    list-style-type : none;
+    padding : 0.5em 5em 0 0;
+}
+
+#member-list li.heading {
+    background : none;
+    font-weight : bold;
+    list-style-type : none;
+    color : #444;
+    height : 1.5em; width : 30em;
+    padding : 0.5em 5em 0 0;
+}
+#member-list li div {
+    float : right;
+    width: 300px;
+}
+#member-list li div.category-name {
+    font-weight: bold;
+    font-size:13px;
+}
+#member-list li div.category-edit,
+#member-list li div.category-box,
+#member-list li div.category-delete {
+    font-size : 0.9em;
+    width : 150px;
+    float: left;
+
+}
+#member-list li div a {
+    color : #000;
+    font-size:14px;
+    text-decoration: underline;
+}
+#member-list li div a:hover {
+    color : #d00;
+    text-decoration: none;
+}
+.select_student{
+    width: 600px;
+    margin-right: 20px;
+}
+.to-options{
+    float:right;
+    width:385px;
+    margin: 8px 0 5px 0;
+}
+
+.to-options a{
+    color:#9D0E00;
+    font-weight:bold;
+}
+.text-area-bg {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:transparent none repeat scroll 0 0;
+    float:right;
+    width:250px;
+}
+.label-field-pair textarea {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:10px;
+    -moz-border-radius-bottomright:10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-radius:10px;
+    background:#EEEEEE none repeat scroll 0 0;
+    border:1px solid #C6C6C6;
+    margin:5px 10px 0px 0;
+    padding:5px;
+    width:205px;
+}
+.button {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:10px;
+    -moz-border-radius-bottomright:10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    border:medium none;
+    color:#FFFFFF;
+    cursor:pointer;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin:30px 280px 0 0;
+    padding:7px 10px;
+    text-align:center;
+    width:auto;
+}
+.scrolable{
+    float:right;
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:10px;
+    -moz-border-radius-bottomright:10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-radius:10px;
+    background:#EEEEEE none repeat scroll 0 0;
+    border:1px solid #C6C6C6;
+    margin:5px 10px 15px 0;
+    padding:7px;
+    width:200px;
+    overflow:auto;
+    max-height:100px;
+}
+.scroll-inside{
+    max-height:100px;
+    overflow:auto;
+}
+.scroll-inside a.all {
+    color:#444444;
+    font-weight:bold;
+    font-size:14px;
+    text-decoration:none;
+}
+.scroll-inside a.individual{
+    font-size:14px;
+    text-decoration:none;
+    color:#444444;
+}
+.scroll-inside .hover span{
+    display: none;
+}
+.scroll-inside .hover:hover a{
+    text-decoration:underline;
+    color:#9f0c14;
+}
+
+.scroll-inside .hover:hover span{
+    display:block;
+    float:left;
+    color:#444444;
+    font-size:13px;
+    padding-top:2px;
+}
+.hover{
+    border-bottom:1px solid #dddddd;
+}
+#form{
+    width:600px;
+    float:right;
+    height:auto;
+    border-left: 2px solid #C6C6C6;
+}
+
+
+
+.scrolable-member{
+    float:left;
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    -moz-border-radius-bottomleft:10px;
+    -moz-border-radius-bottomright:10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-radius:10px;
+    background:#EEEEEE none repeat scroll 0 0;
+    border:1px solid #C6C6C6;
+    padding:7px;
+    margin-top:20px;
+    width:200px;
+    overflow:auto;
+    max-height:100px;
+}
+.scroll-inside-member{
+    max-height:100px;
+    overflow:auto;
+}
+.scroll-inside-member a.all {
+    color:#444444;
+    font-weight:bold;
+    font-size:14px;
+    text-decoration:none;
+}
+.scroll-inside-member a.individual{
+    font-size:14px;
+    text-decoration:none;
+    color:#444444;
+}
+.scroll-inside-member .hover span{
+    display: none;
+}
+.scroll-inside-member .hover-member:hover a{
+    text-decoration:underline;
+    color:#9f0c14;
+}
+
+.scroll-inside-member .hover:hover span{
+    display:block;
+    float:left;
+    color:#444444;
+    font-size:13px;
+    padding-top:2px;
+}
+.hover-member{
+    border-bottom:1px solid #dddddd;
+}
+#label-member1 {
+    margin:0px;
+    color:#444444;
+    font-size: 14px;
+}
+#label-member2 {
+    margin:0px;
+    color:#444444;
+    font-size: 14px;
+}
+#label-member3 {
+    margin:0px;
+    color:#444444;
+    font-size: 14px;
+}
+#label-member4 {
+    margin:0px;
+    color:#444444;
+    font-size: 14px;
+}
+#label-member5 {
+    margin:0px;
+    color:#444444;
+    font-size: 14px;
+}
+#label-member6 {
+    margin:0px;
+    color:#444444;
+    font-size: 14px;
+}
+#label-member7 {
+    color:#b00;
+    font-size: 20px;
+}
+#seperator
+{
+    float:right;
+    width:2px;
+    height:400px;
+    background: #C6C6C6;
+}
+#recipient-list{
+    width:215px;
+    float:left;
+    margin-top:70px;
+    margin-left:50px;
+}
+#task_attachment{
+    height: auto;
+}

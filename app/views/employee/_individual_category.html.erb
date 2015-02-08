@@ -1,0 +1,22 @@
+
+<div class="temp_name">
+  <div class="slabreplace_this" id="remove-slab">
+    <div class="payslip-field-pair">
+      <label for="payroll_category_name"><%= t('name') %> <span class="necessary-field">*</span></label>
+      <div class="payslip-input-bg"> <%= text_field_tag  "new_category[individual_payslip_categories_attributes][replace_this][name]",value= ""%> </div>
+    </div>
+    <div class="delete_btn">
+      <%= link_to_function "","slab_delete(this.id)",{:class => 'list_btn themed_text',:id=>'replace_this'} %>
+    </div>
+    <div class="payslip-field-pair">
+      <label for="category_amount"><%= t('amount') %> <span class="necessary-field">*</span></label>
+      <div class="payslip-input-bg"> <%= text_field_tag  "new_category[individual_payslip_categories_attributes][replace_this][amount]",value= "",:class=>'precision_text'%> </div>
+    </div>
+    <div class="payslip-field-pair">
+      <label for="category_amount"><%= t('is_deduction') %></label>
+      <div class="payslip-input-bg"> <%= check_box "new_category","individual_payslip_categories_attributes[replace_this][is_deduction]",{},1,0 %>  </div>
+    </div>
+    <%= hidden_field_tag "new_category[individual_payslip_categories_attributes][replace_this][salary_date]",value= "" ,options={:class=>"salary_date"}%>
+  </div>
+  <hr class="horreplace_this"></hr>
+</div>

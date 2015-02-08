@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.student_photo do
+  @xml.admission_no(@student.admission_no)
+  @xml.photo_file_name(@student.photo_file_name)
+  @xml.photo_content_type(@student.photo_content_type)
+  @xml.photo_file_size(@student.photo_file_size)
+end
+%>

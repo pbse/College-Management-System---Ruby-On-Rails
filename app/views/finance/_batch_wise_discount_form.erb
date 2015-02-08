@@ -1,0 +1,82 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+<script type="text/javascript">
+
+    
+
+</script>
+<% form_remote_for :fee_discount, :url=>{:action=>"batch_wise_discount_create"},:html=>{:id=>'form'},:before=>"j('.submit_button').attr('disabled', true);",:complete=>"j('.submit_button').attr('value','►#{t('create_text')}');j('.submit_button').attr('disabled', false);" do |form|%>
+
+
+
+  <div class="label-field-pair">
+    <label for="reason"><%= t('name') %><span class="necessary-field">*</span></label>
+    <div class="text-input-bg"><%= form.text_field :name %></div>
+  </div>
+
+
+
+  <div class="label-field-pair">
+    <label for="reason"><%= t('fee_category') %><span class="necessary-field">*</span>:</label>
+    <div class="text-input-bg">
+      <%= select("fee_discount","finance_fee_category_id", @fee_categories.map { |item| [item.name, item.id] }.sort_by{|x, y| x.downcase}.uniq,
+        {:prompt => "#{t('select_category')}" },
+        {:onchange => "#{remote_function(:url => {:action => "fee_collection_batch_update"},
+          :with => "'id='+value",
+          :before => "Element.show('loader1')",
+          :success => "Element.hide('loader1')")}"
+        })%>
+    </div>
+     <div class="loader_div">
+        <%= image_tag("loader.gif",
+          :align => "absmiddle",
+          :border => 0,
+          :id => "loader1",
+          :style =>"display: none;" ) %>
+      </div>
+  </div>
+
+  <div id ="batchs"></div>
+
+  <div class="label-field-pair">
+    <label for="reason"><%= t('discount') %><span class="necessary-field">*</span></label>
+    <div class="text-input-bg"><%= form.text_field :discount, :class=>'precision_text' %></div>
+  </div>
+
+  <div class="label_field_pair">
+    <label class="label_for_student_gender" for="is_amount"><%= t('discount_type') %></label>
+    <div class="student_gender_value">
+      <label class="label_for_gender" for="is_amount_false"> <%= t('percentage') %></label>
+      <%= form.radio_button  :is_amount, false, :checked => "checked" %>
+      <label class="label_for_gender" for="is_amount_true"><%= t('amount') %></label>
+      <%= form.radio_button  :is_amount, true %>
+    </div>
+  </div>
+
+  <div id="submit-button">
+    <%=  form.submit "►#{t('create_text')}",:class=>'submit_button', :id => 'submit_button' , :disable_with => "► #{t('please_wait')}",:data_disable_with=>"► #{t('please_wait')}" %>
+  </div>
+
+<% end %>
+  <script type="text/javascript">
+  j('.submit_button').click( function(){
+    j('.submit_button').attr('value',j('.submit_button').attr('data_disable_with'));
+    j('.submit_button').attr('disabled', true);
+  });
+</script>

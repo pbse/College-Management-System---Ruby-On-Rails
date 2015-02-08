@@ -1,0 +1,170 @@
+.user_button input, .user_button a{
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    margin: 0 auto;
+    text-decoration: none;
+}
+.user_button input:hover, .user_button a:hover{
+    background:  #373B3F;
+}
+table#listing td div.user_button input, table#listing td div.user_button a{
+    color:#fff;
+}
+.label-field-pair1 label {
+    color: #444444;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding-top: 10px;
+    width: 410px;
+}
+.label-field-pair1 input {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    float: right;
+    margin: 5px 10px 0 0;
+    padding: 5px;
+    width: 100px;
+}
+.fine_info {
+    float: left;
+    height: 50px;
+    overflow: hidden;
+    width: auto;
+}
+.label-field-pair1 .submit_button2 {
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 3px;
+    padding: 6px 8px;
+    float: right;
+}
+.label-field-pair1 .submit_button2:hover {
+    background: none repeat scroll 0 0 #373B3F;
+}
+.label-field-pair1{
+    overflow: hidden;
+}
+.text-input-bg1{
+    float: right;
+}
+.fee_submission_td{
+    float: left;
+}
+
+.label-field-pair3 {
+    width: 230px;
+    float:right;
+    padding-top: 3px;
+}
+.text-input-bg3 {
+    background : transparent;
+    height : 28px;
+    width : 250px;
+}
+.label-field-pair3 label {
+    color: #444;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 0px 0;
+    width: 200px;
+    padding-top: 10px;
+    font-weight: 600;
+    margin-right: 16px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+.label-field-pair3 input {
+    background : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 10px 0 0;
+    width : 205px;
+    height:17px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 5px;
+}
+.text-input-bg3 select {
+    background-color : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 10px 0 0;
+    width : 215px;
+    height:27px;
+    padding:3px 6px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+
+.label-field-pair3-text-area{
+    height:70px;
+    padding-top:3px;
+    width:548px;
+    float:right;
+}
+
+.label-field-pair3-text-area label{
+    color: #444;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 0px 0;
+    width: 200px;
+    padding-top: 10px;
+    font-weight: 600;
+    margin-right: 16px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+.textarea-input-bg {
+    background:none repeat scroll 0 0 transparent;
+    margin-right:25px;
+}
+.label-field-pair3-text-area textarea {
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px;
+    background:none repeat scroll 0 0 #EEEEEE;
+    border:1px solid #C6C6C6;
+    margin:5px 10px 0 0;
+    padding:5px;
+    width:548px;
+    height: 17px;
+}
+.label-field-pai3r-text-area textarea:focus{
+    background:#FFFFFF;
+    border: 1px solid #9E0F15;
+}
+#payments_details{
+    margin-top:20px;
+}
+.pay_fees {
+    float: left;
+    margin-top: 9px;
+}
+h4 {
+    float: left;
+    margin-bottom: 0px;
+    margin-top: 43px;
+    margin-right: 7px;
+}
+.errorExplanation {
+    padding: 16px 50px 18px 0;
+    font-size: 14px;
+    font-weight: bold;
+}

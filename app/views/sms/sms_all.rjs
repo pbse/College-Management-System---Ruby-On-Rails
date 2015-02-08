@@ -1,0 +1,2 @@
+page.replace_html 'flash_box', :text => "<p class=\"flash-msg\">#{t('sms_sending_intiated', :log_url => url_for(:controller => "sms", :action => "show_sms_messages"))}</p>"
+page << "Modalbox.hide();"

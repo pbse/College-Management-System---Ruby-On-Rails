@@ -1,0 +1,14 @@
+#flash-msg{
+height:53px;
+overflow:hidden;
+}
+table#listing td{
+    padding:5px 6px;
+}
+table#listing td p{
+padding: 0px;
+margin: 0px;
+}
+table#listing td.col-2{
+width: 19%;
+}

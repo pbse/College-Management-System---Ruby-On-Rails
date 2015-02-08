@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.student_detail{
+  @students.each do |student|
+    @student = student
+    @xml.student do
+      @xml.admission_no(@student.admission_no)
+      @xml.student_name(@student.full_name)
+      @xml.batch_name(@student.batch.full_name)
+    end
+  end
+}%>
+
+

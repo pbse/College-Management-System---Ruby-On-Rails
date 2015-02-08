@@ -1,0 +1,53 @@
+<% remote_form_for :manage_payroll do |s| %>
+  <div class="payslip-field-pair">
+    <label for="salary_date"><%= t('salary_date') %></label>
+    <div class="payslip-input-bg">
+      <%= text_field_tag "salary_date" ,value="#{@salary_date}",{:readonly => true}%>
+    </div>
+  </div>
+
+  <% @monthly_payslips.each do |payslip| %>
+    <div class="payslip-field-pair">
+      <label for="payroll_category_name"><%= payslip.category_name %></label>
+      <div class="payslip-input-bg"><%= text_field_tag  "manage_payroll[monthly_payslips_attributes][#{payslip.payroll_category_id}][amount]",value=precision_label(payslip.amount),
+          :onChange=> "#{remote_function(:url  => {:controller=>"payroll",:action => "update_dependent_payslip_fields"},
+        :with => "'amount='+ value + '&cat_id=' + #{payslip.payroll_category_id}")}",:class=>"precision_text"%></div>
+      <%= hidden_field_tag "manage_payroll[monthly_payslips_attributes][#{payslip.payroll_category_id}][payroll_category_id]",value= "#{payslip.payroll_category_id}"%>
+      <%= hidden_field_tag "manage_payroll[monthly_payslips_attributes][#{payslip.payroll_category_id}][salary_date]",value= "#{@salary_date}" ,options={:class=>"salary_date"}%>
+      <%= hidden_field_tag "manage_payroll[monthly_payslips_attributes][#{payslip.payroll_category_id}][id]",value= "#{payslip.id}"%>
+      <%= hidden_field_tag "manage_payroll[monthly_payslips_attributes][#{payslip.payroll_category_id}][is_rejected]",value=0%>
+    </div>
+  <% end %>
+  <div class="head">
+    <%= t('individual_categories') %>
+  </div>
+  <div class="extender"></div>
+  <hr></hr>
+  <%unless @individual_payslips.nil? %>
+    <% @individual_payslips.each do |individual_payslip|  %>
+      <div id=<%= "field_pair_#{individual_payslip.id}"%> >
+        <div class="payslip-field-pair">
+          <label for="payroll_category_name"><%= individual_payslip.name %></label>
+          <div class="payslip-input-bg">
+            <%= text_field_tag "new_category[individual_payslip_categories_attributes][#{individual_payslip.id}][amount]",value= precision_label(individual_payslip.amount),:class=>"precision_text" %>
+          </div>
+          <%= hidden_field_tag "new_category[individual_payslip_categories_attributes][#{individual_payslip.id}][salary_date]",value= "#{individual_payslip.salary_date}" ,options={:class=>"salary_date"}%>
+          <%= hidden_field_tag "new_category[individual_payslip_categories_attributes][#{individual_payslip.id}][id]",value= "#{individual_payslip.id}"%>
+        </div>
+        <div class="delete_btn">
+          <%= link_to_function "","slab_category_delete(this.id)",{:class => 'list_btn themed_text',:id=>individual_payslip.id} %>
+        </div>
+      </div>
+    <% end %>
+    <div class="extender"></div>
+  <% end %>
+  <div id="add"></div>
+  <div id="link">
+    <%= link_to_function "#{image_tag "buttons/add_2.png" } #{t('add_individual_category')}","add_individual_category();"%>
+  </div>
+
+  <div id="submit-button">
+    <%=submit_tag("► #{t('create_text')}", :disable_with => "► #{t('please_wait')}") %>
+  </div>
+  <div class="extender"></div>
+<% end %>

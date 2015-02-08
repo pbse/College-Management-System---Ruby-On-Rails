@@ -1,0 +1,27 @@
+
+<div class="temp_name slabreplace_this">
+  <div class="slabreplace_this" id="remove-slab">
+<hr  />
+
+        <div id="form-errors"><%= error_messages_for 'fine_rule' %></div>
+        <div class="label-field-pair">
+          <label for="reason">  <%= t('days_after_due_date') %> <span class="necessary-field">*</span></label>
+          <div class="text-input-bg"><%= text_field_tag  "fine[fine_rules_attributes][replace_this][fine_days]",value= "",options={:class=>"precision_text"}%></div>
+        </div>
+        <div class="label-field-pair">
+          <%= link_to_function "&times","slab_delete(this.id)",{:class => 'list_btn themed_text',:id=>'replace_this'} %>
+          <%#=link_to_function "&times",  "slab_delete('#{Time.now.to_i}');", {:class => 'list_btn themed_text'}%>
+          <label for="reason">  <%= t('fine_amount') %> <span class="necessary-field">*</span></label>
+          <div class="text-input-bg"><%= text_field_tag  "fine[fine_rules_attributes][replace_this][fine_amount]",value= precision_label(0),options={:class=>"precision_text"}%></div>
+        </div>
+        <div class="label_field_pair">
+          <div class="fine-mode" >
+            <label class="label_for_student_gender" for="is_amount"><%= t('discount_type') %></label>
+          </div>
+          <div class="student_gender_value" >
+            <label class="label_for_gender" for="is_amount_false"> <%= t('percentage') %></label>
+            <%= radio_button_tag   "fine[fine_rules_attributes][replace_this][is_amount]", value =false,checked=true%>
+            <label class="label_for_gender" for="is_amount_true"><%= t('amount') %></label>
+            <%= radio_button_tag  "fine[fine_rules_attributes][replace_this][is_amount]" ,value =true%>
+          </div>
+        </div></div></div>

@@ -1,0 +1,61 @@
+<% unless @timetable_entries.blank? %>
+  <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+    <tr class="tr-head">
+      <td><%= t('class_timing') %></td>
+      <td><%=t('subject')%></td>
+      <td></td>
+    </tr>
+    <tr class="tr-blank">
+    </tr>
+    <% @timetable_entries.each do |entry| %>
+      <tr class="tr-<%= cycle('odd', 'even')%>">
+        <td class="col-1"><%= "#{entry.class_timing.start_time.strftime("%I:%M%P")}-#{entry.class_timing.end_time.strftime("%I:%M%P")}" %></td>
+        <td class="col-2">
+          <div class="subject"><%= entry.subject.elective_group.present?? entry.subject.elective_group.name : entry.subject.name%></div>
+          <% if entry.subject.elective_group.present? %>
+            <div class="hor_line"></div>
+            <% entry.subject.elective_group.subjects.active.each do |s| %>
+              <% @sub_emp = s.employees %>
+              <% unless @sub_emp.empty? %>
+                <div class="subject"> <%= s.name unless s.nil? %></div>
+                <% @sub_emp.each do |e| %>
+                  <div class="teacher"><%= "#{t('teacher')} :"%> <span class="teacher_name"><%= e.full_name %></span></div>
+                  <div class="hor_line"></div>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <div class="teacher"><%= "#{t('teacher')} :"%> <span class="teacher_name"><%= entry.employee.nil?? "#{t('deleted_user')}" : entry.employee.full_name %></span></div>
+          <% end %>
+        </td>
+        <td class="col-3">
+          <div id=<%= "link_#{entry.id}" %>>
+          </div>
+          <% if @timetable_swaps[entry.id].blank? %>
+            <% unless entry.subject.elective_group.present? %>
+              <div id=<%= "entry_#{entry.id}" %>>
+                <%=link_to_remote "#{t('change')}", :url=>{:action=>'timetable_swap_from',:timetable_entry_id=>entry.id,:batch_id=>entry.batch_id,:date=>params[:batch][:date]},:success=>"$('entry_#{entry.id}').hide();$('link_#{entry.id}').show();" ,:html=>{:class=>"themed_text"}%>
+              </div>
+            <% end %>
+          <% else %>
+            <div id=<%= "entry_#{entry.id}" %>>
+              <div class="change_title"><%= "#{t('changed_to')} "%></div>
+              <div class="new_entry">
+                <div class="subject"><%= @timetable_swaps[entry.id][0].subject.name%></div>
+                <div class="teacher"><%= "#{t('teacher')} :"%> <span class="teacher_name"><%= @timetable_swaps[entry.id][0].employee.nil?? "#{t('deleted_user')}" : @timetable_swaps[entry.id][0].employee.full_name %></span></div>
+              </div>
+              <div class="edit_link">
+                <%=link_to_remote "#{t('delete_text')}", :url=>{:action=>'timetable_swap_delete',:timetable_entry_id=>entry.id,:batch_id=>entry.batch_id,:date=>params[:batch][:date],:timetable_swap_id=>@timetable_swaps[entry.id][0].id},:html=>{:class=>"themed_text"},:confirm => t('delete_confirm_msg')%>
+              </div>
+              <div class="edit_link">
+                <%=link_to_remote "#{t('edit_text')}", :url=>{:action=>'timetable_swap_from',:timetable_entry_id=>entry.id,:batch_id=>entry.batch_id,:date=>params[:batch][:date],:timetable_swap_id=>@timetable_swaps[entry.id][0].id},:success=>"$('entry_#{entry.id}').hide();$('link_#{entry.id}').show();",:html=>{:class=>"themed_text"}%>
+              </div>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <%end%>
+  </table>
+<% else %>
+  <p class="flash-msg"> <%= t('no_record_found') %></p>
+<% end %>

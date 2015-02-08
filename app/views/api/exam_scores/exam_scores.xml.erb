@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.exam_score_detail{
+  @exam_scores.each do |exam_score|
+    @exam_score = exam_score
+    @xml.exam_score do
+      student = @exam_score.student
+      student ||= ArchivedStudent.find_by_former_id(@exam_score.student_id)
+      @xml.student(student.try(:admission_no))
+      @xml.exam_group(@exam_score.exam.try(:exam_group).try(:name))
+      @xml.batch(@exam_score.exam.try(:exam_group).try(:batch).try(:full_name))
+      @xml.subject(@exam_score.exam.try(:subject).try(:code))
+      @xml.marks(@exam_score.marks)
+      @xml.grading_level(@exam_score.grading_level.try(:name))
+      @xml.remarks(@exam_score.remarks)
+    end
+  end
+}%>
+
+

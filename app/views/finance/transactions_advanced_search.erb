@@ -1,0 +1,185 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('deleted_transactions') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%= t('advanced_search_text') %></div>
+
+</div>
+<div id="page-yield">
+  <% unless flash[:notice].nil? %>
+    <div class="show-msg"><div class="flash-msg"><%#= flash[:notice] %></div> </div>
+  <% end %>
+  <% unless params[:search] %>
+    <div id="search-form">
+      <% form_for :search,:url=>{:action=>"transactions_advanced_search"} do |f| %>
+        <div class="label-field-pair">
+          <label for="name"><%= t('student_name') %></label>
+          <div class="text-input-bg">
+            <%= f.text_field :first_name%>
+          </div>
+        </div>
+
+        <div class="label-field-pair">
+          <label for="student_admission_no"><%= t('admission_number') %></label>
+          <div class="text-input-bg">
+            <%= f.text_field :admission_no %>
+          </div>
+        </div>
+      <div class="label-field-pair">
+          <label for="name"><%= t('employee_name') %></label>
+          <div class="text-input-bg">
+            <%= f.text_field :employee_name%>
+          </div>
+        </div>
+      <div class="label-field-pair">
+          <label for="student_admission_no"><%= t('employee_number') %></label>
+          <div class="text-input-bg">
+            <%= f.text_field :employee_number %>
+          </div>
+        </div>
+<%if FedenaPlugin.can_access_plugin?("fedena_instant_fee")%>
+      <div class="label-field-pair">
+          <label for="name"><%= t('guest_name') %></label>
+          <div class="text-input-bg">
+            <%= f.text_field :guest_payee%>
+          </div>
+        </div>
+<%end%>
+      <div class="label-field-pair">
+          <label for="name"><%= t('fee_collection_name') %></label>
+          <div class="text-input-bg">
+            <%= f.text_field :collection_name%>
+          </div>
+        </div>
+        <div class="label-field-pair">
+          <label for="student_course"><%= t('category_name') %><%= image_tag("loader.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "loader",
+              :style =>"display: none;" ) %></label>
+          <div class="text-input-bg">
+            <%cat_name=['Fee']%>
+            <%FedenaPlugin::FINANCE_CATEGORY.flatten.each{|k,v| cat_name<<k[:category_name]}%>
+            <%= select :search, :category_id, FinanceTransactionCategory.find_all_by_name(cat_name,:conditions=>{:deleted=>false}).map{|c| [c.name,c.id]},
+              {:prompt=>"#{t('select_a_category')}"}%>
+          </div>
+        </div>
+      <div class="label-field-pair">
+          <label for="student_date_of_birth"><%= t('start_date') %> </label>
+          <div class="text-input-bg">
+            <%= calendar_date_select_tag 'date[start_date]', I18n.l(@date.present? ? @date.to_date : Date.today , :format=> :default),
+              :year_range => 25.years.ago..5.years.from_now, :readonly=>true, :popup=>"force", :onChange => ""%>
+            <%#= calendar_date_select_tag 'date[start_date]',
+              I18n.l(Date.today,:format=>:default) , :year_range => 15.years.ago..5.years.ago,:popup=>"force" %>
+          </div>
+        </div>
+      <div class="label-field-pair">
+          <label for="student_date_of_birth"><%= t('end_date') %> </label>
+          <div class="text-input-bg">
+            <%= calendar_date_select_tag 'date[end_date]', I18n.l(@date.present? ? @date.to_date : Date.today , :format=> :default),
+              :year_range => 25.years.ago..5.years.from_now, :readonly=>true, :popup=>"force", :onChange => ""%>
+            <%#= calendar_date_select_tag 'date[end_date]',
+              I18n.l(Date.today,:format=>:default) , :year_range => 15.years.ago..5.years.ago,:popup=>"force" %>
+          </div>
+        </div>
+
+        <%= f.submit "#{t('search_text')}", :class=>'submit' %>
+      <% end %>
+    </div>
+  <% else %>
+    <% unless @transactions.nil?%>
+
+      <div id="search-result">
+
+        <p><%= t('searched_for') %></p>
+        <div class="search-again">
+    <%#= link_to_function '► Search again' do |page|
+    page.visual_effect :toggle_slide, "search-form"
+    page.hide "search-result"
+    end %>
+
+          <%= link_to "►#{t('search_again')}", {:controller=>"finance",:action=>"transactions_advanced_search"}, :class => 'user_button'%>
+          
+            <%#= link_to "► #{t('view')} #{t('pdf_report')}",   {:action => "advanced_search_pdf", :search=> params[:search],:advv_search=>params[:advv_search],:adv_search=>params[:adv_search],:page_height => 1200}, :target => '_blank' , :class=> 'user_button' %>
+          
+        </div>
+        <div class="extender"></div>
+        <div class="searched_for themed_text">
+          <%= @searched_for %>
+        </div>
+<% unless @transactions.empty? %>
+
+       <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td><%= t('sl_no') %></td>
+        <td><%= t('payee_name') %></td>
+        <td><%= t('amount') %></td>
+        <td><%= t('cancelled_by') %></td>
+        <td><%= t('date_text') %> </td>
+        <td ><%= t('fee_collection_name') %></td>
+        <td ><%= t('finance_type') %></td>
+      </tr>
+      <tr class="tr-blank"></tr>
+      <% @transactions.each_with_index do |f , i| %>
+        <tr class="tr-<%= cycle("odd","even") %>">
+          <td class="col-1"><%= i +=1 %></td>
+          <%if f.payee.nil? and f.finance.nil?%>
+         <td class="col-3" style="width:20%"> <%="#{t('user_deleted')}"%></td>
+          <%else%>
+          <%if f.payee.nil?%>
+          <td class="col-3" style="width:20%"><%=f.finance.payee_name%></td>
+          <%else%>
+          <td class="col-3" style="width:20%"><%= "#{f.payee.full_name}-&#x200E; (#{f.payee_type=="Student" ? f.payee.admission_no : f.payee.employee_number })&#x200E;" %></td>
+          <%end%>
+          <%end%>
+          <td class="col-3"><%= precision_label(f.amount) %></td>
+          <td class="col-3" style="min-width:85px;"><%= f.user.present?? f.user.full_name  : t('user_deleted') %></td>
+          <td class="col-3" ><%= f.created_at.strftime("%m-%d-%Y") %></td>
+          <td class="col-2" ><div class="cancel" ><%= f.collection_name %></div></td>
+          <td class="col-3" ><%= f.finance_type %></td>
+        </tr>
+        <%end%>
+        <%else%>
+        <div id="payments_details">
+          <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+        <tr class="tr-head">
+    <td style="text-align:center;">
+<%=t('no_reverted_transactions_exists')%></td></tr></table></div>
+  
+      <% end %>
+    </table>
+    <%params[:search].present? ? search=params[:search] : search={"no_value"=>""}%>
+<%#= will_paginate @transactions, :previous_label=>"<", :next_label=>">", :params => {:search=>params[:search],:date=>params[:date]} %>
+        <%#= will_paginate @transactions, :params => {:search=>search,:date=>params[:date]} %>
+         <%= will_paginate @transactions,:previous_label=>"<", :next_label=>">", :renderer => 'RemoteLinkRenderer' ,:remote => { :loading =>  "$('loader_paginate').show();",:complete =>"$('loader').hide();"  }, :params => {:controller=>:finance,:action=>:transactions_advanced_search,:search=>search,:date=>params[:date],:remote=>"remote"} %>
+ 
+        
+        
+        <div class="extender">
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+

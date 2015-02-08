@@ -1,0 +1,71 @@
+
+root { 
+    display: block;
+}
+
+#form-content {
+    height: 150px;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    width: 500px;
+}
+.label-field-pair {
+    height: 40px;
+    padding-top: 3px;
+    width: 600px;
+}
+#submit-button input {
+    -moz-background-clip: border;
+    -moz-background-origin: padding;
+    -moz-background-size: auto auto;
+    -moz-border-radius: 10px;
+    webkit-border-radius: 10px;
+    background-attachment: scroll;
+    background-color: #27292B;
+    background-image: none;
+    background-position: 0 0;
+    background-repeat: repeat;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: medium;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: medium;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: medium;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-right: 150px;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 7px 10px;
+    text-align: center;
+    width: auto;
+}
+.necessary-field {
+    color: #FF0000;
+    font-size: 1.1em;
+}

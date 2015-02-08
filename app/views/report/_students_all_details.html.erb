@@ -1,0 +1,150 @@
+<% unless @students.blank? %>
+  <div class="info">
+    <div class="field_pair">
+      <div class="label1"><%= t('total_students') %></div>
+      <div class="label2"><%=": #{@students.total_entries}" %></div>
+    </div>
+    <div class="field_pair">
+      <div class="label1"><%= "#{t('male')} #{t('students')}" %></div>
+      <div class="label2"><%=": #{@count.first.male_count}" %></div>
+    </div>
+    <div class="field_pair">
+      <div class="label1"><%= "#{t('female')} #{t('students')}" %></div>
+      <div class="label2"><%=": #{@count.first.female_count}" %></div>
+    </div>
+  </div>
+  <div class="submit-button">
+    <%= link_to "#{t('export_as_csv')}" ,{:action=>'students_all_csv',:sort_order=>@sort_order,:subject_id=>params[:subject_id]},:target=>'_blank' %>
+  </div>
+  <div class="extender"></div>
+  <div id="page-yield">
+    <table id="report_table" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head sub-heading">
+        <td><%= t('no_text') %></td>
+
+        <% if @sort_order=="first_name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8595;", :url=>{:action=>"students_all",:sort_order=>"first_name ASC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% elsif @sort_order=="first_name ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8593;", :url=>{:action=>"students_all",:sort_order=>"first_name DESC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('name')}", :url=>{:action=>"students_all",:sort_order=>"first_name DESC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="admission_no DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('admission_no')} &#8595;", :url=>{:action=>"students_all",:sort_order=>"admission_no ASC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% elsif @sort_order=="admission_no ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('admission_no')} &#8593;", :url=>{:action=>"students_all",:sort_order=>"admission_no DESC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('admission_no')}", :url=>{:action=>"students_all",:sort_order=>"admission_no DESC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="admission_date DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('admission_date')} &#8595;", :url=>{:action=>"students_all",:sort_order=>"admission_date ASC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% elsif @sort_order=="admission_date ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('admission_date')} &#8593;", :url=>{:action=>"students_all",:sort_order=>"admission_date DESC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('admission_date')}", :url=>{:action=>"students_all",:sort_order=>"admission_date DESC",:subject_id=>params[:subject_id]} %>
+          </td>
+        <% end %>
+
+        <td><%= t('batch_name')  %></td>
+        <td><%= t('course_name')  %></td>
+
+        <% if @sort_order=="gender DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('gender')} &#8595;", :url=>{:action=>"students_all",:sort_order=>"gender ASC" ,:subject_id=>params[:subject_id]} %>
+          </td>
+        <% elsif @sort_order=="gender ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('gender')} &#8593;", :url=>{:action=>"students_all",:sort_order=>"gender DESC" ,:subject_id=>params[:subject_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('gender')}", :url=>{:action=>"students_all",:sort_order=>"gender DESC" ,:subject_id=>params[:subject_id]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="fee_count DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('fees_paid')} &#x200E;(#{t('yes_text')}/#{t('no_texts')})&#x200E; &#8595;", :url=>{:action=>"students_all",:sort_order=>"fee_count ASC" ,:subject_id=>params[:subject_id]} %>
+          </td>
+        <% elsif @sort_order=="fee_count ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('fees_paid')} &#x200E;(#{t('yes_text')}/#{t('no_texts')})&#x200E; &#8593;", :url=>{:action=>"students_all",:sort_order=>"fee_count DESC" ,:subject_id=>params[:subject_id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('fees_paid')} &#x200E;(#{t('yes_text')}/#{t('no_texts')})&#x200E;", :url=>{:action=>"students_all",:sort_order=>"fee_count DESC" ,:subject_id=>params[:subject_id]} %>
+          </td>
+        <% end %>
+      </tr>
+      <% page_count=0 %>
+      <% @students.each_with_index do |s,@i| %>
+        <% if params[:page].present? %>
+          <% if params[:page].to_i >= 1 %>
+            <% @i = @i  + (params[:page].to_i - 1) * @students.per_page.to_i %>
+          <% end %> <%else %> <% @i = @i %>
+        <% end %>
+        <% page_count+=1 %>
+        <tr class="tr-<%= cycle('odd', 'even') %>">
+          <td class="col-5"> <%=@i+1 %></td>
+          <% if @sort_order=="first_name ASC" or @sort_order=="first_name DESC" %>
+            <td class="col-2 batch_order_select"><%=link_to  "#{s.full_name}" ,{:controller=>'student',:action=>'profile',:id=>s.student_id} %></td>
+          <% else %>
+            <td class="col-2"><%=link_to  "#{s.full_name}" ,{:controller=>'student',:action=>'profile',:id=>s.student_id} %></td>
+          <% end %>
+          <% if @sort_order=="admission_no ASC" or @sort_order=="admission_no DESC" %>
+            <td class="col-2 batch_order_select"><%=link_to  "#{s.admission_no}" ,{:controller=>'student',:action=>'profile',:id=>s.student_id} %></td>
+          <% else %>
+            <td class="col-2"><%=link_to  "#{s.admission_no}" ,{:controller=>'student',:action=>'profile',:id=>s.student_id} %></td>
+          <% end %>
+          <% if @sort_order=="admission_date ASC" or @sort_order=="admission_date DESC" %>
+            <td class="col-2 batch_order_select"><%= s.admission_date %></td>
+          <% else %>
+            <td class="col-2"><%= s.admission_date %></td>
+          <% end %>
+          <td class="col-4"><%= s.batch_name %></td>
+          <td class="col-4"><%=link_to  "#{s.course_name} #{s.code} #{s.section_name}" ,{:action=>'batch_details',:id=>s.course_id} %></td>
+          <% if @sort_order=="gender ASC" or @sort_order=="gender DESC" %>
+            <td class="col-6 batch_order_select"><%= s.gender.downcase=='m' ? t('m') : t('f')%></td>
+          <% else %>
+            <td class="col-6"><%= s.gender.downcase=='m' ? t('m') : t('f')%></td>
+          <% end %>
+          <% if @sort_order=="fee_count DESC" or @sort_order=="fee_count ASC" %>
+            <td class="col-5 batch_order_select"><%= s.fee_count.to_i != 0 ? t('no_texts') : t('yes_text')  %></td>
+          <% else %>
+            <td class="col-5"><%= s.fee_count.to_i != 0 ? t('no_texts') : t('yes_text')  %></td>
+          <% end %>
+
+        </tr>
+      <% end %>
+    </table>
+    <% unless @students.per_page.to_i > @students.total_entries.to_i %>
+      <div class="pagination_list">
+        <div class="pagination_text">
+          <%= "#{t('showing')} #{@i+1-(page_count-1)}-#{@i+1} #{t('of')} #{@students.total_entries}" %>
+        </div>
+        <%= will_paginate @students,:renderer => 'RemoteLinkRenderer' ,:page_links=>false ,:params=>{:sort_order=>@sort_order,:gender=>params[:gender],:subject_id=>params[:subject_id]}%>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="flash-msg"> <%= t('no_students_found') %></p>
+  <% end %>
+</div>

@@ -1,0 +1,16 @@
+
+<div id="content-header">
+  <%= show_header_icon %>
+  <h1><%= t('view_refunds') %></h1>
+  <div class='header-sep'>|</div>
+  <div class='sub-header'><%= t('view_refunds') %></div>
+
+</div>
+
+<div id="page-yield">
+  <div class="bread_crumb">
+ <%= link_to t('fees_text'), :controller => "student", :action=>"fees",:id=>params[:id] %> &raquo;
+      <%= t('fees_refund') %>
+  </div>
+<%= render :partial => 'finance/refund_student_view' %>
+</div>

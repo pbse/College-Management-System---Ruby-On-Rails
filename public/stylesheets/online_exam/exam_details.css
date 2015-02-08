@@ -1,0 +1,103 @@
+#q-no{
+    float: left;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+    
+}
+
+#question{
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    padding-left: 107px;
+}
+
+#mark{
+    font-size: 12px;
+    margin-left: 106px;
+    float: left;
+    color: #BB0000;
+    margin-top: 5px;
+}
+
+#link{
+    float:right;
+    margin-right: 20px;
+    color: #BB0000;
+}
+
+#link a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #BB0000;
+}
+#link a:hover{
+    color: black;
+}
+
+.q-table{
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#option-content{
+    font-size: 17px;
+    color: black;;
+    padding-left: 107px;
+}
+.option{
+    margin-top: 20px;
+    overflow: hidden;
+}
+#option-label{
+    color: black;
+    float: left;
+    font-size: 14px;
+    margin-left: 19px;
+}
+
+.is-answer{
+    color: black;
+    float: left;
+    width: 680px;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 20px;
+}
+.not-answer{
+    float: left;
+    width: 680px;
+    font-size: 12px;
+    min-height: 20px;
+}
+
+.option-edit{
+    float: left;
+    width:100px;
+    padding-top: 10px;
+}
+
+#option-content a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #BB0000;
+}
+#option-content a:hover{
+    color: black;
+}
+
+#page-yield h4{
+    color: #999999;
+}
+
+.answer{
+    overflow: hidden;
+}
+.horizontal-line{
+    border-left-width: 0px;
+    color : #27292B;
+}
+img{
+    width: 100%;
+}

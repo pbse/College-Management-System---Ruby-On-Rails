@@ -1,0 +1,100 @@
+<% unless @batches.empty? %>
+  <div class="field_pair">
+    <div class="label1"><%="#{t('total_amount')}" %></div>
+    <div class="label2"><%=": #{currency} #{ precision_label(@total_amount) }" %></div>
+  </div>
+  <div class="submit-button">
+    <%= link_to "#{t('export_as_csv')}" ,{:action=>'batch_fee_defaulters_csv',:sort_order=>@sort_order ,:id=>params[:id]},:target=>'_blank'  %>
+  </div>
+  <div class="extender"></div>
+  <div id="page-yield">
+    <table id="report_table" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head sub-heading">
+        <td><%= t('no_text') %></td>
+        <% if @sort_order=="name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8595;", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"name ASC",:id=>params[:id]} %>
+          </td>
+        <% elsif @sort_order=="code ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8593;", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"name DESC",:id=>params[:id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('name')}", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"name DESC",:id=>params[:id]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="start_date DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('start_date')} &#8595;", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"start_date ASC",:id=>params[:id]} %>
+          </td>
+        <% elsif @sort_order=="start_date ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('start_date')} &#8593;", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"start_date DESC",:id=>params[:id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('start_date')}", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"start_date DESC",:id=>params[:id]} %>
+          </td>
+        <% end %>
+        <% if @sort_order=="end_date DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('end_date')} &#8595;", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"end_date ASC",:id=>params[:id]} %>
+          </td>
+        <% elsif @sort_order=="end_date ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('end_date')} &#8593;", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"end_date DESC",:id=>params[:id]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('end_date')}", :url=>{:action=>"batch_fee_defaulters",:sort_order=>"end_date DESC",:id=>params[:id]} %>
+          </td>
+        <% end %>
+        <td><%= t('tutor')  %></td>
+        <td><%=t('students') %></td>
+        <td><%=t('fee_collections') %></td>
+        <td><%="#{t('balance')} &#x200E;(#{currency})&#x200E; "  %></td>
+      </tr>
+      <% @batches.each_with_index do |b,@i| %>
+        <tr class="tr-<%= cycle('odd', 'even') %>">
+          <td class="col-5"> <%=@i+1 %></td>
+          <% if @sort_order=="code DESC" or @sort_order=="code ASC" %>
+            <td class="col-4 batch_order_select"><%= link_to "#{b.code}-#{b.name}", {:action=>'batch_fee_collections' ,:id=>b.id} %></td>
+          <% else %>
+            <td class="col-4"><%= link_to "#{b.code}-#{b.name}", {:action=>'batch_fee_collections' ,:id=>b.id} %></td>
+          <% end %>
+          <% if @sort_order=="start_date DESC" or @sort_order=="start_date ASC" %>
+            <td class="col-3 batch_order_select"><%= b.start_date.to_date %></td>
+          <% else %>
+            <td class="col-3"><%= b.start_date.to_date %></td>
+          <% end %>
+          <% if @sort_order=="end_date DESC" or @sort_order=="end_date ASC" %>
+            <td class="col-3 batch_order_select"><%= b.end_date.to_date %></td>
+          <% else %>
+            <td class="col-3"><%= b.end_date.to_date %></td>
+          <% end %>
+
+          <% unless @employees.blank?%>
+            <% unless @employees[b.id.to_s].nil? %>
+              <td class="col-2">
+                <%@employees[b.id.to_s].each do |emp| %>
+                  <div class="emp_name"><%=link_to "#{emp.full_name} - #{emp.employee_number}" ,{:controller=>'employee',:action=>'profile',:id=>emp.employee_id}%></div>
+                <% end %>
+              </td>
+            <% else %>
+              <td class="col-2">-</td>
+            <% end %>
+          <% else %>
+            <td class="col-2">-</td>
+          <% end %>
+          <td class="col-3"><%= b.student_count %></td>
+          <td class="col-3"><%= b.fee_collections_count %></td>
+          <td class="col-4"><%=link_to "#{ precision_label(b.balance.nil?? 0.0 : b.balance)}" , {:action=>'batch_fee_collections' ,:id=>b.id} %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% else %>
+  <p class="flash-msg"> <%= t('no_record_found') %></p>
+<% end %>

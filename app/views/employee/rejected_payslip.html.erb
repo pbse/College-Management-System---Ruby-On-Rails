@@ -1,0 +1,48 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('rejected_payslip') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%= t('department_wise_payslip') %></div>
+
+
+</div>
+<div id="page-yield">
+  <div class="bread_crumb">
+    <%= link_to t('hr'), :controller => "employee", :action=>"hr" %> <div class = "bread-crumb-separator"> > </div>
+    <%= link_to t('create_payslip'), :controller => "employee", :action=>"payslip" %> <div class = "bread-crumb-separator"> > </div>
+    <%= t('rejected_payslip') %>
+  </div>
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+  <div class="drop-down-box">
+    <label for="category_prefix"><%= t('select_a_department') %></label>
+    <div class="text-input-bg"> <%= select :individual_payslip, :department_id, @departments.map { |s| [s.name, s.id] },
+        {:prompt => "#{ t('select_a_department')}"},
+        {:onChange => "#{remote_function(:url => {:action => "update_rejected_employee_list"},
+        :with => "'department_id='+value",:before=>"$('loader').show();",:success=>"$('loader').hide();")}"} %>
+      <%= image_tag("loader.gif", :align => "absmiddle", :border => 0, :id => "loader", :style =>"display: none;" ) %>
+    </div>
+  </div>
+  <div class="extender"></div>
+  <div id="employees_select_list"></div>
+</div>

@@ -1,0 +1,185 @@
+
+#category-list {
+    clear : both;
+    padding : 10px 0 40px 0px;
+    width:960px;
+    margin:0px auto;
+}
+
+#category-list .listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    min-height : 1.5em;
+    overflow: auto;
+    list-style-type : none;
+    padding : 0.5em 0 0 1em;
+}
+
+#category-list .listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    min-height : 1.5em;
+    overflow: auto;
+    list-style-type : none;
+    padding : 0.5em 0 0 1em;
+}
+
+#category-list .heading {
+    background:none repeat scroll 0 0 #BECFFB;
+    border-bottom:2px solid #BECFFB;
+    color:#444444;
+    height:1.5em;
+    list-style-type:none;
+    padding:0.5em 0 0 1em;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#category-list li div {
+    float : left;
+}
+#category-list li div.category-name {
+    width : 230px;
+    font-weight: bold;
+    font-size:13px;
+}
+#category-list li div a {
+    color: #444;
+    font-size: 14px;
+    text-decoration: none;
+}
+.category-list li div a:hover {
+    color : #d00;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+.label-field-pair {
+    height: auto;
+    overflow: hidden;
+    padding-top: 3px;
+    width: 600px;
+}
+.text-input-bg {
+    background : transparent;
+    height : 28px;
+    width : 250px;
+    float:left;
+}
+.label-field-pair label {
+    color : #444;
+    display : block;
+    font-size: 14px;
+    margin : 0 0 10px 0;
+    float:left;
+    width:200px;
+    padding-top: 10px;
+    font-weight: 600;
+
+}
+.label-field-pair input {
+    background : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width : 205px;
+    height:17px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding: 5px;
+}
+.text-input-bg select {
+    background-color : #eee;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width : 215px;
+    height:27px;
+    padding:3px 6px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+.label-checkbox-pair {
+    float : left;
+    padding : 30px 0 0 10px;
+    width : 250px;
+}
+
+.submit_button {
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 10px;
+    margin-left: 210px;
+}
+
+.label-field-pair{
+    width: auto;
+}
+.fields{
+    /*    width: 620px;*/
+}
+
+.delete_button_img{
+    background:#fff url(/images/buttons/delete_2.png) no-repeat;
+    display: block;
+    float: right;
+    height: 12px;
+    width: 150px;
+    margin-top: 13px;
+    margin-left: 5px;
+    margin-right: 365px;
+    font-size: 13px;
+    padding-left: 15px;
+    color: #f00;
+    text-decoration: none;
+}
+
+.add_button_img{
+    background: none;
+    display: block;
+    float: none;
+    height: 12px;
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 210px;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline;
+    color: #080;
+}
+.label-field-pair input ,.text-input-bg select {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+.add_button_img{
+    float: left;
+    width: 110px;
+}
+.custom .add_button_img{
+    float: none;
+    margin-left: 210px;
+}
+.submit_button{
+    margin-top: 8px;
+}
+
+.fieldWithErrors input {
+    border: 1px solid #B00;
+}
+
+#page-yield .add_link a:hover{
+    color: #008800 !important;
+}

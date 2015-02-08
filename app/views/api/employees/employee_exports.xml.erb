@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%= @xml.employee_detail{
+  @employees.each do |employee|
+    @employee = employee
+    employee_profile_data = employee.get_profile_data
+    @additional_data = employee_profile_data.second
+    @biometric_id = employee_profile_data.third
+    @bank_data = employee_profile_data[2]
+    @total_years = employee_profile_data[3]
+    @total_months = employee_profile_data[4]
+    @employee_salary_details = employee_profile_data[5]
+    @biometric_id = employee_profile_data[6]
+    @xml.employee do
+      @xml.employee_number(@employee.employee_number)
+      @xml.employee_name(@employee.full_name)
+      @xml.joining_date(@employee.joining_date)
+      @xml.employee_department(@employee.employee_department.try(:name))
+      @xml.employee_category(@employee.employee_category.try(:name))
+      @xml.employee_position(@employee.employee_position.try(:name))
+      @xml.employee_grade(@employee.employee_grade.try(:name))
+      @xml.job_title(@employee.job_title)
+      @xml.reporting_manager(@employee.reporting_manager.try(:full_name))
+      @xml.gender(@employee.gender)
+      @xml.email(@employee.email)
+      @xml.status(@employee.status)
+      @xml.qualification(@employee.qualification)
+      @xml.total_experiance(@total_years.to_s+" #{t('years')} "+@total_months.to_s+" #{t('months')}")
+      @xml.experiance_info(@employee.experience_detail)
+      @xml.date_of_birth(@employee.date_of_birth)
+      @xml.marital_status(@employee.marital_status)
+      @xml.children_count(@employee.children_count)
+      @xml.father_name(@employee.father_name)
+      @xml.mother_name(@employee.mother_name)
+      @xml.spouse_name(@employee.husband_name)
+      @xml.blood_group(@employee.blood_group)
+      @xml.nationality(@employee.nationality.try(:name))
+      @xml.home_address("#{@employee.home_address_line1} #{@employee.home_address_line2}")
+      @xml.city(@employee.home_city)
+      @xml.state(@employee.home_state)
+      @xml.country(@employee.home_country.try(:name))
+      @xml.pin_code(@employee.home_pin_code)
+      @xml.office_address("#{@employee.office_address_line1} #{@employee.office_address_line2}")
+      @xml.office_city(@employee.office_city)
+      @xml.office_country(@employee.office_country.try(:name))
+      @xml.office_pin_code(@employee.office_pin_code)
+      @xml.office_phone1(@employee.office_phone1)
+      @xml.office_phone2(@employee.office_phone2)
+      @xml.mobile(@employee.mobile_phone)
+      @xml.home_phone(@employee.home_phone)
+      @xml.fax(@employee.fax)
+      @xml.biometric_id(@biometric_id)
+      @xml.employee_additional_details do
+        @additional_data.each_pair do |key,value|
+          @xml.additional_field do
+            @xml.name(key)
+            @xml.value(value)
+          end
+        end
+      end
+      @xml.employee_bank_details do
+        @bank_data.each_pair do |key,value|
+          @xml.bank_field do
+            @xml.name(key)
+            @xml.value(value)
+          end
+        end
+      end
+      @xml.employee_salary_details do
+        @employee_salary_details.each do |employee_salary_detail|
+          @xml.salary do
+            @xml.payroll_category(employee_salary_detail.payroll_category.try(:name))
+            @xml.amount(employee_salary_detail.amount.try(:to_f))
+          end
+        end
+      end
+    end
+  end
+}%>

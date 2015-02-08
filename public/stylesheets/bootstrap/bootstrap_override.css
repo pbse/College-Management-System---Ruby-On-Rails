@@ -1,0 +1,246 @@
+
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    min-height: 100%;
+    height: 100%;
+    /*    height: auto !important;*/
+
+    /*        padding-top: 40px;*/
+}
+.container-fluid {
+    /*    min-height: 100%;
+        height: 100%;*/
+    /*        padding-top: 40px;*/
+}
+.nav-container{
+    min-height: 10%;
+    height: 10%;
+}
+.phone_top_margin{
+    margin-top: 40px;
+    display: block;
+}
+.phone_bottom_margin{
+    margin-top: -40px;
+    display: block;
+}
+.content{
+    /*    margin-top: 20px;*/
+    min-height: 80%;
+    height: auto !important;
+    /*    height: 80%;*/
+    /*    height: 90%;*/
+    /*        margin: 0 auto -2em ;*/
+}
+.footer{
+    height:2em;
+    margin-top:-2em;
+    position: fixed;
+    bottom: 0;
+}
+.header_space{
+    height: 4em;
+    display: block;
+}
+.event_name, .name, .name a{
+    font-weight: bold;
+    color: black;
+}
+.subject, .subject a{color: #a20000}
+.subject-unread, .subject-unread a{
+    color: #a20000;
+    font-weight: bold;
+}
+.event, .event a{
+    color: #a20000;
+    font-weight: bold;
+}
+.paid{
+    color: #00a200;
+    font-weight: bold;
+}
+.unpaid{
+    color: #a20000;
+    font-weight: bold;
+}
+.read, .read a{color: gray;}
+.description, .description a{
+    color: gray;
+    font-weight: bold;
+}
+/*.navbar .container { height: 2em; }*/
+.extender {
+    height:1px;
+    clear:both;
+}
+.event_name{
+    margin-top: -25px;
+}
+.red, .blue, .green, .black{
+    width:15px;
+    height:30px;
+    margin-top:-5px;
+    position: relative;
+    left: 95%;
+    top: 0px;
+}
+.red{background:#fff url(../../images/fedena_mobile/red.png) no-repeat;}
+.green{background:#fff url(../../images/fedena_mobile/green.png) no-repeat;}
+.blue{background:#fff url(../../images/fedena_mobile/blue.png) no-repeat;}
+.black{background:#fff url(../../images/fedena_mobile/black.png) no-repeat;}
+.big{font-size: 30px}
+.date_select{
+    width: 20px;
+}
+#leave_apply_start_date_3i, #leave_apply_start_date_2i, #leave_apply_end_date_3i, #leave_apply_end_date_2i, #attendance_month_date_3i, #attendance_month_date_2i{width: 22%}
+#leave_apply_start_date_1i, #leave_apply_end_date_1i, #attendance_month_date_1i{width: 25%}
+.row-fluid {
+    /*    width: 96%;*/
+    width: 100%;
+}
+.container-fluid {
+    padding: 0;
+}
+.collapse.in {
+    height: auto;
+}
+.desktop-nav-container{
+    min-height: 5%;
+    height: 5%;
+}
+.footer_margin{
+    min-height: 2em;
+    height: 2em;
+    display: block;
+    margin-top: 2em;
+}
+.footer_content{
+    display: block;
+    background-color: silver;
+    background-repeat: repeat-x;
+}
+.sticky{
+    padding: 0px;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+
+.max-height{
+    height:100% !important;
+    min-height:100% !important;
+}
+
+.nav-footer{
+    margin-bottom:  0;
+}
+.full_width{
+    min-width: 100%;
+    width: 100%;
+}
+.dashboard, .dashboard a{
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+}
+.expanded{
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+}
+.top_margin{
+    height: 43px;
+    display: block;
+}
+body{
+    padding: 0;
+}
+.alert{
+    margin: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.content{
+    min-height: 89%;
+}
+.top_separation{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#footer_link, #footer_link a{
+    font-weight: bold;
+    color: #555;
+    margin-top: -14px;
+    background-color: silver;
+}
+form{
+    margin-left: 3%;
+    margin-right: 3%;
+    font-weight: bold;
+}
+form label{
+    font-weight: bold;
+}
+.student_name{
+    color: #a20000;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    border-bottom: solid 1px #aaa;
+    padding: 4px;
+}
+#student_list, #student_list a{
+    font-weight: bold;
+    color: #222;
+}
+.navbar  .brand,.navbar  .brand a{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+}
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner{padding: 0}
+.btn .btn-navbar{float: left;}
+.contents{margin-left: 0}
+
+#submit-button input {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin:0px auto;
+/*    margin-left:271px;*/
+    margin-top:-30px;
+    padding:7px 10px;
+    border:none;
+    text-align:center;
+    width:auto;
+    cursor:pointer;
+}
+
+.btn-danger {
+  background-color: hsl(0, 100%, 25%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d10000", endColorstr="#7f0000");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#d10000), to(#7f0000));
+  background-image: -moz-linear-gradient(top, #d10000, #7f0000);
+  background-image: -ms-linear-gradient(top, #d10000, #7f0000);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d10000), color-stop(100%, #7f0000));
+  background-image: -webkit-linear-gradient(top, #d10000, #7f0000);
+  background-image: -o-linear-gradient(top, #d10000, #7f0000);
+  background-image: linear-gradient(#d10000, #7f0000);
+  border-color: #7f0000 #7f0000 hsl(0, 100%, 21%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.26);
+  -webkit-font-smoothing: antialiased;
+}

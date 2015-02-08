@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.fee_due_detail{
+  @finance_fee_collections.each do |finance_fee_collection|
+    @finance_fee_collection = finance_fee_collection
+    @xml.finance_fee_collection do
+      unless @student.check_fee_pay(@finance_fee_collection)
+        @xml.name(@finance_fee_collection.name)
+        @xml.due_date(@finance_fee_collection.due_date)
+        @xml.amount(precision_label(@finance_fee_collection.student_fee_balance(@student)))
+      end
+    end
+  end
+}%>
+
+

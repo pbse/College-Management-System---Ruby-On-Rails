@@ -1,0 +1,51 @@
+.text-input-bg textarea {
+-moz-border-radius:10px ;
+-webkit-border-radius:10px ;
+background-color:#EEEEEE;
+border:1px solid #C6C6C6;
+height:120px;
+margin:5px 10px 0 0;
+padding:3px 6px;
+width:205px;
+}
+.text-input-bg textarea:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+#placementevent-description{
+    height: auto;
+    overflow: hidden;
+}
+#placementevent-description .text-input-bg {
+    height: auto;
+}
+.text-input-bg img{
+padding-right:4px;
+padding-top:11px;
+}
+.label-field-pair label{
+width: 108px;
+}
+.submit-button{
+    float: right;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:none repeat scroll 0 0 #27292B;
+    border:medium none;
+    color:#FFFFFF;
+    cursor:pointer;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    padding:7px 10px;
+    min-width:50px;
+        text-decoration: none
+}
+.submit-button:hover { background: #373b3f; }
+#placementevent_submit{
+    margin-right: 122px;
+    margin-top: 20px;
+}
+#new_placementevent_form{
+    margin-right:245px;
+}

@@ -1,0 +1,393 @@
+root {
+    display: block;
+}
+
+.red_heading
+{
+    font-weight: bold;
+    font-size: 15px;
+    color : #b30000;
+    margin-bottom: 10px;
+}
+.textField1 textarea
+{
+    background: #E0E0E0;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    width:700px
+}
+.textField1 textarea:focus
+{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+.textField1 input:focus
+{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+.textField1 input {
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 25px;
+    width: 320px;
+    padding: 5px;
+}
+.textField textarea
+{
+    height: 110px;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius: 10px;
+    width:700px;
+    padding: 5px;
+    resize: none;
+}
+.textField textarea:focus
+{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+.textField input:focus
+{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+.textField
+{
+    color: #333333;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: Arial;
+}
+.textField2
+{
+    color: #333333;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: Arial;
+}
+.textField input
+{
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    width: 180px;
+    height:25px;
+    padding: 5px;
+}
+#go
+{   float: left;
+    margin-top:-20px;
+}
+#go input
+{
+    -moz-background-inline-policy: continuous;
+    -moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 7px 12px;
+    text-align: center;
+    min-width: 90px;
+    width: auto;
+    height:auto;
+    float: right;
+}
+#sub{
+    width: 710px;
+}
+#share
+{
+    width: 675px;
+}
+#all_posts
+{
+    margin-top: 30px;
+    width:700px;
+}
+#my_groups
+{
+
+    font-size: 13px;
+    font-family: Arial;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#members
+{
+    font-size: 13px;
+    font-family: "Arial";
+}
+#leftside
+{
+    float:left;
+}
+#rightside
+{
+    float:left;
+    margin-left: 60px;
+    border-left:#c6c6c6 solid 1px;
+    margin-top: 20px;
+    overflowL: hidden;
+    width: 225px;
+}
+#right_content
+{
+    margin-left:30px;
+}
+.posted_by
+{
+    float : left;
+    width: auto;
+}
+.posted_by a
+{
+    color:#b00;
+    text-decoration: none;
+    font-weight: bold;
+}
+.comments
+{
+    float:right;
+    color:#b00;
+    font-weight: bold;
+}
+.comments a
+{
+    color:#b00;
+}
+#all_posts a
+{
+    text-decoration: none;
+    font-weight: bold;
+}
+.paginate
+{
+    margin-top: 15px;
+    margin-right:-100px;
+}
+#horizantal_bar
+{
+    height:1px;
+    width:700px;
+    margin-bottom: 10px;
+    border-bottom:  1px solid #AAA;
+    padding-top: 15px;
+}
+.firstName a
+{
+    text-decoration: none;
+    color:#333333;
+    margin-right:10px;
+}
+.firstName
+{
+    text-decoration: none;
+    color:#333333;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+#del_mem
+{
+    float: right;
+}
+#del_mem a
+{
+    text-decoration: none;
+    color:#9d0e00;
+}
+#spaceforbrowse
+{
+    padding-top: 50px;
+}
+#read_more
+{
+    text-align: justify;
+    font-family: Arial;
+    font-size: 13px;
+}
+#post_title a
+{
+    color:#000;
+    font-size: 16px;
+}
+.post_details
+{
+    font-size: 12px;
+    float:left;
+    width:700px;
+}
+.space
+{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.member_img
+{
+    float: left;
+    margin-right: 10px;
+}
+.text_description
+{
+    color: #333333;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 13px;
+}
+.group_names a
+{
+    font-weight: normal;
+}
+#share_heading
+{
+    margin-top: 15px;
+}
+#title_label
+{
+    margin-top: 20px;
+}
+#description_label
+{
+    margin-top: 15px;
+}
+#all_posts_heading
+{
+    margin-bottom: 10px;
+}
+#horizantal_bar_paginate
+{
+    margin-top: 10px;
+    height:1px;
+    width:700px;
+    border-bottom:  1px solid #AAA;
+}
+#upload
+{
+    margin-top: 10px;
+}
+.each_post
+{
+    height: 60px;
+}
+.memberDetails
+{
+    position: relative;
+    font-family: "arial";
+    font-weight: bold;
+    font-size: 11px;
+}
+.memberDetails:hover
+{
+    color: #ffffff;
+    display: block;
+    position: absolute;
+    min-width: 100px;
+    background-color: #fff;
+    border:4px solid #c3d9ff;
+    min-height: 40px;
+    left: 50px;
+    top: -10px;
+    color: #FFFFFF;
+    padding: 5px;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    padding-top:10px;
+    color:#990A10;
+    font-weight:bold;
+}
+.firstName:hover
+{
+    color:#000000;
+}
+.firstName
+{
+    color:#fff;
+}
+.memberName
+{
+    color:#000;
+}
+.memberName:hover
+{
+    color:#b30000;
+    cursor: pointer;
+}
+.post_title_black a
+{
+    font-size: 14px;
+    color:#000000;
+}
+.td-name{
+    padding:5px;
+    color:#2D2D2D;
+    padding-left:0px;
+    font-size:12px;
+    min-height:15px;
+    height: auto;
+    cursor:pointer;
+    word-wrap: break-word;
+}
+.td-name .date{
+    position: relative;
+}
+.td-name:hover{
+    color: #b30000;
+}
+.td-name .date span{
+    display: none;
+    color: #FFFFFF;
+}
+.td-name:hover .date span{
+    color: #000000;
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    background-color: #fff;
+    border:1px solid #000000;
+    min-height: 20px;
+    left: 50px;
+    top: -10px;
+    color: #FFFFFF;
+    padding: 5px;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    padding-top:10px;
+    color:#000000;
+    font-weight:bold;
+    font-size: 11px;
+    font-family: arial;
+}
+#necessary-field-notification {
+    font-weight: bold;
+    padding: 0px 0 0px;
+}
+.necessary-field {
+    color: #FF0000;
+    font-size: 1.1em;
+}
+#members a
+{
+    text-decoration: none;
+}
+#see_all_members a
+{
+    color:#b30000;
+    font-family: "arial";
+    font-weight: bold;
+    font-size: 11px;
+}

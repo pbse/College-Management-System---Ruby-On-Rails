@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<% privilege_text = Array.new %>
+<%=
+@xml.user_detail{
+  @xml.user do
+    @xml.username(@user.username)
+    @xml.first_name(@user.first_name)
+    @xml.last_name(@user.last_name)
+    @xml.email(@user.email)
+    @xml.user_type(@user.user_type)
+    @privileges.each do |privilege|
+      privilege_text.push t(privilege.to_s)
+    end
+    unless privilege_text.blank?
+      @xml.privileges(privilege_text.join(', '))
+    end
+  end
+}%>

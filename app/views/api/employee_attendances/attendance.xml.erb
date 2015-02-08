@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.attendance_detail{
+  @xml.attendance do 
+    @xml.attendance do
+      @xml.attendance_date(@attendance.attendance_date)
+      @xml.employee_number(@attendance.employee.nil? ? "Deleted Employee" : @attendance.employee.employee_number)
+      @xml.leave_type(@attendance.employee_leave_type.code)
+      @xml.reason(@attendance.reason)
+      @xml.half_day(@attendance.is_half_day == true ? "Half Day" : "Full Day")
+    end
+  end
+}%>
+

@@ -1,0 +1,26 @@
+** Daemonized, any open files are closed.  Look at log/mongrel.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:12001
+** Starting Rails with production environment...
+/home/crosstr/rails_apps/school/config/../config/preinitializer.rb:21: Bundler couldn't find some gems.Did you run `bundle install`? (RuntimeError)
+	from /home/crosstr/rails_apps/school/config/boot.rb:28:in `load'
+	from /home/crosstr/rails_apps/school/config/boot.rb:28:in `preinitialize'
+	from /home/crosstr/rails_apps/school/config/boot.rb:10:in `boot!'
+	from /home/crosstr/rails_apps/school/config/boot.rb:126
+	from /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+	from /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+	from /home/crosstr/rails_apps/school/config/environment.rb:1
+	from /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+	from /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:147:in `rails'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:113:in `cloaker_'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:149:in `call'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:149:in `listener'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:99:in `cloaker_'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `call'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `initialize'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `new'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `run'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+	from /usr/bin/mongrel_rails:23:in `load'
+	from /usr/bin/mongrel_rails:23

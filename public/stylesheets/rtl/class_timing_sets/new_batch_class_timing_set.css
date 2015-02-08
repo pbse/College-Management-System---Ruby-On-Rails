@@ -1,0 +1,196 @@
+.assigned_batches_section{
+    width: 405px;
+    min-width: 405px;
+    max-width: 405px;
+    float: right;
+    height: 350px;
+    min-height: 350px;
+    max-height: 350px;
+    margin-top: 30px;
+}
+
+.select_all_section{
+    margin-bottom: 20px;
+    margin-right: 10px;
+    width: 405px;
+    min-width: 405px;
+    max-width: 405px;
+    float: right;
+}
+
+.select_all_section label{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #343434;
+    margin-bottom: 5px;
+}
+
+.select_all_section input.checkbox{
+    float: left;
+}
+
+#assigned_batches{
+    width: 405px;
+    min-width: 405px;
+    max-width: 405px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    height: 310px;
+    max-height: 310px;
+    min-height: 310px;
+    float: right;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.assigned_batch{
+    font-family: Arial;
+    font-size: 13px;
+    color: #484848;
+    float: right;
+    width: 405px;
+    max-width: 405px;
+    min-width: 405px;
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px;
+}
+
+.assigned_batch:hover{
+    background-color: #dcdcdc;
+}
+
+.assigned_batch label{
+    padding-right: 10px;
+    padding-top: 10px;
+    float: right;
+}
+
+.assigned_batches_check{
+    padding-right: 10px;
+    margin-top: 10px;
+    float: right;
+}
+
+.buttons{
+    width: 125px;
+    min-width: 125px;
+    max-width: 125px;
+    height: 310px;
+    min-height: 310px;
+    max-height: 310px;
+    float: right;
+    margin-top : 70px;
+}
+
+
+.right a {
+    background: url(/images/class_timing_sets/left.png);
+    display: block;
+    float: right;
+    height: 38px;
+    margin-right: 37px;
+    margin-top: 106px;
+    max-height: 38px;
+    max-width: 49px;
+    min-width: 49px;
+    width: 49px;
+}
+
+.right a:hover{
+    background: url(/images/class_timing_sets/left_hover.png);
+}
+
+.left a{
+    background: url(/images/class_timing_sets/right.png);
+    float: right;
+    height: 38px;
+    margin-right: 37px;
+    margin-top: 20px;
+    max-height: 38px;
+    max-width: 49px;
+    min-width: 49px;
+    width: 49px;
+}
+
+.left a:hover{
+    background: url(/images/class_timing_sets/right_hover.png);
+}
+
+
+.all_batches_section{
+    width: 405px;
+    min-width: 405px;
+    max-width: 405px;
+    float: right;
+    height: 350px;
+    min-height: 350px;
+    max-height: 350px;
+    margin-top: 30px;
+}
+
+#all_batches{
+    width: 420px;
+    min-width: 405px;
+    max-width: 405px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    height: 310px;
+    max-height: 310px;
+    min-height: 310px;
+    float: right;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.all_batch{
+    font-family: Arial;
+    font-size: 13px;
+    color: #484848;
+    float: right;
+    width: 405px;
+    max-width: 405px;
+    min-width: 405px;
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px;
+}
+
+.all_batch:hover{
+    background-color: #dcdcdc;
+}
+
+.all_batch label{
+    padding-right: 10px;
+    padding-top: 10px;
+    float: right;
+}
+
+.all_batches_check{
+    padding-right: 10px;
+    margin-top: 10px;
+    float: right;
+}
+
+.necessary-field {
+    color : #f00;
+    font-size : 1.1em;
+}
+
+
+div#list_batches img#loader1 {
+    margin-right: -474px;
+    margin-top: 71px;
+}
+

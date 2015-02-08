@@ -1,0 +1,19 @@
+<% if @fine_rules.present? %>
+<div class="batch_select_box"> <div class="label-field-pair"></div>
+    <div class="fee_category1_scroll">
+      <div class="fine-head">
+      <div class="fine-days"><%=t('days')%></div>
+      <div class="fine-amt"><%=t('fine_amount')%></div></div>
+      <% @fine_rules.each do |f| %>
+
+        <div class="each_batch" id="remove-slab">
+          <div class="fine-days"> <%=f.fine_days%></div><div class="fine-amt"><%=f.fine_amount%><%=f.is_amount??  currency : "%" %></div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+
+<% else %>
+  <p class="flash-msg"> <%= t('no_fine') %> </p>
+<% end %>

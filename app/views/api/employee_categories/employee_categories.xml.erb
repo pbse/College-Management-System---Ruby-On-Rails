@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.employee_category_detail{
+  @employee_categories.each do |employee_category|
+    @employee_category = employee_category
+    @xml.employee_category do
+      @xml.name(@employee_category.name)
+      @xml.prefix(@employee_category.prefix)
+    end
+  end
+}%>
+
+

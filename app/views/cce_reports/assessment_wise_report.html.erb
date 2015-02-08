@@ -1,0 +1,83 @@
+<div id="content-header">
+  <%= show_header_icon %>
+  <h1>CCE Reports</h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'>Assessment-wise Report</div>
+<div id="inner-tab-menu">
+  <ul>
+  </ul>
+</div>
+</div>
+<div id="page-yield">
+  <div class="bread_crumb">
+    <%= link_to t('exam_text'), :controller => "exam", :action=>"index" %> <div class = "bread-crumb-separator"> > </div>
+    <%= link_to t('report_center'), :controller => "exam", :action => "report_center" %> <div class = "bread-crumb-separator"> > </div>
+    <%= link_to t('cce_reports'), :controller => "cce_reports" %> <div class = "bread-crumb-separator"> > </div>
+    Assessment-wise Report
+  </div>
+  <div id="hider">
+    <% unless flash[:notice].nil? %>
+      <p id="flash-msg"class="flash-msg"> <%= flash[:notice] %> </p>
+    <% end %>
+  </div>
+  <% remote_form_for :assessment ,:url=>{:action=>'generated_report'},:loading => "$('loading').show();", :loaded => "$('loading').hide();" do |f| %>
+    <div class="label-field-pair1">
+      <div class="label-field-pair">
+        <label for="batch_id">Select course</label>
+        <div class="text-input-bg margin-left-10">
+          <%= select :course, :course_id,
+            @courses.map {|c| [c.full_name, c.id]},
+            {:prompt => "Select a Course"},
+            {:onChange => "#{remote_function(:url => {:action => "list_batches"},
+            :with => "'course_id='+ value",
+            :before => "Element.show('loader')",
+            :success => "Element.hide('loader')"
+            )}"} %> <%= image_tag("loader.gif",
+            :align => "absmiddle",
+            :border => 0,
+            :id => "loader",
+            :style =>"display: none;" ) %>
+        </div>
+      </div>
+      <div id ="batch_select">
+        <div class="label-field-pair2">
+          <label for="batch_id">Select Batch</label>
+          <div  class="text-input-bg2" id="exam-group-select">
+            <%= f.select :batch_id, @batches.map{|exam| [exam.name,exam.id]},:prompt=> "Select Batch" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="label-field-pair1">
+      <div class="label-field-pair">
+        <label for="batch_id">Assessment Group</label>
+        <div  class="text-input-bg" id="exam-group-select">
+          <%= f.select  :assessment_group, @assessment_groups.map{|a| [a,a]},:prompt=> "Select Assessment" %>
+        </div>
+      </div>
+      <div class="label-field-pair2">
+        <label for="batch_id">Student Category</label>
+        <div  class="text-input-bg2" id="exam-group-select">
+          <%= f.select :student_category_id,@student_category.map {|c| [c.name, c.id]}, { :prompt => "All" } %>
+        </div>
+      </div>
+
+      <div class="label-field-pair">
+        <label for="batch_id">Gender</label>
+        <div  class="text-input-bg" id="exam-group-select">
+          <%= f.select :gender, [['All',''],['Male','m'],['Female','f']] %>
+        </div>
+      </div>
+      <div class="submit_btn">
+        <%= submit_tag "", :value => "► #{t('view')}", :class => "submit-button", :disable_with => "► #{t('please_wait')}" %>
+        <%= image_tag("loader.gif",
+          :align => "absmiddle",
+          :border => 0,
+          :id => "loading",
+          :style =>"display: none;" ) %>
+      </div>
+    </div>
+  <% end %>
+  <div class="extender"></div>
+</div>
+<div id="report_table"></div>

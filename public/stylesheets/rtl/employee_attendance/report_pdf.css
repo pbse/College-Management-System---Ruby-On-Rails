@@ -1,0 +1,181 @@
+.page1 {
+    width:800px;
+    height: auto;
+    page-break-after: always;
+    page-break-inside: avoid;
+    clear: both;
+}
+.page-break1{
+    height: 20px;
+    border: 1px solid #fff;
+    width: 800px;
+    margin: 0 auto;
+/*    float: left;*/
+}
+
+#page-yield {
+    width:800px;
+    margin: 0 auto;
+
+}
+.page-blank{
+    width: 100%;
+/*    float: left;*/
+}
+.page_break{
+    margin-top: 60px;
+}
+.section1{
+    page-break-before:always;
+    text-align: center;
+}
+.row{
+    float: right;
+    width: 100%;
+    text-align: center;
+}
+.page-blank{
+    width: 100%;
+    float: right;
+}
+.page_break{
+    margin-top: 60px;
+}
+.hor_line {
+    background: none repeat scroll 0 0 #333333;
+    float: right;
+    height: 1px;
+    width: 800px;
+}
+#page-yield h2{
+    text-align: right;
+    margin-right: 0px;
+}
+.page-blank{
+    width: 100%;
+    float: right;
+    border-top: 1px solid #ADACAB;
+}
+.page-break1{
+    height: 20px;
+    border: 1px solid #fff;
+    width: 100%;
+    float: right;
+}
+
+h2.heading{
+    text-align: center;
+    margin:5px;
+    /*    font-size: 15px;*/
+}
+.section1 h2{
+    text-align: center;
+    margin: 5px;
+}
+
+#main_info h4{
+    color: #555555;
+    margin-top: 2px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#h2{
+    margin-bottom: 2px;
+    font-weight: normal;
+}
+.report{
+    margin: 0 auto;
+}
+.info-left {
+    text-align: right;
+}
+.info-right {
+    float: left;
+}
+table#pdf-table{
+    border-top: 1px solid #ADACAB;
+    border-bottom: 1px solid #ADACAB;
+    border-collapse:collapse
+}
+.odd{
+    height:auto;
+    background: #EEEEEE;
+}
+.even{
+    height:auto;
+    background: #fff;
+}
+tr.even{
+    border: 1px solid #ADACAB;
+    border-bottom: 0;
+}
+tr.odd{
+    border: 1px solid #ADACAB;
+    border-bottom: 0;
+}
+.even td{
+    padding: 12px 15px 12px 12px;
+    border: 1px solid #ADACAB;
+    border-left: 0px solid #fff;
+    border-top: 0px solid #fff;
+    border-bottom: 0;
+}
+.odd td{
+    padding: 12px 15px 12px 12px;
+    border: 1px solid #ADACAB;
+    border-left: 0px solid #fff;
+    border-top: 0px solid #fff;
+    border-bottom: 0;
+}
+.table-header td{
+    padding: 12px 15px 12px 12px;
+    border-top: 1px solid #ADACAB;
+    border-right: 1px solid #ADACAB;
+    border-left: 1px solid #ADACAB;
+    color: #97080e;
+    background: #EEEEEE;
+}
+.col-pdf1{
+    color: #990A10;
+    font-weight: bold;
+    text-align: center;
+}
+.name-td{
+    width: 200px;
+    min-width:200px;
+    max-width:200px;
+    overflow: hidden;
+}
+.lt-td{
+    width:50px;
+    min-width:50px;
+    max-width:50px;
+    overflow:hidden;
+}
+.lt-total{
+    width:auto;
+    min-width:70px;
+    max-width:70px;
+    overflow:hidden;
+}
+.col-pdf{
+    text-align: right;
+}
+.col-lt{
+    text-align:center;
+    overflow:hidden;
+
+}
+.leave-td{
+    width: 50px;
+    min-width:50px;
+    max-width: 50px;
+    overflow:hidden;
+
+}
+.total-td{
+    width:auto;
+    min-width:30px;
+    max-width:30px;
+    overflow:hidden;
+}

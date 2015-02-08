@@ -1,0 +1,55 @@
+.opt{
+    margin-right:200px;
+    width:199px;
+}
+
+.each_batch{
+    font-size: 12px;
+    overflow:auto;
+    width:220px;
+
+}
+
+.batches {
+    overflow: auto;
+    width:240px;
+    height: 90px;
+    padding-right:10px;
+}
+.label-field-pair {
+    height:auto;
+    padding-top:3px;
+    width:600px;
+    clear:both;
+}
+.sel-list {
+    margin-bottom:2px;
+    width:200px;
+}
+.submit_button  {
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px;
+    background:none repeat scroll 0 0 #27292B;
+    border:medium none;
+    color:#FFFFFF;
+    cursor:pointer;
+    float:right;
+    font-size:14px;
+    font-weight:bold;
+    padding:7px;
+    margin-right: 172px;
+    margin-top: 33px;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+
+.box{
+    margin: 0 auto;
+    width:500px;
+    height:auto;
+}
+.necessary-field {
+    color: #FF0000;
+    font-size: 1.1em;
+}

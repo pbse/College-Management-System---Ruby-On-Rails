@@ -1,0 +1,121 @@
+#category-list {
+    clear : both;
+    padding : 10px 0px 40px 0;
+    width:950px;
+    margin:0px auto;
+    font-weight:bold;
+}
+
+#category-list .listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    min-height : 1.5em; width : 58em;
+    overflow: auto;
+    list-style-type : none;
+    padding : 0.5em 1.5em 0 0;
+}
+
+#category-list .listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    min-height : 1.5em; width : 58em;
+    overflow: auto;
+    list-style-type : none;
+    padding : 0.5em 1.5em 0 0;
+}
+
+#category-list li.heading {
+    background : none;
+    font-weight : bold;
+    list-style-type : none;
+    color : #444;
+    height : 1.5em; width : 30em;
+    padding : 0.5em 5em 0 0;
+}
+#category-list li div {
+    float : right;
+}
+#category-list li div.category-name {
+    width : 450px;
+    font-weight: bold;
+    font-size:13px;
+}
+
+#category-list li div.category-delete {
+    color : #009cbe;
+    font-size : 13px;
+    width : 100px;
+
+}
+
+#category-list li div.category-delete1 {
+    color : #4ebc67;
+    font-size : 13px;
+    width : 100px;
+
+}
+
+
+#category-list li div.category-edit
+{
+     font-size : 13px;
+    width : 180px;
+}
+
+#category-list li div a {
+    color : #000;
+    font-size:14px;
+    text-decoration: none;
+}
+#category-list li div a:hover {
+    color : #d00;
+    text-decoration: underline;
+}
+.pagination{
+    float:left;
+    position: relative;
+    margin-top:-2px;
+    margin-left:100px;
+}
+.pagination a.prev_page,.pagination a.next_page{
+    color:#27292b;
+    font-weight:bold;
+    text-transform: lowercase;
+    background: none;
+    text-decoration:underline;
+    border:none;
+}
+.pagination a{
+    background: #fff;
+    color:#27292b;
+    border:1px solid #a6c7ff;
+    font-weight:bold;
+    padding:3px;
+    font-size:14px;
+    text-decoration:none;
+}
+.pagination .disabled{
+    color:#27292b;
+    font-size:14px;
+    font-weight:normal;
+    text-transform: lowercase;
+    background: none;
+    text-decoration:none;
+    border:none;
+}
+.pagination .current{
+    color:#990a10;
+    font-weight:bold;
+    padding:3px;
+    font-size:14px;
+}
+.label-field-pair {
+    width:340px;
+    float:right;
+    margin-right:15px;
+}
+.label-field-pair label {
+    width:80px;
+}

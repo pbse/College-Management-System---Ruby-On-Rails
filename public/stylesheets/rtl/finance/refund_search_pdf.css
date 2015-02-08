@@ -1,0 +1,169 @@
+#page-yield {
+    width:100%;
+    margin: 0 auto;
+}
+
+.hor_line{
+    width:100%;
+    background: #333333;
+    height: 1px;
+}
+
+h2{
+    text-align: center;
+    font-size: 18px;
+}
+
+#main_info h4{
+    color: #555555;
+    margin-top: 18px;
+    font-weight: normal;
+    font-size: 15px;
+}
+.odd{
+    height:auto;
+    background: #EEEEEE;
+    font-size: 14px;
+
+}
+
+.even{
+
+    height:auto;
+    background: #fff;
+    font-size: 14px;
+
+
+}
+tr.even{
+    border: 1px solid #ADACAB;
+}
+
+tr.odd{
+    border: 1px solid #ADACAB;
+}
+
+.even td{
+
+    padding: 12px 15px 12px 12px;
+    border: 1px solid #ADACAB;
+    border-left: 0px solid #fff;
+    border-top: 0px solid #fff;
+
+}
+
+.odd td{
+    padding: 12px 15px 12px 12px;
+    border: 1px solid #ADACAB;
+    border-left: 0px solid #fff;
+    border-top: 0px solid #fff;
+
+}
+
+td.col-pdf-bold{
+    font-weight: bold !important;
+}
+
+.table-header td{
+    padding: 12px 15px 12px 12px;
+    border-top: 1px solid #ADACAB;
+    border-right: 1px solid #ADACAB;
+    border-left: 1px solid #ADACAB;
+    color: #97080e;
+    background: #EEEEEE;
+    font-size: 15px;
+}
+
+table#pdf-table{
+    border-top: 1px solid #ADACAB;
+    border-collapse:collapse
+}
+
+
+#signature{
+    text-align: left;
+    width: 10700px;
+    margin: 0 auto;
+    color: #999999;
+    font-size: 18px;
+}
+
+
+
+#pdf-footer{
+    text-align: left;
+    font-size: 18px;
+
+}
+
+.grand_total
+{
+    border-bottom: 1px solid #ADACAB;
+}
+.sl_no-td{
+   width:8%;
+    min-width:10%;
+    max-width:10%;
+    word-break:break-all;
+}
+.student_name-td{
+     width:21%;
+    min-width:25%;
+    max-width:25%;
+    word-break:break-word;
+}
+.amount-td{
+   width:13%;
+    min-width:14%;
+    max-width:14%;
+    word-break:break-all;
+}
+.date-td{
+   width:18%;
+    min-width:16%;
+    max-width:16%;
+    word-break:break-all;
+}
+.collection_name-td{
+    width:22%;
+    min-width:25%;
+    max-width:25%;
+    word-break:break-word;
+}
+.refund_by-td{
+     width:18%;
+    min-width:20%;
+    max-width:20%;
+    word-break:break-word;
+}
+.mark-td{
+    width:10%;
+    min-width:10%;
+    max-width:10%;
+    word-break:break-all;
+
+
+}
+.name-td{
+    width:20%;
+    min-width:20%;
+    max-width:20%;
+    word-break:break-word;
+}
+.avg-td{
+    width:10%;
+    min-width:10%;
+    max-width:10%;
+    word-break:break-word;
+}
+.plot {
+    margin: 0px;
+}
+#content_top{
+    margin-top:-15px;
+}
+.page {
+      page-break-after: auto;
+      page-break-inside: avoid;
+      overflow: hidden;
+      }

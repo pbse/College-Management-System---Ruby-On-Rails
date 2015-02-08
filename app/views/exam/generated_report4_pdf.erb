@@ -1,0 +1,264 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+
+
+
+<div id="page-yield" class="available_sections1">
+  <div class="page1"></div>
+  <div class="section1 row" >
+    <center>
+      <div class="hor_line"></div>
+      <h3><%= "Grouped Exam Report for Batch : "+@batch.full_name %></h3>
+    </center>
+  </div>
+  <div class="section1 row">
+    <center>
+      <div id ="main_info">
+        <div class="info1">
+            <div class="info-left">
+              <h4>  <%= @student.full_name %> </h4>
+            </div>
+        </div>
+      </div>
+    </center>
+  </div>
+
+  <% grade_type = "normal" %>
+  <% grade_type = "GPA" if @batch.gpa_enabled? %>
+  <% grade_type = "CWA" if @batch.cwa_enabled? %>
+
+  <% if @type=="grouped" %>
+    <div class="section1 row" id="table-headers" >
+      <center>
+        <table id="pdf-table" width="100%">
+          <tr class="table-header">
+            <td class="col-pdf1 subject-td"><%= t('subject') %></td>
+            <% if grade_type=="GPA" or grade_type=="CWA" %>
+              <td class="col-pdf1 credit-td"><%= t('credit') %></td>
+            <% end %>
+            <% @exam_groups.each do |exam_group| %>
+              <td class="col-pdf1 exam-group-td"><%= exam_group.name %></td>
+            <% end %>
+            <td class="col-pdf1 combined-td"><%= t('combined') %></td>
+          </tr>
+        </table>
+      </center>
+    </div>
+    <% c ='even' %>
+    <% @subjects.each do |subject| %>
+      <div class="section1 row" >
+        <center>
+          <table id="pdf-table" width="100%">
+            <tr class="<%= cycle(c,(["odd","even"]-[c]).first) %>">
+              <td class="subject-td" ><%= subject.name %></td>
+              <% if grade_type=="GPA" or grade_type=="CWA" %>
+                <td class="credit-td"><%= subject.credit_hours.present? ? subject.credit_hours : "-" %></td>
+              <% end %>
+              <% @exam_groups.each do |exam_group| %>
+
+                <% @exam = Exam.find_by_subject_id_and_exam_group_id(subject.id,exam_group.id) %>
+                <% exam_score = ExamScore.find_by_student_id(@student.id, :conditions=>{:exam_id=>@exam.id})unless @exam.nil? %>
+                <td class="exam-group-td">
+                  <% if grade_type=="GPA" %>
+                    <%= exam_score.present? ? "#{exam_score.grading_level || "-"}"+" ["+"#{exam_score.grading_level.present? ? (exam_score.grading_level.credit_points || "-") : "-"}"+"]" : "-" %>
+                  <% elsif grade_type=="CWA" %>
+                    <%= exam_score.present? ? "#{exam_score.marks.present? ? ("%.2f" %((exam_score.marks.to_f/@exam.maximum_marks.to_f)*100)) : "-"}"+" ["+"#{exam_score.grading_level.present? ? exam_score.grading_level : "-"}"+"]" : "-" %>
+                  <% else %>
+                    <% if exam_group.exam_type == "MarksAndGrades" %>
+                      <%= exam_score.nil? ? '-' :  "#{(exam_score.marks || "-")}" +"/"+@exam.maximum_marks.to_s+"[#{(exam_score.grading_level || "-")}]" %>
+                    <% elsif exam_group.exam_type == "Marks" %>
+                      <%= exam_score.nil? ? '-' : "#{exam_score.marks || "-"}/"+@exam.maximum_marks.to_s %>
+                    <% else %>
+                      <%= exam_score.nil? ? '-' : (exam_score.grading_level || '-')  %>
+                    <% end %>
+                  <% end %>
+                </td>
+              <% end %>
+              <% subject_average = GroupedExamReport.find_by_student_id_and_subject_id_and_score_type(@student.id,subject.id,"s") %>
+              <td class="combined-td"><%= subject_average.present? ? subject_average.marks : "-" %></td>
+            </tr>
+          </table>
+        </center>
+      </div>
+    <% end %>
+    <div class="section1 row" >
+      <center>
+        <table id="pdf-table" width="100%">
+          <tr class="table-header end">
+            <% if grade_type=="GPA" %>
+              <td colspan="2" align="right"><%= t('gpa') %></td>
+            <% elsif grade_type=="CWA" %>
+              <td colspan="2" align="right"><%= t('weighted_average') %></td>
+            <% else %>
+              <td align="right"><%= t('percentage') %></td>
+            <% end %>
+            <% @exam_groups.each do |exam_group| %>
+              <% exam_total = GroupedExamReport.find_by_student_id_and_exam_group_id_and_score_type(@student.id,exam_group.id,"e") %>
+              <td class="exam-group-td">
+                <%= exam_total.present? ? exam_total.marks : "-" %>
+              </td>
+            <% end %>
+            <% total_avg = GroupedExamReport.find_by_student_id_and_batch_id_and_score_type(@student.id,@batch.id,"c") %>
+            <td class="combined-td"><%= total_avg.present? ? total_avg.marks : "-" %></td>
+          </tr>
+        </table>
+      </center>
+    </div>
+  <% else %>
+    <% all_exams = @exam_groups.reject{|ex| ex.exam_type == "Grades"} %>
+
+    <% c ='even' %>
+    <div class="section1 row" >
+      <center>
+        <table id="pdf-table" width="100%">
+          <tr class="table-header">
+            <td class="subject-td"><%= t('subject') %></td>
+            <% @exam_groups.each do |exam_group| %>
+              <td class="exam-group-td"><%= exam_group.name %></td>
+            <% end %>
+            <% unless all_exams.empty? %>
+              <td class="combined-td"><%= t('total') %></td>
+            <% end %>
+          </tr>
+        </table>
+      </center>
+    </div>
+    <%  @subjects.each do |subject| %>
+      <div class="section1 row" >
+        <center>
+          <table id="pdf-table" width="100%">
+            <tr class="<%= cycle(c,(["odd","even"]-[c]).first) %>">
+              <td class="subject-td" ><%= subject.name %></td>
+              <% @mmg = 1;@g = 1 %>
+              <% @exam_groups.each do |exam_group| %>
+
+                <% @exam = Exam.find_by_subject_id_and_exam_group_id(subject.id,exam_group.id) %>
+                <% exam_score = ExamScore.find_by_student_id(@student.id, :conditions=>{:exam_id=>@exam.id})unless @exam.nil? %>
+                <td class="exam-group-td">
+                  <% unless @exam.nil? %>
+                    <% if exam_group.exam_type == "MarksAndGrades" %>
+                      <%= exam_score.nil? ? '-' :  "#{(exam_score.marks || "-")}" +"/"+@exam.maximum_marks.to_s+"[#{(exam_score.grading_level || "-")}]" %>
+                    <% elsif exam_group.exam_type == "Marks" %>
+                      <%= exam_score.nil? ? '-' : "#{exam_score.marks || "-"}/"+@exam.maximum_marks.to_s %>
+                    <% else %>
+                      <%= exam_score.nil? ? '-' : (exam_score.grading_level || '-')  %>
+                      <% @g = 0 %>
+                    <% end %>
+                  <% else %>
+                    <%= "#{t('n_a')}" %>
+                  <% end %>
+                <% end %>
+              </td>
+              <% total_score = ExamScore.new() %>
+              <% unless all_exams.empty? %>
+                <% if @mmg == @g %>
+                  <td class="combined-td"><%= total_score.grouped_exam_subject_total(subject,@student,@type) %></td>
+                <% else %>
+                  <td class="combined-td">-</td>
+                <% end %>
+              <% end %>
+            </tr>
+          </table>
+        </center>
+      </div>
+    <% end %>
+    <div class="section1 row" >
+      <center>
+        <table id="pdf-table" width="100%" cellspacing="0">
+          <tr class="<%= cycle(c,(["odd","even"]-[c]).first) %>">
+            <td class="exam-group-td td-bold"><%= t('total') %></td>
+            <% @max_total = 0 %>
+            <% @marks_total = 0 %>
+
+            <% @exam_groups.each do |exam_group| %>
+              <% if exam_group.exam_type == "MarksAndGrades" %>
+                <td class="exam-group-td td-bold"><%= exam_group.total_marks(@student)[0] %></td>
+              <% elsif exam_group.exam_type == "Marks" %>
+                <td class="exam-group-td td-bold"><%= exam_group.total_marks(@student)[0] %></td>
+              <% else %>
+                <td class="exam-group-td td-bold">-</td>
+              <% end %>
+              <% unless exam_group.exam_type == "Grades" %>
+                <% @max_total = @max_total + exam_group.total_marks(@student)[1] %>
+                <% @marks_total = @marks_total + exam_group.total_marks(@student)[0] %>
+              <% end %>
+            <% end %>
+            <% unless all_exams.empty? %>
+              <!--td></td-->
+            <% end %>
+          </tr>
+        </table>
+      </center>
+    </div>
+  <% end %>
+
+
+
+</div>
+<% if params[:page_height] %>
+  <script type="text/javascript">
+    var body = document.body,
+    html = document.documentElement;
+    var pg_height = parseInt(<%= params[:page_height] %>);
+    var header = $("table-headers")
+    var page = new Element('div',{'class' : 'page1'});
+    var pageBreak = new Element('div',{'class' : 'page-break1'});
+    var insertPageBreak = function(){body.appendChild(pageBreak.cloneNode(true))};
+    var insertPage = function(){body.appendChild(page.cloneNode(true));};
+    var currPage = function(){return $$('.page1').last()};
+    var insertHeader = function(){
+      header1 = header.cloneNode(true);
+      header1.style.marginTop="50px";
+      currPage().appendChild(header1.cloneNode(true));};
+    var current_page_height=0;
+    var i=0
+    $$('.available_sections1 .section1').each(function(el){
+      a = parseInt(el.getHeight());
+      //el.innerHTML = a + el.innerHTML;
+      try{
+        var height_element = el.children[0].children[0]
+        if(height_element.id=="pdf-table")
+        {
+          height_element.style.height=a+"px";
+        }
+      }
+      catch(e){
+
+      }
+      c=current_page_height+a;
+      current_page_height=c;
+      if(c>pg_height){
+        current_page_height=a
+        body.appendChild(new Element('div',{'id' : 'page-blank_'+i, 'class' : 'page-blank'}))
+        document.getElementById('page-blank_'+i).style.height= (c-pg_height)+'px';
+        document.getElementById('page-blank_'+i).innerHTML="&nbsp;"/* if a div doesnt have any content it may not display.. set height will not work */
+        i+=1
+
+        //el.style.marginTop="50px"; /* for this border-top is coming, top section of each page */
+        insertPageBreak();
+        /* insertHeader(); */
+        insertPage();
+        insertHeader();
+        current_page_height = (current_page_height + header.getHeight() + 50)
+
+      }
+      currPage().appendChild(el);
+    });
+  </script>
+<% end %>

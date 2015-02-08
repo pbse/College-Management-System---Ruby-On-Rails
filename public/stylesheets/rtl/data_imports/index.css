@@ -1,0 +1,46 @@
+#box{
+    width:700px;
+    margin:0px auto;
+}
+
+#errorExplanation{
+    width: auto;
+}
+
+.submit_button {
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+    margin-right: 211px;
+    margin-top: 20px;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+.label-field-pair input {
+    height: auto;
+}
+#errorExplanation1 {
+   background: #ffdedf url(/images/_global/error.png) no-repeat 10px 14px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    height : auto; width : 510px;
+    margin : 20px auto;
+    padding : 10px 20px 20px 0;
+}
+#errorExplanation1 ul {
+    margin: 5px 0 0;
+}
+#errorExplanation1 ul li{
+    font-weight:600;
+    font-size:13px;
+    display: block;
+}

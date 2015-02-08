@@ -1,0 +1,63 @@
+<div id="content-header">
+  <%= show_header_icon %>
+  <h1><%= t('fees_refund') %></h1>
+  <div class='header-sep'>|</div>
+  <div class='sub-header'><%= t('create_fees_refund') %></div>
+
+
+
+</div>
+
+
+
+<div id="page-yield">
+  <div class="bread_crumb">
+    <%= link_to t('finance_text'), :controller => "finance", :action=>"index" %> <div class = "bread-crumb-separator"> > </div>
+    <%= t('create_fees_refund') %>
+  </div>
+  <div id="flash_box">
+  </div>
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <% form_for @refund_rule,
+    :url => {:action => 'create_refund'},:html=>{} do |form| %>
+
+    <div id="form-errors"><%= error_messages_for 'refund_rule' %></div>
+    <div id="left-side-inputs">
+      <div class="label-field-pair">
+        <label for="reason"> <%= t('fee_collection') %><span class="necessary-field">*</span>:</label>
+        <div class="text-input-bg">
+          <%= form.select(:finance_fee_collection_id, @collections.map { |item| [item.name, item.id] }.sort_by{|x, y| x.downcase}.uniq,
+            {:selected => @fee_collection.present? ? @fee_collection.name : nil , :prompt => "#{ t('select_fee_collection')}" })%>
+        </div>
+        <div class="loader_div">
+          <%= image_tag("loader.gif",
+            :align => "absmiddle",
+            :border => 0,
+            :id => "loader",
+            :style =>"display: none; position : absolute; " ) %>
+        </div>
+      </div>
+      <div class="label-field-pair">
+        <label for="reason">  <%= t('refund_name') %><span class="necessary-field">*</span>:</label>
+        <div class="text-input-bg"><%= form.text_field :name%></div>
+      </div>
+      <div class="label-field-pair">
+        <label for="reason">  <%= t('refund_validity') %><span class="necessary-field">*</span>:</label>
+        <div class="text-input-bg"><%= calendar_date_select_tag 'refund_rule[refund_validity]', I18n.l(@refund_rule.refund_validity || Date.today,:format=>:default), :popup=>"force",:class=>'due_date'%></div>
+      </div>
+      <div class="label-field-pair">
+        <label for="reason">  <%= t('refund_percentage') %><span class="necessary-field">*</span>:</label>
+        <div class="text-input-bg"><%= form.text_field :refund_percentage, :value=> precision_label(@refund_rule.refund_percentage), :class=>'precision_text'%></div>
+      </div>
+
+    </div>
+    
+    <div class="extender"></div>
+    <div id="submit-button">
+      <%=  submit_tag "► #{t('create_text')}",:class=>'submit_button',:disable_with => "► #{t('create_text')}" %>
+    </div>
+  <% end %>
+</div>

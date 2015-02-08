@@ -1,0 +1,51 @@
+/* 
+    Document   : create
+    Created on : 3 Nov, 2011, 2:37:53 PM
+    Author     : foradian
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root {
+    display: block;
+}
+
+#form-content {
+    height: 150px;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    width: 500px;
+}
+.label-field-pair {
+    height: 40px;
+    padding-top: 3px;
+    width: 600px;
+}
+#submit-button input {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin:0px auto;
+    margin-right:214px;
+    margin-top:30px;
+    padding:7px 10px;
+    border:none;
+    text-align:center;
+    width:auto;
+    cursor:pointer;
+}
+.necessary-field {
+    color: #FF0000;
+    font-size: 1.1em;
+}

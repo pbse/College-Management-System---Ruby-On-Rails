@@ -1,0 +1,31 @@
+a.user_button{
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B;
+    color:#FFFFFF;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0px auto;
+    padding: 7px 12px;
+    border: none;
+    margin-left: 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    float: right;
+    margin-bottom: 30px;
+}
+table#listing {
+    clear: both;
+}
+.download-link-col a{
+    font-size: 13px;
+    margin: 0 5px;
+}
+.download-link{
+    background: url(/images/google_docs/download.png) left center no-repeat;
+    padding-left: 15px;
+    margin-left: 30px;
+}

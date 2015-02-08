@@ -1,0 +1,116 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('batch_transfer') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%= t('transfer') %></div>
+
+
+</div>
+<div id="page-yield">
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div class="transfer_batch_details">
+    <div class="label-field-pair"><label><%= t('transferring_batch') %>:</label> <div class="text-input-bg themed_text transfer-label"><%= @batch.full_name %></div></div></div>
+
+  <% form_for :transfer,@batch, :url => { :controller => 'batch_transfers', :action => 'transfer', :id => @batch.id },:html => {:id => "form"} do |f| %>
+    <%= error_messages_for 'batch', :header_message => nil %>
+    <div class="label-field-pair">
+      <label for="subject_id"><%= t('transfer_to') %> </label>
+      <div class="text-input-bg"><%= select :transfer, :to, @batches.map{ |b| [b.full_name, b.id] }, :prompt=>t('select_a_batch'), :id=>'transfer_to' %></div>
+    </div>
+    <% unless @batch.students.empty? %>
+      <p><%= t('uncheck_message') %>. </p>
+
+      <ul id="category-list">
+        <li class="listheading">
+          <div class="heading-no"><%= t('adm_no') %></div>
+          <div class="category-name"><%= t('name') %></div>
+          <div class="sel-list">
+            <%= link_to_function t('all'), "$$('input.right').each(function(checkbox) { checkbox.checked = true; });" %>,
+            <%= link_to_function t('none'), "$$('input.right').each(function(checkbox) { checkbox.checked = false; });" %>
+          </div>
+        </li>
+        <% @batch.students.each do |student| %>
+          <li class="list<%=cycle('odd', 'even')%>">
+            <% if student.finance_fees.collect(&:is_paid).flatten.include? false %>
+              <div class="category-number"><%= link_to student.admission_no, :controller => 'student', :action => 'fees', :id=>student.id %></div>
+              <div class="category-name"><%= link_to student.full_name, :controller => 'student', :action => 'fees', :id=>student.id %></div>
+            <% else %>
+              <div class="category-number_disabled"><%= student.admission_no %></div>
+              <div class="category-name_disabled"><%= student.full_name %></div>
+            <% end %>
+            <div class="category-edit"><%= check_box_tag 'transfer[students][]', student.id, true,:class=>"right" %></div>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= submit_tag "", :value => "► #{t('save')}", :class => "submit_button", :id => 'submit_button' %>
+    <% else %>
+      <ul id="category-list">
+        <li class="listheading">
+          <div class="category-name"><%= t('no_students_found_in_the_batch') %></div>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <div class="extender"></div>
+</div>
+<script type="text/javascript">
+  j('#submit_button').click(function()
+  {
+    var elt = $('transfer_to');
+    var button = document.getElementById('submit_button');
+    var c = false;
+    $$('.right').each(function(check){
+      if (check.checked == true){
+        c = true;
+      }
+    })
+    if (c==false){
+      alert('<%= t('select_at_least_one_student') %>')
+      return false
+    }
+    if (elt.value=="")
+    {
+      alert('<%=t('select_a_batch_to_continue')%>')
+      return false
+    }
+    else
+    {
+      var text = elt.options[elt.selectedIndex].text;
+      button.disabled = true;
+      button.value = '<%= "► #{t('please_wait')}"%>';
+      if (confirm('<%=t('are_you_sure_to_trnsfer')%> ' + text )){
+        button.disabled = true;
+        j('#form').submit();
+      }
+      else{
+        button.disabled = false;
+        button.value = '<%= "► #{t('save')}"%>';
+        return false
+      }
+    }
+  });
+</script>

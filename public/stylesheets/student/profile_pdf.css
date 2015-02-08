@@ -1,0 +1,105 @@
+#page-yield {
+    width:100%;
+    margin: 0 auto;
+}
+
+.hor_line{
+    width:100%;
+    background: #333333;
+    height: 1px;
+}
+
+h2{
+    text-align: center;
+    font-size: 15px;
+}
+
+#main_info h4{
+    color: #555555;
+    margin-top: 18px;
+    font-weight: normal;
+    font-size: 14px;
+}
+.odd{
+    height:auto;
+    background: #EEEEEE;
+    font-size: 13px;
+
+}
+
+.even{
+
+    height:auto;
+    background: #fff;
+    font-size: 13px;
+
+
+}
+tr.even{
+    border: 1px solid #ADACAB;
+}
+
+tr.odd{
+    border: 1px solid #ADACAB;
+}
+
+.even td{
+
+    padding: 12px 12px 12px 15px;
+    border: 1px solid #ADACAB;
+    border-right: 0px solid #fff;
+    border-top: 0px solid #fff;
+
+}
+
+.odd td{
+    padding: 12px 12px 12px 15px;
+    border: 1px solid #ADACAB;
+    border-right: 0px solid #fff;
+    border-top: 0px solid #fff;
+
+}
+
+td.col-pdf-bold{
+    font-weight: bold !important;
+}
+
+table#pdf-table{
+    border-top: 1px solid #ADACAB;
+    border-collapse:collapse
+}
+
+
+#signature{
+    text-align: right;
+    width: 10700px;
+    margin: 0 auto;
+    color: #999999;
+    font-size: 18px;
+}
+
+
+
+#pdf-footer{
+    text-align: right;
+    font-size: 18px;
+
+}
+.name{
+    width:40%;
+    min-width:40%;
+    max-width:40%;
+    word-break:break-all;
+}
+.amnt{
+    width:60%;
+    min-width:60%;
+    max-width:60%;
+    word-break:break-word;
+}
+.section {
+    margin-top: 0px !important;
+}
+#content_top{
+    margin-top:-15px;
+}

@@ -1,0 +1,131 @@
+.box{
+    width: 980px;
+    margin: 0 auto;
+}
+
+root {
+    display: block;
+}
+
+#poll-table{
+    width:935px;
+    margin:0 auto;
+    margin-top:-10px;
+}
+
+.tr-head{
+    height:35px;
+    width:935px;
+    font-weight: bold;
+    color:#b00;
+    font-size: 18px;
+
+    padding-right:15px;
+    padding-left:15px;
+}
+
+.tr-odd{
+    height:35px;
+    width:935px;
+    background: #dfeaff;
+    padding-top:4px;
+    padding-bottom:10px;
+    padding-right:15px;
+    padding-left:15px;
+    border:1px solid #BECFFB;
+    border-bottom:0px;
+}
+
+.tr-even{
+    height:35px;
+    width:935px;
+    background: #f1f6ff;
+    padding-top:4px;
+    padding-bottom:10px;
+    padding-right:15px;
+    padding-left:15px;
+    border:1px solid #BECFFB;
+}
+
+.poll-name {
+    float: right;
+    padding-right: 14px;
+    width: 550px;
+}
+.poll-title {
+    list-style: none;
+    color: #000;
+    float: right;
+    /*font-weight: bold;*/
+    width: 550px;
+}
+.poll-delete {
+    list-style: none;
+    color: #000;
+    float: right;
+    /*font-weight: bold;*/
+    width: 550px;
+}
+
+.poll-date{
+    float:right;
+    width:110px;
+}
+.poll-date-col{
+    padding-top:5px;
+    float:right;
+    width:140px;
+    font-size: 13px;
+    color : #444;
+    margin-top: 5px;
+}
+
+.poll-votes {
+    float: left;
+    margin-left: -54px;
+    width: 100px;
+}
+
+.poll-name a{
+    color : #444;
+    font-size : 11px;
+    text-decoration:none;
+}
+.poll-title a{
+    color : #000;
+    font-size : 13px;
+    text-decoration:none;
+}
+
+
+#closed{
+    margin-top:45px;
+}
+.colon{
+    color : #444;
+    font-size : 13px;
+}
+.square {
+    background: none repeat scroll 0 0 #cccccc;
+    float: right;
+    height: 12px;
+    margin-right: -28px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 10px;
+}
+.tr-odd .poll-votes,.tr-even .poll-votes {
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    float: left;
+    margin-left: -64px;
+    margin-top: 10px;
+    width: 100px;
+}
+.small-strike {
+    text-decoration:  line-through;
+    font-size: 11px;
+    width:35px;
+    color: #444;
+}

@@ -1,0 +1,75 @@
+#search_textbox input {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 21px;
+    margin-right: 20px;
+    padding: 5px 20px 0 0;
+    width: 180px;
+}
+
+.label-field-pair {
+    height : auto;
+    width : 650px;
+    padding-top:20px;
+    padding: 25px 0 20px 0;
+    overflow: hidden;
+}
+.text-input-bg {
+    background : transparent;
+    height : 28px;
+    width : 80px;
+    float:right;
+}
+.label-field-pair label {
+    color: #444444;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 0;
+    padding-top: 10px;
+    width: 100px;
+}
+.label-container1
+{
+    color: #444444;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding-top: 10px;
+    width: 150px;
+}
+.text-input-bg select {
+    -moz-border-radius:10px 10px 10px 10px;
+    background-color:#EEEEEE;
+    border:1px solid #C6C6C6;
+    height:27px;
+    margin:5px 0px 0 0;
+    padding:3px 6px;
+    width:215px;
+}
+
+.edit-delete-box div{
+    float: right;
+    margin: 0 3px;
+}
+.edit-delete-box{
+    width: 160px;
+}
+table#listing {
+    -moz-border-radius:10px 10px 10px 10px;
+    background:none repeat scroll 0 0 #C3D9FF;
+    padding:20px 20px 20px;
+}
+#search_dropdown{
+    width: 215px;
+    height: 27px;
+}
+
+.pagination {
+    float: left;
+    position: relative;
+    margin: 9px;
+}

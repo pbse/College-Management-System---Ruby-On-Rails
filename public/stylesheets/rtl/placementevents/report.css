@@ -1,0 +1,23 @@
+
+.submit-button{
+    float: right;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:none repeat scroll 0 0 #27292B;
+    border:medium none;
+    color:#FFFFFF;
+    cursor:pointer;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    padding:7px 10px;
+    min-width:50px;
+    text-decoration: none;
+    margin-right: 23px;
+}
+.submit-button:hover { background: #373b3f; }
+
+#pdf-button{
+    margin-top: 15px;
+    padding-right: 420px;
+}

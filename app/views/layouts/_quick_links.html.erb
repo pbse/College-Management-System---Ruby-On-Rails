@@ -1,0 +1,49 @@
+<%#*<div id="right-inner-div" class="more-height">%>
+  <% parent_links = menu_links.select{|s| s.higher_link_id.nil?}.sort_by{|a|a.name} %>
+  <div id="col_0" class="menu_cols"></div>
+  <div id="col_1" class="menu_cols"></div>
+  <div id="col_2" class="menu_cols"></div>
+  <div id="col_3" class="menu_cols"></div>
+  <% parent_links.each do|link| %>
+    <% target_id = 0 %>
+    <% target_id = @current_user.student_record.id if @current_user.student? %>
+    <% target_id = @current_user.employee_record.id if @current_user.employee? %>
+    <% target_id = @current_user.guardian_entry.current_ward_id if @current_user.parent? %>
+    <div class="parent-link">
+      <% if link.link_type == "own" %>
+        <% unless link.target_action=="index" %>
+          <%= link_to "<div class='parent-link-area themed_hover_text'><div class='link-icon #{link.icon_class}'></div><div class='parent-text'>#{t(link.name)}</div></div>", {:controller=>link.target_controller,:action=>link.target_action,:id=>target_id} %>
+        <% else %>
+          <%= link_to "<div class='parent-link-area themed_hover_text'><div class='link-icon #{link.icon_class}'></div><div class='parent-text'>#{t(link.name)}</div></div>", {:controller=>link.target_controller} %>
+        <% end %>
+      <% else %>
+        <% unless link.target_action=="index" %>
+          <%= link_to "<div class='parent-link-area themed_hover_text'><div class='link-icon #{link.icon_class}'></div><div class='parent-text'>#{t(link.name)}</div></div>", {:controller=>link.target_controller,:action=>link.target_action} %>
+        <% else %>
+          <%= link_to "<div class='parent-link-area themed_hover_text'><div class='link-icon #{link.icon_class}'></div><div class='parent-text'>#{t(link.name)}</div></div>", {:controller=>link.target_controller} %>
+        <% end %>
+      <% end %>
+      <% sub_links = menu_links.select{|s| s.higher_link_id == link.id}.sort_by{|a|a.name} %>
+      <% unless sub_links.empty? %>
+      <%#*<div class="nav-button" onclick="show_sub_links(this);">+</div>%>
+      <div class="child-link-box" style="display:none;">
+        <% sub_links.each do|sub_link| %>
+          <% if sub_link.link_type == "own" %>
+            <% unless sub_link.target_action == "index" %>
+              <%= link_to "<div class='child-link-text'>#{t(sub_link.name)}</div>", {:controller=>sub_link.target_controller,:action=>sub_link.target_action,:id=>target_id},:class=>"sub_link" %>
+            <% else %>
+              <%= link_to "<div class='child-link-text'>#{t(sub_link.name)}</div>", {:controller=>sub_link.target_controller},:class=>"sub_link" %>
+            <% end %>
+          <% else %>
+            <% unless sub_link.target_action == "index" %>
+              <%= link_to "<div class='child-link-text'>#{t(sub_link.name)}</div>", {:controller=>sub_link.target_controller,:action=>sub_link.target_action},:class=>"sub_link" %>
+            <% else %>
+              <%= link_to "<div class='child-link-text'>#{t(sub_link.name)}</div>", {:controller=>sub_link.target_controller},:class=>"sub_link" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+<%#*</div>%>

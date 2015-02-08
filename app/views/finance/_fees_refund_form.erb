@@ -1,0 +1,200 @@
+<%-# Fedena
+#Copyright 2010 Foradian Technologies Private Limited
+#
+#This product includes software developed at
+#Project Fedena - http://www.projectfedena.org/
+#
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#Unless required by applicable law or agreed to in writing,
+#software distributed under the License is distributed on an
+#"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#KIND, either express or implied.  See the License for the
+#specific language governing permissions and limitations
+#under the License. -%>
+<div id="refund">
+<% unless flash[:notice].nil? %>
+  <div id="errorExplanation" class="errorExplanation"><p><%= t('there_were_pblm') %></p><ul><li><%= flash[:notice] %></li></ul></div>
+<% end %>
+
+<% unless flash[:warning].nil? %><p class="flash-msg"><%= flash[:warning] %></p><% end %>
+<div class="details">
+  <div class="name">
+    <%= t('fees_receipt_no') %>
+  </div>
+  <div class="val themed_text">
+    <span>:</span>
+    <div class="val-align"><%= @fee_refund.nil? ? t('n_a') : @fee_refund.finance_transaction.receipt_no %></div>
+  </div>
+  <% unless @fee_category.nil? %>
+    <div class="name">
+      <%= t('fee_category_name') %>
+    </div>
+    <div class="val themed_text">
+      <span>:</span>
+      <div class="val-align">
+        <%= @fee_category.name.capitalize %>
+      </div>
+    </div>
+  <% end %>
+  <% unless @student.student_category.nil? %>
+    <div class="name">
+      <%= t('student_category') %>
+    </div>
+    <div class="val themed_text">
+      <span>:</span>
+      <div class="val-align">
+        <%= @student.student_category.name.capitalize %>
+      </div>
+    </div>
+  <% else %>
+    <div class="name">
+      <%= t('student_category') %>
+    </div>
+    <div class="val themed_text">
+      <span>:</span>
+      <div class="val-align">
+        <%= t('n_a') %>
+      </div>
+    </div>
+  <% end %>
+  <div class="name">
+    <%= t('fees_collection_date_name')%>
+  </div>
+  <div class="val themed_text">
+    <span>:</span>
+    <div class="val-align">
+      <%= @date.name.capitalize  %>
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="height-fixer"> </div>
+<div class="extender"></div>
+<% total_fees =0 %>
+<% form_remote_for :fees, :id=> 'fees_form', :url => {:action => 'fees_refund_student', :id => @student.id,:date => @date.id, :fine=>@fine},:html => {:id => "fees_form"},:before=>"prev_double()",:complete=>"set_back()" do |form| %>
+
+  <% unless @fee_particulars.nil? %>
+    <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td><%= t('sl_no') %></td>
+        <td><%= t('particulars') %></td>
+        <td><%= t('amount') %> (<%= currency %>  )</td>
+      </tr>
+      <% i = 0 %>
+      <tr class="tr-blank"></tr>
+      <% @fee_particulars.each do |fee| %>
+        <tr class="tr-<%= cycle("odd","even") %>">
+          <td class="col-1"><%= i +=1 %></td>
+          <td class="col-2"><%= fee.name %></td>
+          <td class="col-6"><%=precision_label(fee.amount)%></td>
+        </tr>
+        <% total_fees += fee.amount %>
+      <% end %>
+
+      <% unless @total_discount == 0 %>
+        <tr class="tr-blank"></tr>
+        <tr class="tr-blank"></tr>
+        <tr class="tr-<%= cycle("odd","even") %>" cellpadding="1" cellspacing="1">
+          <td class="col-1" ></td>
+          <td class="col-1" colspan="2"><span class="themed_text"><%= t('discount') %> </span></td>
+        </tr>
+        <% @discounts.each do |d| %>
+          <tr class="tr-<%= cycle("odd","even") %>">
+            <td class="col-1"><%= i+1 %></td>
+            <% discount_text = d.is_amount == true ? "#{d.name}" : "#{d.name}&#x200E; (#{d.discount})% &#x200E;" %>
+            <td class="col-2"><%= discount_text %></td>
+             <td class="col-6"> <%= precision_label(@total_payable * d.discount.to_f/ (d.is_amount?? @total_payable : 100)) %></td>
+          </tr>
+          <% i += 1 %>
+        <% end %>
+ <% end %>
+
+        <tr class="tr-blank"></tr>
+        <tr class="tr-blank"></tr>
+       <% total_fees = (@total_payable-@total_discount)%>
+        <tr class="tr-<%= cycle("odd","even") %>" cellpadding="1" cellspacing="1">
+          <td class="col-8" colspan="2" ><%= t('total_fees') %> </td>
+          <td class="col-6" ><%= precision_label(total_fees) %></td>
+        </tr>
+
+
+     
+
+      <tr class="tr-blank"></tr>
+      <tr class="tr-blank"></tr>
+
+     
+        <% unless @refund_rule.nil? %>
+        <tr class="tr-blank"></tr>
+        <tr class="tr-<%= cycle("odd","even") %>" cellpadding="1" cellspacing="1">
+          <td class="col-8" colspan="2"><%= t('refund_percentage') %></td>
+          <td class="col-6" ><%=precision_label(@refund_rule.refund_percentage) %></td>
+        </tr>
+        <%end%>
+<%balance=@financefee.balance.to_f+@fine.to_f%>
+      <tr class="tr-blank"></tr>
+      <tr class="tr-blank"></tr>
+      <%unless @fee_refund or @financefee.fee_refund%>
+      <tr class="tr-<%= cycle("odd","even") %>" cellpadding="1" cellspacing="1">
+        <td class="col-8" colspan="2"><%= t('amount_to_refund') %></td>
+        <td class="col-6" ><%= precision_label(@refund_amount) %></td>
+        <%=  hidden_field_tag 'fees[amount]', @refund_amount %>
+      </tr>
+
+     
+        <tr>
+          <td colspan="3">
+            <div class="payment_details">
+             <%if @refund_rule.nil?%>
+                <h4 style="margin-top:45px;"><%= t('no_refund_exists') %></h4>
+                <%else%>
+                 <div class="label-field-pair3-text-area">
+                   <div class="refund-description"><label><%= t('description') %> </label></div>
+                <div class="textarea-input-bg3"><%= form.text_area :reason,:cols => 50, :rows => 1 %>
+                </div>
+              </div>
+                 <div class="pay_fees_buttons">
+                <%= submit_tag "► #{t('refund')}",:class=>'submit_button', :id => 'submit_button' , :disable_with => "► #{t('please_wait')}",:data_disable_with=>"► #{t('please_wait')}" %>
+              <%end%>
+              </div>
+              
+            </div>
+          </td>
+        </tr>
+      
+       <%else%>
+      <tr class="tr-<%= cycle("odd","even") %>" cellpadding="1" cellspacing="1">
+        <td class="col-8" colspan="2"><%= t('amount_refunded') %></td>
+        <td class="col-6" ><%=precision_label(@fee_refund.amount.to_f) %></td>
+      </tr>
+
+      <tr>
+        <td colspan="3">
+          <div class="pay_fees">
+            <div id="payment_mode"></div>
+
+
+              <div class="pay_fees_buttons">
+                <h4><%= t('amount_refunded') %></h4>
+              </div>
+
+          </div>
+        </td>
+      </tr>
+        <%end%>
+
+    <%end%>
+  </table>
+<% end %>
+</div>
+<script type="text/javascript">
+  j('.submit_button').click( function(){
+    j('.submit_button').attr('value',j('.submit_button').attr('data_disable_with'));
+  });
+</script>

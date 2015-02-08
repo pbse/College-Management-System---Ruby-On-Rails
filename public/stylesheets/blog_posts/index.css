@@ -1,0 +1,205 @@
+.new_post{
+    background: none repeat scroll 0 0 #27292B;
+    border: medium none;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px 10px 10px 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 10px;
+    float: right;
+    margin-right: 10px;
+}
+
+.new_post a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+#new_blog_post{
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#list_blog_posts{
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+}
+
+.blog_post {
+    border-top: 1px solid #C6C6C6;
+    color: black;
+    float: left;
+    font-family: Arial;
+    font-size: 12px;
+    min-height: 50px;
+    width: 100%;
+}
+
+.post_title{
+    min-width: 50%;
+    max-width: 50%;
+    float: left;
+    margin-top: 18px;
+}
+
+.post_title a {
+    color: black;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.post_title a:hover{
+    color: #b00;
+}
+
+.blog_post:hover .timestamp a{
+    color: black;
+    font-weight:bold;
+}
+
+.blog_post:hover .total_likes a{
+    color: black;
+    font-weight: bold;
+}
+
+.blog_post:hover .total_comments a{
+    color: black;
+    font-weight:bold;
+}
+
+.blog_post:hover .post_title a{
+    color: #b00;
+    font-weight: bold;
+}
+.blog_post:hover .like_no{
+    color: black;
+    font-weight: bold;
+}
+
+.total_comments{
+    min-width: 14%;
+    max-width: 14%;
+    float: left;
+    margin-top: 18px;
+}
+
+.total_comments a{
+    color: #666666;
+    text-decoration: none;
+}
+.total_likes{
+    min-width: 10%;
+    max-width: 10%;
+    float: left;
+    margin-top: 18px;
+}
+
+.total_likes a{
+    color: #666666;
+    text-decoration: none;
+}
+.timestamp{
+    text-align: center;
+    min-width: 20%;
+    max-width: 20%;
+    float: left;
+    margin-top: 18px;
+}
+
+.timestamp a{
+    color: #666666;
+    text-decoration: none;
+}
+.options{
+    min-width: 5%;
+    max-width: 5%;
+    float: right;
+    margin-top: 18px;
+}
+
+.options a{
+    text-decoration: none;
+    font: 12px;
+    color: #444444;
+}
+
+.like_no {
+    color: #656565;
+    float: left;
+    font-family: Arial;
+    font-size: 12px;
+    margin-top: -1px;
+}
+
+
+.blog_post .pagination {
+    float: none;
+    margin-left: 360px;
+    margin-top: 16px;
+    position: relative;
+    width: auto;
+}
+
+.blog_post .pagination a.prev_page a.next_page{
+    font-family: Arial;
+    font-size:14px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.who_liked{
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 50px;
+    background: #EFEFD1;
+    position: absolute;
+    z-index: 20;
+    display: none;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: normal;
+    color: #444444;
+}
+
+div.like_image:hover .who_liked{
+    display: block;
+}
+
+
+.like_image {
+    margin-top: -1px;
+    margin-right: 2px;
+    width:15px;
+    height:15px;
+    float: left;
+    background:#fff url(/images/blogs/yellowstar.png) 0 0 no-repeat;
+}
+
+#content-header img {
+    border: 0 none;
+    float: left;
+    margin: 0;
+    padding: 2px;
+}
+
+.text-input-bg select {
+    background-color: #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 27px;
+    margin: 5px 0 0;
+    padding: 3px 6px;
+    width: 215px;
+}

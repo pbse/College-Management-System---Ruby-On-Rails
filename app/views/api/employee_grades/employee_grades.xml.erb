@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.employee_grade_detail{
+  @employee_grades.each do |employee_grade|
+    @employee_grade = employee_grade
+    @xml.employee_grade do
+      @xml.name(@employee_grade.name)
+      @xml.priority(@employee_grade.priority)
+      @xml.max_hours_day(@employee_grade.max_hours_day)
+      @xml.max_hours_week(@employee_grade.max_hours_week)
+    end
+  end
+}%>
+
+

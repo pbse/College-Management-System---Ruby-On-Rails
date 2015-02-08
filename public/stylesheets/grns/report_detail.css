@@ -1,0 +1,121 @@
+#fees-table{
+    padding-top: 10px;
+    width:900px;
+    height:auto;
+}
+.fees-th {
+    background: none repeat scroll 0 0 #BECFFB;
+    border-bottom: 1px solid #BECFFB;
+    font-weight: normal;
+    height: 1.5em;
+    list-style-type: none;
+    padding: 0.5em 0 0 1em;
+}
+
+.fees-table-payee{
+    float:left;
+    width:150px;
+    padding-left:65px;
+}
+.fees-table-category{
+    padding-left:100px;
+    float:left;
+    width:150px;
+}
+.fees-table-amount{
+    padding-left:50px;
+    float:left;
+    width:75px;
+}
+.fees-table-date {
+    float: left;
+    padding-left: 50px;
+    width: 30px;
+}
+.fees-table-reciept{
+    margin-left:50px;
+    float:left;
+    width:75px;
+    text-align: center;
+}
+
+.fees-table-total-amount {
+    float: right;
+    margin-right: 45px;
+    margin-top: -19px;
+}
+
+.fees-table-total-name {
+    float: left;
+    margin-left: 642px;
+    margin-right: 5px;
+}
+
+.listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em;
+    list-style-type : none;
+    padding: 10px 0 0 16px;
+    font-size: 14px;
+    width:885px;
+
+}
+
+.listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em;
+    list-style-type : none;
+    padding: 10px 0 0 16px;
+    font-size: 14px;
+    width:885px;
+
+}
+
+.fees-table-payee a{
+    text-decoration: none;
+    color: #444444;
+}
+
+.fees-table-payee a:hover{
+    text-decoration: none;
+    color: #BB0000;
+}
+#fees_report_title{
+}
+
+.label-field-show {
+    min-height: 20px;
+    width : 470px;
+    padding: 3px 0 1px 0;
+    float:left;
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+.label-container1 {
+    color:#444444;
+    display:block;
+    float:left;
+    font-size:15px;
+    font-weight:60;
+    padding: 0px;
+    padding-top:10px;
+    width:180px;
+    margin : 5px 0 0 10px;
+    height:17px;
+}
+
+.label-output {
+    float:left;
+    margin : 5px 0 0 10px;
+    width : 180px;
+    height:17px;
+    font-size:15px;
+    padding: 5px;
+    display:block;
+    font-weight: bold;
+}

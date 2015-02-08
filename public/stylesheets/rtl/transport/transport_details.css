@@ -1,0 +1,105 @@
+.label-field-pair-select-class {
+height:40px;
+margin:0 auto;
+padding-top:3px;
+width:500px;
+}
+.label-field-pair-select-class label {
+color:#444444;
+display:block;
+float:right;
+font-size:14px;
+font-weight:600;
+margin:0 0 10px;
+padding-top:10px;
+width:120px;
+}
+.text-input-bg {
+background:none repeat scroll 0 0 transparent;
+float:right;
+height:28px;
+width:250px;
+}
+.text-input-bg select {
+-moz-border-radius:10px 10px 10px 10px;
+background-color:#EEEEEE;
+border:1px solid #C6C6C6;
+height:27px;
+margin:5px 10px 0 0;
+padding:3px 6px;
+width:215px;
+}
+input[type="text"], input[type="password"], textarea, select {
+outline:medium none;
+}
+table {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:700px;
+}
+table#listing td.col-1 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:10%;
+}
+table#listing td.col-2 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:30%;
+}
+table#listing td.col-3 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:30%;
+}
+table#listing td.col-4 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:10%;
+}
+table#listing td.col-5 {
+padding:5px 10px 5px 5px;
+text-align:right;
+width:15%;
+}
+table#listing td a {
+color:#27292B;
+font-size:11px;
+text-decoration:none;
+}
+.user_button {
+    margin-right:420px;
+    margin-top:0px;
+}
+.user_button:hover{
+    background: #373b3f;
+}
+.seat_occupancy{
+    margin-right:140px;
+    height:50px;
+
+}
+.label{
+    color: #999;
+    font: 15px;
+    width:115px;
+    float: right;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.record{
+    float: right;
+    width: 300px;
+    color: #B00;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.record span{
+    color: black;
+}
+
+.info{
+   padding-top: 10px;
+}

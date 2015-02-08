@@ -1,0 +1,83 @@
+div.attr_pair{
+    width: 480px;
+    float: right;
+}
+div.attr_pair div{
+    float: right;
+    padding: 5px;
+    height: auto;
+    color: #444;
+}
+div.attr_value{
+    width: 260px;
+    font-weight: bold;
+    font-size: 14px;
+}
+div.attr_label{
+    width: 200px;
+    font-size: 14px;
+}
+h4.section-heading {
+    color: #980000;
+    border-bottom: 1px solid black;
+    margin-top: 2px;
+    padding-bottom: 10px;
+    float: right;
+    width: 100%;
+}
+
+table.section{
+    width: 100%;
+    height: auto;
+    float: right;
+}
+table.section-table th, table td {
+    padding: 10px 10px 9px;
+    line-height: 18px;
+    text-align: right;
+}
+table.section-table {
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 0;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+table.section-table th {
+    padding-top: 9px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+table.section-table td {
+    vertical-align: top;
+    border-top: 1px solid #DDD;
+}
+
+h4.section-heading-question{
+    width:100%;
+    float:right;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-weight: normal;
+    color:#444444;
+}
+
+.available_sections{
+}
+.section{
+    margin:0 auto;
+    height:auto;
+    width:100%;
+    float:right;
+}
+.page {
+    page-break-after: auto;
+    page-break-inside: avoid;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.page-break{
+    float: right;
+    width: 100%;
+ }

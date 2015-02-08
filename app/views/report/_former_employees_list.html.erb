@@ -1,0 +1,168 @@
+<% unless @former_employees.blank? %>
+  <div class="info">
+    <div class="field_pair">
+      <div class="label1"><%= t('total_employees') %></div>
+      <div class="label2"><%=": #{@former_employees.total_entries}" %></div>
+    </div>
+    <div class="field_pair">
+      <div class="label1"><%= "#{t('male')} #{t('employees')}" %></div>
+      <div class="label2"><%=": #{@count.first.male_count}" %></div>
+    </div>
+    <div class="field_pair">
+      <div class="label1"><%= "#{t('female')} #{t('employees')}" %></div>
+      <div class="label2"><%=": #{@count.first.female_count}" %></div>
+    </div>
+  </div>
+  <div class="submit-button">
+    <%= link_to "#{t('export_as_csv')}" ,{:action=>'former_employees_csv',:sort_order=>@sort_order ,:former_employee=>params[:former_employee]},:target=>'_blank' %>
+  </div>
+  <div class="extender"></div>
+  <div id="page-yield">
+    <table id="report_table" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head sub-heading">
+        <td><%= t('no_text') %></td>
+
+        <% if @sort_order=="first_name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8595;", :url=>{:action=>"former_employees",:sort_order=>"first_name ASC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% elsif @sort_order=="fullname ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8593;", :url=>{:action=>"former_employees",:sort_order=>"first_name DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('name')}", :url=>{:action=>"former_employees",:sort_order=>"first_name DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="employee_number DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('employee_id')} &#8595;", :url=>{:action=>"former_employees",:sort_order=>"employee_number ASC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% elsif @sort_order=="employee_number ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('employee_id')} &#8593;", :url=>{:action=>"former_employees",:sort_order=>"employee_number DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('employee_id')}", :url=>{:action=>"former_employees",:sort_order=>"employee_number DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="joining_date DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('joining_date')} &#8595;", :url=>{:action=>"former_employees",:sort_order=>"joining_date ASC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% elsif @sort_order=="joining_date ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('joining_date')} &#8593;", :url=>{:action=>"former_employees",:sort_order=>"joining_date DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('joining_date')}", :url=>{:action=>"former_employees",:sort_order=>"joining_date DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="created_at DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('leaving_date')} &#8595;", :url=>{:action=>"former_employees",:sort_order=>"created_at ASC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% elsif @sort_order=="created_at ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('leaving_date')} &#8593;", :url=>{:action=>"former_employees",:sort_order=>"created_at DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('leaving_date')}", :url=>{:action=>"former_employees",:sort_order=>"created_at DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="department_name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('department')} &#8595;", :url=>{:action=>"former_employees",:sort_order=>"department_name ASC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% elsif @sort_order=="department_name ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('department')} &#8593;", :url=>{:action=>"former_employees",:sort_order=>"department_name DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('department')}", :url=>{:action=>"former_employees",:sort_order=>"department_name DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% end %>
+
+        <td><%= t('position')  %></td>
+        <td><%= t('manager') %></td>
+
+        <% if @sort_order=="gender DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('gender')} &#8595;", :url=>{:action=>"former_employees",:sort_order=>"gender ASC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% elsif @sort_order=="gender ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('gender')} &#8593;", :url=>{:action=>"former_employees",:sort_order=>"gender DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('gender')}", :url=>{:action=>"former_employees",:sort_order=>"gender DESC",:former_employee=>params[:former_employee]} %>
+          </td>
+        <% end %>
+      </tr>
+      <% page_count=0 %>
+      <% @former_employees.each_with_index do |e,@i| %>
+        <% if params[:page].present? %>
+          <% if params[:page].to_i >= 1 %>
+            <% @i = @i  + (params[:page].to_i - 1) * @former_employees.per_page.to_i %>
+          <% end %> <%else %> <% @i = @i %>
+        <% end %>
+        <% page_count+=1 %>
+        <tr class="tr-<%= cycle('odd', 'even') %>">
+          <td class="col-5"> <%=@i+1 %></td>
+          <% if @sort_order=="first_name ASC" or @sort_order=="first_name DESC" %>
+            <td class="col-2 batch_order_select"><%=link_to  "#{e.full_name}" ,{:controller=>'archived_employee',:action=>'profile',:id=>e.emp_id} %></td>
+          <% else %>
+            <td class="col-2"><%=link_to  "#{e.full_name}" ,{:controller=>'archived_employee',:action=>'profile',:id=>e.emp_id} %></td>
+          <% end %>
+          <% if @sort_order=="employee_number ASC" or @sort_order=="employee_number DESC" %>
+            <td class="col-2 batch_order_select"><%=link_to  "#{e.employee_number}" ,{:controller=>'archived_employee',:action=>'profile',:id=>e.emp_id} %></td>
+          <% else %>
+            <td class="col-2"><%=link_to  "#{e.employee_number}" ,{:controller=>'archived_employee',:action=>'profile',:id=>e.emp_id} %></td>
+          <% end %>
+          <% if @sort_order=="joining_date ASC" or @sort_order=="joining_date DESC" %>
+            <td class="col-2 batch_order_select"><%= e.joining_date %></td>
+          <% else %>
+            <td class="col-2"><%= e.joining_date %></td>
+          <% end %>
+          <% if @sort_order=="created_at ASC" or @sort_order=="created_at DESC" %>
+            <td class="col-2 batch_order_select"><%= e.created_at.to_date %></td>
+          <% else %>
+            <td class="col-2"><%= e.created_at.to_date %></td>
+          <% end %>
+          <% if @sort_order=="department_name ASC" or @sort_order=="department_name DESC" %>
+            <td class="col-4 batch_order_select"><%= e.department_name %></td>
+          <% else %>
+            <td class="col-4"><%= e.department_name %></td>
+          <% end %>
+          <td class="col-4"><%= e.emp_position %></td>
+          <td class="col-4"><%="#{e.manager_first_name} #{e.manager_last_name}" %></td>
+          <% if @sort_order=="gender ASC" or @sort_order=="gender DESC" %>
+            <td class="col-6 batch_order_select"><%= e.gender.downcase=='m' ? t('m') : t('f')%></td>
+          <% else %>
+            <td class="col-6"><%= e.gender.downcase=='m' ? t('m') : t('f')%></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+    <% unless @former_employees.per_page.to_i > @former_employees.total_entries.to_i %>
+      <div class="pagination_list">
+        <div class="pagination_text">
+          <%= "#{t('showing')} #{@i+1-(page_count-1)}-#{@i+1} #{t('of')} #{@former_employees.total_entries}" %>
+        </div>
+        <%= will_paginate @former_employees,:renderer => 'RemoteLinkRenderer' ,:page_links=>false ,:params=>{:sort_order=>@sort_order,:former_employee=>params[:former_employee]}%>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="flash-msg"> <%= t('no_employees_present') %></p>
+  <% end %>
+</div>

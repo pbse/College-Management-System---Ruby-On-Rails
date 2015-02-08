@@ -1,0 +1,48 @@
+#content-header img {
+    margin: 0;
+    padding: 2px;
+    width:auto;
+    padding: 0 10px;
+}
+.tables {
+    margin:30px auto;
+    float: left;
+}
+table.report-table{    
+    padding:10px 0 ;
+    float: left;
+}
+.report-table th,.report-table th a{
+    background-color: #BECFF3;
+    padding:6px 8px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #000;
+}
+.report-table th a:hover{
+    text-decoration: underline;
+}
+.report-table td{
+    border: 1px solid #BECFFB;
+    padding:3px 2px 5px 2px;
+    font-size:13px;
+    text-align: left;
+}
+.sortarrow{
+    font-size: 14px;
+    color: #bb0000;
+    font-weight: bolder;
+}
+.slno th{
+    padding-top: 8px !important;
+}
+.sinumber{
+}
+.scroll{
+    overflow-x:auto;
+}
+.pagination {
+    margin-top: 0;	
+    float: left;
+    width: 100%;
+}

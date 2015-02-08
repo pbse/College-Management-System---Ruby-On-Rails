@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.attendance_detail{
+  @employee_attendances.each do |employee_attendance|
+    @employee_attendance = employee_attendance
+    @xml.attendance do
+      @xml.attendance_date(@employee_attendance.attendance_date)
+      @xml.employee_number(@employee_attendance.employee.nil? ? ArchivedEmployee.find_by_former_id(@employee_attendance.employee_id).try(:employee_number) : @employee_attendance.employee.employee_number)
+      @xml.leave_type(@employee_attendance.employee_leave_type.code)
+      @xml.reason(@employee_attendance.reason)
+      @xml.half_day(@employee_attendance.is_half_day == true ? "Half Day" : "Full Day")
+    end
+  end
+}%>
+

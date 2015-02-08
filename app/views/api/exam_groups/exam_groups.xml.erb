@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%=
+@xml.exam_group_detail{
+  @exam_groups.each do |exam_group|
+    @exam_group = exam_group
+    @xml.exam_group do
+      @xml.name(@exam_group.name)
+      @xml.batch(@exam_group.batch.try(:full_name))
+      @xml.exam_type(@exam_group.exam_type)
+      @xml.is_published(@exam_group.is_published)
+      @xml.result_published(@exam_group.result_published)
+      @xml.exam_date(@exam_group.exam_date)
+      @xml.cce_exam_category(@exam_group.cce_exam_category.try(:name))
+      @xml.exam_detail do
+        exam_group.exams.each do |exam|
+          @xml.exam do
+            @xml.subject(exam.subject.try(:name))
+            @xml.start_time(exam.start_time)
+            @xml.end_time(exam.end_time)
+            @xml.maximum_marks(exam.maximum_marks)
+            @xml.minimum_marks(exam.minimum_marks)
+            @xml.event(exam.event.try(:title))
+          end
+        end
+      end
+    end
+  end
+}%>
+
+

@@ -1,0 +1,139 @@
+<% unless @courses.empty? %>
+  <div class="submit-button">
+    <%= link_to "#{t('export_as_csv')}" ,{:action=>'course_batch_details_csv',:sort_order=>@sort_order},:target=>'_blank' %>
+  </div>
+  <div class="extender"></div>
+  <div id="page-yield">
+    <table id="report_table" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head sub-heading">
+        <td><%= t('no_text') %></td>
+
+        <% if @sort_order=="course_name DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8595;", :url=>{:action=>"course_batch_details",:sort_order=>"course_name ASC"} %>
+          </td>
+        <% elsif @sort_order=="course_name ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('name')} &#8593;", :url=>{:action=>"course_batch_details",:sort_order=>"course_name DESC"} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('name')}", :url=>{:action=>"course_batch_details",:sort_order=>"course_name DESC"} %>
+          </td>
+        <% end %>
+
+        <td><%= t('code')  %></td>
+        <td><%= t('section')  %></td>
+
+        <% if @sort_order=="batch_count DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('batch')} &#8595;", :url=>{:action=>"course_batch_details",:sort_order=>"batch_count ASC"} %>
+          </td>
+        <% elsif @sort_order=="batch_count ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('batch')} &#8593;", :url=>{:action=>"course_batch_details",:sort_order=>"batch_count DESC"} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('batch')}", :url=>{:action=>"course_batch_details",:sort_order=>"batch_count DESC"} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="student_count DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('students')} &#8595;", :url=>{:action=>"course_batch_details",:sort_order=>"student_count ASC"} %>
+          </td>
+        <% elsif @sort_order=="student_count ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('students')} &#8593;", :url=>{:action=>"course_batch_details",:sort_order=>"student_count DESC"} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('students')}", :url=>{:action=>"course_batch_details",:sort_order=>"student_count DESC"} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="male_count DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('male')} &#8595;", :url=>{:action=>"course_batch_details",:sort_order=>"male_count ASC"} %>
+          </td>
+        <% elsif @sort_order=="male_count ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('male')} &#8593;", :url=>{:action=>"course_batch_details",:sort_order=>"male_count DESC"} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('male')}", :url=>{:action=>"course_batch_details",:sort_order=>"male_count DESC"} %>
+          </td>
+        <% end %>
+
+        <% if @sort_order=="female_count DESC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('female')} &#8595;", :url=>{:action=>"course_batch_details",:sort_order=>"female_count ASC"} %>
+          </td>
+        <% elsif @sort_order=="female_count ASC" %>
+          <td class="batch_order_select">
+            <%= link_to_remote  "#{t('female')} &#8593;", :url=>{:action=>"course_batch_details",:sort_order=>"female_count DESC"} %>
+          </td>
+        <% else %>
+          <td class="batch_order">
+            <%= link_to_remote  "#{t('female')}", :url=>{:action=>"course_batch_details",:sort_order=>"female_count DESC"} %>
+          </td>
+        <% end %>
+      </tr>
+      <% page_count=0 %>
+      <% @courses.each_with_index do |c,@i| %>
+        <% if params[:page].present? %>
+          <% if params[:page].to_i >= 1 %>
+            <% @i = @i  + (params[:page].to_i - 1) * @courses.per_page.to_i %>
+          <% end %> <%else %> <% @i = @i %>
+        <% end %>
+        <% page_count+=1 %>
+        <tr class="tr-<%= cycle('odd', 'even') %>">
+          <td class="col-5"> <%= @i+1 %></td>
+          <% if @sort_order=="course_name ASC" or @sort_order=="course_name DESC" %>
+            <td class="col-2 batch_order_select"><%= link_to  "#{c.course_name}",{:action=>"batch_details",:id=>c.id} %></td>
+          <% else %>
+            <td class="col-2"><%= link_to  "#{c.course_name}",{:action=>"batch_details",:id=>c.id} %></td>
+          <% end %>
+          <td class="col-4"><%= c.code %></td>
+          <td class="col-3"><%= c.section_name %></td>
+          <% if @sort_order=="batch_count ASC" or @sort_order=="batch_count DESC" %>
+            <td class="col-6 batch_order_select"><%= link_to "#{c.batch_count}" ,{:action=>"batch_details",:id=>c.id} %></td>
+          <% else %>
+            <td class="col-6"><%= link_to "#{c.batch_count}" ,{:action=>"batch_details",:id=>c.id} %></td>
+          <% end %>
+
+          <% if @sort_order=="student_count DESC" or @sort_order=="student_count ASC" %>
+            <td class="col-6 batch_order_select"><%= link_to "#{c.student_count}" ,{:action=>"course_students_all",:id=>c.id} %></td>
+          <% else %>
+            <td class="col-6"><%= link_to "#{c.student_count}" ,{:action=>"course_students",:id=>c.id}%></td>
+          <% end %>
+
+          <% if @sort_order=="male_count DESC" or @sort_order=="male_count ASC" %>
+            <td class="col-5 batch_order_select"><%= link_to "#{c.male_count}" ,{:action=>"course_students",:id=>c.id,:gender=>"m"}%></td>
+          <% else %>
+            <td class="col-5"><%= link_to "#{c.male_count}" ,{:action=>"course_students",:id=>c.id,:gender=>"m"}%></td>
+          <% end %>
+
+          <% if @sort_order=="female_count DESC" or @sort_order=="female_count ASC" %>
+            <td class="col-5 batch_order_select"><%= link_to "#{c.female_count}" ,{:action=>"course_students",:id=>c.id,:gender=>"f"}%></td>
+          <% else %>
+            <td class="col-5"><%= link_to "#{c.female_count}" ,{:action=>"course_students",:id=>c.id,:gender=>"f"}%></td>
+          <% end %>
+
+        </tr>
+      <% end %>
+    </table>
+    <% unless @courses.per_page.to_i > @courses.total_entries.to_i %>
+      <div class="pagination_list">
+        <div class="pagination_text">
+          <%= "#{t('showing')} #{@i+1-(page_count-1)}-#{@i+1} #{t('of')} #{@courses.total_entries}" %>
+        </div>
+        <%= will_paginate @courses,:renderer => 'RemoteLinkRenderer' ,:page_links=>false ,:params=>{:sort_order=>@sort_order}%>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="flash-msg"> <%= t('no_record_found') %></p>
+<% end %>

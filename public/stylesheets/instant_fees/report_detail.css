@@ -1,0 +1,171 @@
+#fees-table{
+    padding-top: 10px;
+    width: 840px;
+    height:auto;
+    margin-bottom: 35px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.fees-th {
+    background: none repeat scroll 0 0 #BECFFB;
+    border-bottom: 1px solid #BECFFB;
+    font-weight: normal;
+    height: 1.5em;
+    list-style-type: none;
+    padding: 0.5em 0 0 1em;
+}
+
+.fees-table-payee{
+    float:left;
+    width:305px;
+    padding-left:65px;
+}
+.fees-table-category{
+    padding-left:100px;
+    float:left;
+    width:150px;
+}
+.fees-table-amount{
+    padding-left:50px;
+    float:left;
+    width:75px;
+}
+.fees-table-date{
+    padding-left:50px;
+    float:left;
+    width:75px;
+}
+.fees-table-reciept{
+    margin-left:50px;
+    float:left;
+    width:75px;
+    text-align: right;
+}
+
+.fees-table-total-amount {
+    float: right;
+    margin-right: 75px;
+}
+.fees-table-total-name {
+    float: left;
+    margin-left: 286px;
+    width: auto;
+}
+
+.listeven{
+    background : #EEF2FD;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em;
+    list-style-type : none;
+    padding: 10px 0 0 16px;
+    font-size: 14px;
+    width:824px;
+
+}
+
+.listodd{
+    background : #DFEAFF;
+    border-bottom:1px solid #BECFFB;
+    color : #444;
+    height : 1.5em;
+    list-style-type : none;
+    padding: 10px 0 0 16px;
+    font-size: 14px;
+    width:824px;
+
+}
+
+#fees_report_title{
+}
+.fees-table-description a{
+    width: 254px;
+    text-decoration: none;
+    color: #444444;
+}
+
+.fees-table-description a:hover{
+    width: 254px;
+    text-decoration: none;
+    color: #BB0000;
+}
+
+.report-detail{
+
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #444;
+
+}
+
+.report-detail-left{
+    width: 440px;
+    float:left;
+    height:15px;
+    padding: 10px;
+    font-size: 13px;
+}
+.report-detail-right{
+    float: right;
+    width: 297px;
+    padding: 10px;
+    font-size: 13px;
+}
+.report-detail-right2{
+    float:left;
+    width:400px;
+}
+.report-detail-right-payment_mode{
+    float:left;
+    width: 140px;
+}
+.report-detail-right-payment_note{
+    float:left;
+    width: 140px;
+}
+.report-detail-left-name{
+    width: 140px;
+    float:left;
+    margin-left: 10px;
+}
+.report-detail-left-value{
+    width: 272px;
+    float:left;
+    word-break: break-word;
+}
+.report-detail-right-name{
+    width: 93px;
+    float:left;
+}
+.report-detail-right-value{
+    width: 440px;
+    float:left;
+    word-break: break-word;
+}
+.report-detail-right-value1{
+    width: 169px;
+    float:left;
+    word-break: break-word;
+}
+p{
+    margin-top:-15px;
+    margin-left:10px
+}
+.report_left{
+    float:left;
+    width:50%;
+}
+.report_right{
+    float:right;
+    width:48%;
+}
+.notes{
+    width: 680px;
+
+    height: 44px;
+    font-size: 13px;
+    margin-left: 10px;
+    color: #444;
+}

@@ -1,0 +1,14 @@
+<div id="content-header">
+<%= show_header_icon %>
+  <h1><%= t('reports_text') %></h1>
+<div class='header-sep'>|</div>
+<div class='sub-header'><%="#{t('course_text')} #{t('students')} #{t('details')}" %></div>
+
+</div>
+
+<% unless flash[:notice].nil? %>
+  <p class="flash-msg"> <%= flash[:notice] %> </p>
+<% end %>
+<div id="information">
+  <%= render  :partial => 'course_students_details'%>
+</div>
