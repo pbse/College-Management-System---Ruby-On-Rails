@@ -1,7 +1,0 @@
-:development:
-      :host:
-        - localhost:11211
-
-:production:
-      :host:
-        - localhost:11211
